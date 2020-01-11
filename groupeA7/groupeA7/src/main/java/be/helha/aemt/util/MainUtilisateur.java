@@ -43,7 +43,7 @@ public class MainUtilisateur {
 		em.close();
 		emf.close();
 		
-		//"test"
+		//coucou Max
 
 	}
 }
