@@ -32,7 +32,7 @@
 	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	    <ul class="navbar-nav mr-auto">
 	      <li class="nav-item active">
-	        <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+	        <a class="nav-link" href="index.xhtml">Accueil <span class="sr-only">(current)</span></a>
 	      </li>
 	      <li class="nav-item dropdown">
 	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -44,7 +44,7 @@
 	        </div>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" href="#">Alumni</a>
+	        <a class="nav-link" href="alumni.xhtml">Alumni</a>
 	      </li>
 	      <li class="nav-item dropdown">
 	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -63,18 +63,49 @@
 	      </li>
 	    </ul>
 	    <form class="form-inline my-2 my-lg-0">
-	    <a href="#" id="connexion">
-		    <span id="userLogo">
-		  		<i class="fa fa-user"></i>
-			</span>
-			Connexion
-		</a>
+	    	<button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#connection">Connexion</button>
 	    </form>
 	  </div>
 	</nav>
 		
+		
+	<!-- MODAL CONNECTION -->
+	<div class="modal fade" id="connection" tabindex="-1" role="dialog" aria-labelledby="connectionLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="connectionLabel">New message</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					</button>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="form-group">
+							<label for="recipient-name" class="col-form-label">Recipient:</label>
+							<input type="text" class="form-control" id="recipient-name" />
+						</div>
+						<div class="form-group">
+							<label for="message-text" class="col-form-label">Message:</label>
+							<textarea class="form-control" id="message-text"></textarea>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Send message</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+		
 	<!-- CONTENT -->
 	<div class="container">
+	
+		
+	
 	</div>
 	
 	
@@ -137,19 +168,6 @@
 	    <a href="https://mdbootstrap.com/education/bootstrap/" id="copyright"> MeetHELHa.be</a>
 	  </div>
 	</footer>
-	
-	
-	
-	
-	
-<!-- 	<footer class="bg-info"> -->
-<!-- 		<div class="container"> -->
-			
-<!-- 			<div class="footer-copyright text-center py-3" id="copyright">© 2020 Copyright: -->
-<!-- 	    		<a href="index.xhtml" id="copyright"> MeetHELHa.be</a> -->
-<!-- 	  		</div> -->
-<!-- 		</div> -->
-<!-- 	</footer> -->
 	
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
