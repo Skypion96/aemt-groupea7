@@ -1,5 +1,51 @@
+#userLogo{
+	font-size: 48px; 
+	color: white;
+}
+
+#userLogo:hover{
+	color: black;
+}
+
 #connexion{
 	color: white;
 	font-size: 25px;
 	margin-left: 3px;
+}
+
+#connexion:hover{
+	text-decoration: none;
+	color: black;
+}
+
+html, body{
+	margin: 0;
+	display: table;
+	height: 100%;
+	width: 100%;
+}
+
+.container{
+	height: auto;
+}
+
+#copyright{
+	color: white;
+	width: 100%;
+}
+
+hr{
+	background-color: white;
+}
+
+h5{
+	color: white;
+}
+
+.liFooter{
+	color: white;
+}
+
+.liFooter:hover {
+	color: white;
 }
