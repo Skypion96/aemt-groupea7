@@ -1,12 +1,3 @@
-#userLogo{
-	font-size: 48px; 
-	color: white;
-}
-
-#userLogo:hover{
-	color: black;
-}
-
 #connexion{
 	color: white;
 	font-size: 25px;
@@ -18,13 +9,6 @@
 	color: black;
 }
 
-html, body{
-	margin: 0;
-	display: table;
-	height: 100%;
-	width: 100%;
-}
-
 .container{
 	height: auto;
 }
@@ -34,13 +18,39 @@ html, body{
 	width: 100%;
 }
 
+h5{
+	color: white;
+}
+
 hr{
 	background-color: white;
 }
 
-h5{
+html, body{
+	margin: 0;
+	display: table;
+	height: 100%;
+	width: 100%;
+}
+
+#userLogo{
+	font-size: 48px; 
 	color: white;
 }
+
+#userLogo:hover{
+	color: black;
+}
+
+
+
+
+
+
+
+
+
+
 
 .liFooter{
 	color: white;
