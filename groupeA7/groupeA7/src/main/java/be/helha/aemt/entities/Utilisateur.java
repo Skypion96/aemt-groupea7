@@ -112,6 +112,12 @@ public class Utilisateur  implements Serializable{
 		return true;
 	}
 
+	@Override
+	public String toString() {
+		return "Utilisateur [email=" + email + ", password=" + password + ", nom=" + nom + ", prenom=" + prenom
+				+ ", role=" + role + "]";
+	}
+
 	
 
 	

@@ -9,6 +9,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
+import be.helha.aemt.dao.AncienDAO;
 import be.helha.aemt.entities.Admin;
 import be.helha.aemt.entities.Ancien;
 import be.helha.aemt.entities.Offre;
@@ -28,7 +29,7 @@ public class MainUtilisateur {
 
 		//Utilisateur u3 = new Utilisateur("L3","P1","E1","user");
 
-
+		AncienDAO ancienDao = new AncienDAO();
 		
 		EntityManagerFactory emf;
 		EntityManager em;
@@ -40,16 +41,16 @@ public class MainUtilisateur {
 		 
 		 
 		tx.begin();
-		em.merge(u1);
+		/*em.merge(u1);
 		em.merge(u2);
 		em.merge(o1);
-		em.merge(o2);
+		em.merge(o2);*/
 		//em.persist(u3);
 		tx.commit();
 		
-		
+		System.out.println(ancienDao.selectAll());;
 
-
+		ancienDao.close();
 		
 		em.close();
 		emf.close();
