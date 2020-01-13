@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
-<html xmlns:jsf="http://xmlns.jcp.org/jsf" xmlns:h="http://xmlns.jcp.org/jsf/html" class=" FB_FW_ext eidReader">
+<html xmlns:jsf="http://xmlns.jcp.org/jsf" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:b="http://bootsfaces.net/ui" class=" FB_FW_ext eidReader">
 <head>
 	<title>MeetHELHa</title>
 	<meta http-equiv="  Content-Type" content="text/html; charset=UTF-8" />
@@ -83,40 +83,51 @@
 		</nav>
 		<div class="tab-content" id="nav-tabContent">
 			<div class="tab-pane fade show active" id="nav-direction" role="tabpanel" aria-labelledby="nav-direction-tab">
-					<table class="table">
-						<thead>
-							<tr>
-								<th scope="col" data-sortable="true" data-field="name">Nom</th>
-								<th scope="col" data-sortable="true" data-field="firstName">Prénom</th>
-								<th scope="col" data-sortable="true" data-field="mail">E-mail</th>
-								<th scope="col" data-sortable="true" data-field="tel">Numéro de téléphone</th>
-								<th scope="col" data-sortable="true" data-field="diplome">Année diplômante</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<th>Janssens</th>
-								<th>Maxime</th>
-								<th>la161762@student.helha.be</th>
-								<th>0471358327</th>
-								<th>2020</th>
-							</tr>
-							<tr>
-								<th>Leurart</th>
-								<th>Vincent</th>
-								<th>warmachinedu96@hotmail.fr</th>
-								<th>0471876852</th>
-								<th>2018</th>
-							</tr>
-							<tr>
-								<th>Orient</th>
-								<th>David</th>
-								<th>ledetraque@life.fr</th>
-								<th>0472589868</th>
-								<th>2019</th>
-							</tr>
-						</tbody>
-					</table>
+<!-- 					<table class="table"> -->
+<!-- 						<thead> -->
+<!-- 							<tr> -->
+<!-- 								<th scope="col" data-sortable="true" data-field="name">Nom</th> -->
+<!-- 								<th scope="col" data-sortable="true" data-field="firstName">Prénom</th> -->
+<!-- 								<th scope="col" data-sortable="true" data-field="mail">E-mail</th> -->
+<!-- 								<th scope="col" data-sortable="true" data-field="tel">Numéro de téléphone</th> -->
+<!-- 								<th scope="col" data-sortable="true" data-field="diplome">Année diplômante</th> -->
+<!-- 							</tr> -->
+<!-- 						</thead> -->
+<!-- 						<tbody> -->
+<!-- 							<tr> -->
+<!-- 								<th>Janssens</th> -->
+<!-- 								<th>Maxime</th> -->
+<!-- 								<th>la161762@student.helha.be</th> -->
+<!-- 								<th>0471358327</th> -->
+<!-- 								<th>2020</th> -->
+<!-- 							</tr> -->
+<!-- 							<tr> -->
+<!-- 								<th>Leurart</th> -->
+<!-- 								<th>Vincent</th> -->
+<!-- 								<th>warmachinedu96@hotmail.fr</th> -->
+<!-- 								<th>0471876852</th> -->
+<!-- 								<th>2018</th> -->
+<!-- 							</tr> -->
+<!-- 							<tr> -->
+<!-- 								<th>Orient</th> -->
+<!-- 								<th>David</th> -->
+<!-- 								<th>ledetraque@life.fr</th> -->
+<!-- 								<th>0472589868</th> -->
+<!-- 								<th>2019</th> -->
+<!-- 							</tr> -->
+<!-- 						</tbody> -->
+<!-- 					</table> -->
+						
+						<h:form>
+							<b:dataTable value="#{utilisateur.utilisateur}" var="user">
+								<b:dataTableColumn value="#{user.nom}" label="Nom"/>
+								<b:dataTableColumn value="#{user.prenom}" label="Prénom"/>
+								<b:dataTableColumn value="#{user.email}" label="E-mail"/>
+								<b:dataTableColumn value="#{user.telephone}" label="Téléphone"/>
+								<b:dataTableColumn value="#{user.anneeDiplomante}" label="Année diplômante"/>
+							</b:dataTable>
+						</h:form>
+
 			</div>
 			
 			<div class="tab-pane fade" id="nav-compta" role="tabpanel" aria-labelledby="nav-compta-tab">
