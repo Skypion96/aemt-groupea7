@@ -38,22 +38,8 @@ public class UtilisateurDAO {
 	}
 	
 	public Utilisateur add(Utilisateur u) {
-		/*String requete ="INSERT INTO utilisateur (login, password, email) VALUES (?,?,?)";
-		
-		Query qAdd=em.createNativeQuery(requete);
-		qAdd.setParameter(1, u.getLogin());
-		qAdd.setParameter(2, u.getPassword());.
-		qAdd.setParameter(3, u.getEmail());*/
 		u = new Utilisateur("Roger","null","rien","user");
 		tx.begin();
-		//qAdd.executeUpdate();
-		//em.persist(u); //--> Ajoute une ligne dans la BD
-		
-		
-		/*u = em.find(Utilisateur.class, 1); //--> Synchronise et n'ajoute pas de ligne dans la BD */
-		
-		
-		
 		em.merge(u);
 		tx.commit();
 		return u;
@@ -62,8 +48,6 @@ public class UtilisateurDAO {
 	//rechercher un utilisateur
 	public Utilisateur find(Utilisateur u) {
 		String requete ="SELECT u from Utilisateur u where u.login =:plogin";
-		
-		//Query qFind=em.createQuery(requete);
 		TypedQuery<Utilisateur> qFind = em.createQuery(requete, Utilisateur.class);
 		qFind.setParameter("plogin", u.getLogin());
 		List<Utilisateur> res= qFind.getResultList();
@@ -73,16 +57,11 @@ public class UtilisateurDAO {
 	
 	// supprimer les utilisateurs en fonction de leur login
 	public Utilisateur remove(Utilisateur u) {
-		/*String requete ="Delete from Utilisateur utilisateur where u.login =:plogin";
-		
-		Query qRemove=em.createQuery(requete);
-		qRemove.setParameter("plogin", u.getLogin());*/
+
 		if(u.getId()==null) {
 			return null;
 		}
 		tx.begin();
-		/*Utilisateur gerer=em.merge(u);
-		em.remove(gerer);*/
 		em.remove(em.merge(u));
 		tx.commit();
 		return u;

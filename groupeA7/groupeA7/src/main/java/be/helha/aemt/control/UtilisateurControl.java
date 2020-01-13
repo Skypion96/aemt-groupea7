@@ -11,7 +11,6 @@ import javax.swing.JSpinner.ListEditor;
 
 import be.helha.aemt.ejb.GestionVisiteurEJB;
 import be.helha.aemt.entities.Utilisateur;
-import be.helha.aemt.entities.Visiteur;
 
 @SessionScoped
 @Named
@@ -35,7 +34,7 @@ private String nom = "Anonymous";
         return "list.xhtml";
     }
     
-    public List<Visiteur> selectAll(){        
+    public List<Utilisateur> selectAll(){        
         return beanUtilisateur.findAll();
         
     }

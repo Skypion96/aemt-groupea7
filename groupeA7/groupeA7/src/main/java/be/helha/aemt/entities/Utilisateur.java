@@ -16,10 +16,12 @@ import javax.persistence.UniqueConstraint;
 
 @Entity
 @Table(uniqueConstraints = {@UniqueConstraint(columnNames = {"login"})})
-public class Utilisateur extends Visiteur implements Serializable{
+public class Utilisateur  implements Serializable{
 	
 	
-	private String login;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;	private String login;
 	private String password;
 	private String email;
 
@@ -70,6 +72,14 @@ public class Utilisateur extends Visiteur implements Serializable{
 
 
 	
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
 	public String getGroupName() {
 		return groupName;

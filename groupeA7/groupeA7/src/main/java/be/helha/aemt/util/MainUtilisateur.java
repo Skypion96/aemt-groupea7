@@ -6,7 +6,6 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 import be.helha.aemt.entities.Utilisateur;
-import be.helha.aemt.entities.Visiteur;
 
 public class MainUtilisateur {
 
@@ -18,7 +17,6 @@ public class MainUtilisateur {
 		Utilisateur u3 = new Utilisateur("L3","P1","E1","user");
 
 
-		Visiteur v1 = new Visiteur("192.193.194.195");
 		
 		EntityManagerFactory emf;
 		EntityManager em;
@@ -30,7 +28,6 @@ public class MainUtilisateur {
 		 
 		 
 		tx.begin();
-		em.persist(v1);
 		em.persist(u1);
 		em.persist(u2);
 		em.persist(u3);
@@ -43,7 +40,6 @@ public class MainUtilisateur {
 		em.close();
 		emf.close();
 		
-		//coucou Max
 
 	}
 }
