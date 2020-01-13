@@ -5,7 +5,7 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 
 @Entity
-public class OffreEmploi extends Offres implements Serializable{
+public class OffreEmploi extends Offre implements Serializable{
 
 	public OffreEmploi() {
 		super();

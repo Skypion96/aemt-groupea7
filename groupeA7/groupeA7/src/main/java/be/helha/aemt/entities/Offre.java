@@ -10,7 +10,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-public class Offres {
+public class Offre {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,7 +28,7 @@ public class Offres {
 	private String type;
 	private String descriptif;
 	private String section;
-	public Offres(String titre, boolean valide, Date date, Ancien ancien, String nomEntreprise,
+	public Offre(String titre, boolean valide, Date date, Ancien ancien, String nomEntreprise,
 			String adresseEntreprise, String descriptif, String section) {
 		super();
 		this.titre = titre;
@@ -42,7 +42,7 @@ public class Offres {
 	}
 	
 	
-	public Offres() {
+	public Offre() {
 		super();
 	}
 
@@ -116,7 +116,7 @@ public class Offres {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Offres other = (Offres) obj;
+		Offre other = (Offre) obj;
 		if (adresseEntreprise == null) {
 			if (other.adresseEntreprise != null)
 				return false;
