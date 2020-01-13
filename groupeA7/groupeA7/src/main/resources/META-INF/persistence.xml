@@ -12,6 +12,9 @@
 		<class>be.helha.aemt.entities.Ancien</class>
 		<class>be.helha.aemt.entities.Admin</class>
 		<class>be.helha.aemt.entities.Offres</class>
+		<class>be.helha.aemt.entities.OffreEmploi</class>
+		<class>be.helha.aemt.entities.OffreStage</class>
+		
 		
 				
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>

@@ -1,6 +1,7 @@
 package be.helha.aemt.util;
 
 import java.awt.SystemColor;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.EntityManager;
@@ -20,7 +21,7 @@ public class MainUtilisateur {
 		
 		Utilisateur u1 = new Ancien("P1","Mail1","Maxime","Yes","0202020",2020,"coucou",7000,"Mons","Chomage");
 		Utilisateur u2 = new Admin("P1","Mail2","Maxime","No");
-		Offres o1 = new Offres("Salut mon pote",false,new Date(),(Ancien)u1,"meetHelha","rue des vieux","test","test");
+		Offres o1 = new Offres("Salut mon pote",false,new Date() ,(Ancien)u1,"meetHelha","rue des vieux","test","test");
 		//Utilisateur u3 = new Utilisateur("L3","P1","E1","user");
 
 
