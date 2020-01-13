@@ -8,7 +8,6 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-import be.helha.aemt.entities.Admin;
 import be.helha.aemt.entities.Ancien;
 import be.helha.aemt.entities.Utilisateur;
 

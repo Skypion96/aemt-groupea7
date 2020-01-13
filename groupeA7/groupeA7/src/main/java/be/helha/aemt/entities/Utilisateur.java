@@ -1,16 +1,9 @@
 package be.helha.aemt.entities;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
@@ -26,7 +19,7 @@ public class Utilisateur  implements Serializable{
 	private String prenom;
 	private String role;
 	
-	
+
 	public Utilisateur() {
 	}
 
@@ -35,7 +28,6 @@ public class Utilisateur  implements Serializable{
 		this.email = email;
 		this.nom = nom;
 		this.prenom = prenom;
-		this.role = "";
 	}
 
 	public String getPassword() {
@@ -89,26 +81,9 @@ public class Utilisateur  implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		Utilisateur other = (Utilisateur) obj;
-		if (email == null) {
-			if (other.email != null)
-				return false;
-		} else if (!email.equals(other.email))
+		if (!email.equals(other.email)) {
 			return false;
-		if (nom == null) {
-			if (other.nom != null)
-				return false;
-		} else if (!nom.equals(other.nom))
-			return false;
-		if (password == null) {
-			if (other.password != null)
-				return false;
-		} else if (!password.equals(other.password))
-			return false;
-		if (prenom == null) {
-			if (other.prenom != null)
-				return false;
-		} else if (!prenom.equals(other.prenom))
-			return false;
+		} 
 		return true;
 	}
 

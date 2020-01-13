@@ -1,12 +1,11 @@
 package be.helha.aemt.entities;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
-import javax.persistence.CascadeType;
+import javax.persistence.Basic;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.FetchType;
+import javax.persistence.Lob;
 
 @Entity
 public class Ancien extends Utilisateur implements Serializable{
@@ -18,7 +17,10 @@ public class Ancien extends Utilisateur implements Serializable{
 	private int cp;
 	private String localite;
 	private String emploiActuel;
-	//private Image photo;
+	
+	@Lob
+    @Basic(fetch = FetchType.LAZY)
+    private byte[] imageProfil;
 
 	
 	public String getTelephone() {
@@ -78,6 +80,14 @@ public class Ancien extends Utilisateur implements Serializable{
 		this.emploiActuel = emploiActuel;
 	}
 
+	public byte[] getImageProfil() {
+		return imageProfil;
+	}
+
+	public void setImageProfil(byte[] imageProfil) {
+		this.imageProfil = imageProfil;
+	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -112,8 +122,5 @@ public class Ancien extends Utilisateur implements Serializable{
 		} else if (!telephone.equals(other.telephone))
 			return false;
 		return true;
-	}
-	
-	
-	
+	}	
 }
