@@ -8,6 +8,8 @@
 	<link rel="stylesheet" href="res/css/css.css" />
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"/>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+	<script type="text/javascript" src="res/js/alumni.js"></script>
+
 </head>
 <body>
 
@@ -82,20 +84,18 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form>
+					<form method="POST" action="j_security_check">
 						<div class="form-group">
-							<label for="txtMail" class="col-form-label">E-mail:</label>
-							<input type="text" class="form-control" id="txtMail" />
+							<label for="txtMail"  class="col-form-label">E-mail:</label>
+							<input type="text"  name="j_username" class="form-control" id="txtMail" />
 						</div>
 						<div class="form-group">
 							<label for="txtMdp" class="col-form-label">Mot de passe:</label>
-							<input type="password" class="form-control" id="txtMdp" />
+							<input type="password" name="j_password" class="form-control" id="txtMdp" />
 						</div>
+							<input type="submit" value="Login" onclick="alertme()"/>
+							<input type="reset" value="Reset"/>
 					</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-					<button type="button" class="btn btn-primary">Connexion</button>
 				</div>
 			</div>
 		</div>

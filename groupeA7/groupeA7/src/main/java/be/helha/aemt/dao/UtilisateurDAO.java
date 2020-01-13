@@ -21,7 +21,7 @@ public class UtilisateurDAO {
 	
 	public UtilisateurDAO() {
 		//ON EST EN RESSOURCE_LOCAL
-		emf = Persistence.createEntityManagerFactory("leurartVisiteur");//UNIQUEMENT EN RESSOURCE LOCAL
+		emf = Persistence.createEntityManagerFactory("groupeA7");//UNIQUEMENT EN RESSOURCE LOCAL
 		em = emf.createEntityManager();
 		tx=em.getTransaction();
 	}
