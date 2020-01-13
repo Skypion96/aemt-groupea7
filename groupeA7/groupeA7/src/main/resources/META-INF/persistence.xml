@@ -11,6 +11,7 @@
 		<class>be.helha.aemt.entities.Utilisateur</class>
 		<class>be.helha.aemt.entities.Ancien</class>
 		<class>be.helha.aemt.entities.Admin</class>
+		<class>be.helha.aemt.entities.Offres</class>
 		
 				
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>

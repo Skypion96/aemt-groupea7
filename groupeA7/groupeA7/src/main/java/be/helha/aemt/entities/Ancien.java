@@ -1,8 +1,12 @@
 package be.helha.aemt.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Ancien extends Utilisateur implements Serializable{
@@ -15,6 +19,8 @@ public class Ancien extends Utilisateur implements Serializable{
 	private String localite;
 	private String emploiActuel;
 	//private Image photo;
+	@OneToMany(cascade = CascadeType.ALL)
+	private List<Offres> offres;
 
 	
 	public String getTelephone() {
@@ -31,6 +37,7 @@ public class Ancien extends Utilisateur implements Serializable{
 		this.localite = localite;
 		this.emploiActuel = emploiActuel;
 		this.setRole("Ancien");
+		offres = new ArrayList<Offres>();
 	}
 	
 	
