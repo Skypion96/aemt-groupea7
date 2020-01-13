@@ -19,8 +19,6 @@ public class Ancien extends Utilisateur implements Serializable{
 	private String localite;
 	private String emploiActuel;
 	//private Image photo;
-	@OneToMany(cascade = CascadeType.ALL)
-	private List<Offre> offres;
 
 	
 	public String getTelephone() {
@@ -37,7 +35,6 @@ public class Ancien extends Utilisateur implements Serializable{
 		this.localite = localite;
 		this.emploiActuel = emploiActuel;
 		this.setRole("Ancien");
-		offres = new ArrayList<Offre>();
 	}
 	
 	
