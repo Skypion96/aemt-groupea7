@@ -18,10 +18,6 @@
 	width: 100%;
 }
 
-h5{
-	color: white;
-}
-
 hr{
 	background-color: white;
 }
@@ -33,6 +29,18 @@ html, body{
 	width: 100%;
 }
 
+.liFooter{
+	color: white;
+}
+
+.liFooter:hover {
+	color: white;
+}
+
+.text-uppercase{
+	color: white;
+}
+
 #userLogo{
 	font-size: 48px; 
 	color: white;
@@ -40,22 +48,4 @@ html, body{
 
 #userLogo:hover{
 	color: black;
-}
-
-
-
-
-
-
-
-
-
-
-
-.liFooter{
-	color: white;
-}
-
-.liFooter:hover {
-	color: white;
 }
