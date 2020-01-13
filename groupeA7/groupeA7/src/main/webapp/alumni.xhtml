@@ -134,14 +134,17 @@
 <!-- 					</table> -->
 						
 						<h:form>
-							<b:dataTable value="#{utilisateur.utilisateur}" var="user">
-								<b:dataTableColumn value="#{user.nom}" label="Nom"/>
-								<b:dataTableColumn value="#{user.prenom}" label="Prénom"/>
-								<b:dataTableColumn value="#{user.email}" label="E-mail"/>
-								<b:dataTableColumn value="#{user.telephone}" label="Téléphone"/>
-								<b:dataTableColumn value="#{user.anneeDiplomante}" label="Année diplômante"/>
+						<!-- value="#{utilisateurControl}" var="user" -->
+							<b:dataTable>
+								<b:dataTableColumn value="#{utilisateurControl.nom}" label="Nom"/>
+<!-- 								<b:dataTableColumn value="#{user.prenom}" label="Prénom"/> -->
+<!-- 								<b:dataTableColumn value="#{user.email}" label="E-mail"/> -->
+<!-- 								<b:dataTableColumn value="#{user.telephone}" label="Téléphone"/> -->
+<!-- 								<b:dataTableColumn value="#{user.anneeDiplomante}" label="Année diplômante"/> -->
 							</b:dataTable>
 						</h:form>
+						
+<!-- 						<H1>#{utilisateurControl.selectAll()}</H1> -->
 
 			</div>
 			
