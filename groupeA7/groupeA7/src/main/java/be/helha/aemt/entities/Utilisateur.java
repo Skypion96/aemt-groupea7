@@ -15,37 +15,27 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
 @Entity
-@Table(uniqueConstraints = {@UniqueConstraint(columnNames = {"login"})})
+@Table(uniqueConstraints = {@UniqueConstraint(columnNames = {"email"})})
 public class Utilisateur  implements Serializable{
 	
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;	private String login;
+	private String email;	
 	private String password;
-	private String email;
-
-	private String groupName;
+	private String nom;
+	private String prenom;
+	private String role;
 	
 	
 	public Utilisateur() {
 	}
 
-	public Utilisateur(String login, String password, String email,String groupName) {
-		this.login = login;
+	public Utilisateur(String password, String email,String nom,String prenom) {
 		this.password = password;
 		this.email = email;
-		this.groupName = groupName;
-
-	}
-
-
-	public String getLogin() {
-		return login;
-	}
-
-	public void setLogin(String login) {
-		this.login = login;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.role = "";
 	}
 
 	public String getPassword() {
@@ -63,30 +53,31 @@ public class Utilisateur  implements Serializable{
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-	@Override
-	public String toString() {
-		return super.toString()+ login + ", " + email;
-	}
 	
 
-
-	
-
-	public Integer getId() {
-		return id;
+	public String getNom() {
+		return nom;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setNom(String nom) {
+		this.nom = nom;
 	}
 
-	public String getGroupName() {
-		return groupName;
+	public String getPrenom() {
+		return prenom;
 	}
 
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 	@Override
@@ -98,13 +89,31 @@ public class Utilisateur  implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		Utilisateur other = (Utilisateur) obj;
-		if (login == null) {
-			if (other.login != null)
+		if (email == null) {
+			if (other.email != null)
 				return false;
-		} else if (!login.equals(other.login))
+		} else if (!email.equals(other.email))
+			return false;
+		if (nom == null) {
+			if (other.nom != null)
+				return false;
+		} else if (!nom.equals(other.nom))
+			return false;
+		if (password == null) {
+			if (other.password != null)
+				return false;
+		} else if (!password.equals(other.password))
+			return false;
+		if (prenom == null) {
+			if (other.prenom != null)
+				return false;
+		} else if (!prenom.equals(other.prenom))
 			return false;
 		return true;
 	}
+
+	
+
 	
 	
 

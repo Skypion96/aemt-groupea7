@@ -11,7 +11,7 @@ import be.helha.aemt.dao.UtilisateurDAO;
 import be.helha.aemt.entities.Utilisateur;
 
 @Stateless
-public class GestionVisiteurEJB{
+public class GestionUtilisateurEJB{
 
 	@EJB//injection (@Inject)
     private UtilisateurDAO dao;

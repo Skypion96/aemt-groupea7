@@ -9,7 +9,7 @@ import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import javax.swing.JSpinner.ListEditor;
 
-import be.helha.aemt.ejb.GestionVisiteurEJB;
+import be.helha.aemt.ejb.GestionUtilisateurEJB;
 import be.helha.aemt.entities.Utilisateur;
 
 @SessionScoped
@@ -19,7 +19,7 @@ public class UtilisateurControl implements Serializable{
 private String nom = "Anonymous";
     
     @EJB
-    private GestionVisiteurEJB beanUtilisateur;
+    private GestionUtilisateurEJB beanUtilisateur;
 
     public String getNom() {
         return nom;

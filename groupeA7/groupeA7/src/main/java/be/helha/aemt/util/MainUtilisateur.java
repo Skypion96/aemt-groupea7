@@ -5,6 +5,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
+import be.helha.aemt.entities.Admin;
+import be.helha.aemt.entities.Ancien;
 import be.helha.aemt.entities.Utilisateur;
 
 public class MainUtilisateur {
@@ -12,9 +14,9 @@ public class MainUtilisateur {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Utilisateur u1 = new Utilisateur("L1","P1","E1","admin");
-		Utilisateur u2 = new Utilisateur("L2","P1","E1","user");
-		Utilisateur u3 = new Utilisateur("L3","P1","E1","user");
+		Utilisateur u1 = new Ancien("P1","Mail1","Maxime","Yes","0202020",2020,"coucou",7000,"Mons","Chomage");
+		Utilisateur u2 = new Admin("P1","Mail2","Maxime","No");
+		//Utilisateur u3 = new Utilisateur("L3","P1","E1","user");
 
 
 		
@@ -28,9 +30,9 @@ public class MainUtilisateur {
 		 
 		 
 		tx.begin();
-		em.persist(u1);
-		em.persist(u2);
-		em.persist(u3);
+		em.merge(u1);
+		em.merge(u2);
+		//em.persist(u3);
 		tx.commit();
 		
 		

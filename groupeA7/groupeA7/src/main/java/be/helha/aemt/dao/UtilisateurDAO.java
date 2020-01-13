@@ -38,7 +38,6 @@ public class UtilisateurDAO {
 	}
 	
 	public Utilisateur add(Utilisateur u) {
-		u = new Utilisateur("Roger","null","rien","user");
 		tx.begin();
 		em.merge(u);
 		tx.commit();
@@ -47,9 +46,9 @@ public class UtilisateurDAO {
 	
 	//rechercher un utilisateur
 	public Utilisateur find(Utilisateur u) {
-		String requete ="SELECT u from Utilisateur u where u.login =:plogin";
+		String requete ="SELECT u from Utilisateur u where u.mail =:mail";
 		TypedQuery<Utilisateur> qFind = em.createQuery(requete, Utilisateur.class);
-		qFind.setParameter("plogin", u.getLogin());
+		qFind.setParameter("mail", u.getEmail());
 		List<Utilisateur> res= qFind.getResultList();
 		return res.size()==0? null:res.get(0);
 	}
@@ -58,7 +57,7 @@ public class UtilisateurDAO {
 	// supprimer les utilisateurs en fonction de leur login
 	public Utilisateur remove(Utilisateur u) {
 
-		if(u.getId()==null) {
+		if(u.getEmail()==null) {
 			return null;
 		}
 		tx.begin();
@@ -69,10 +68,10 @@ public class UtilisateurDAO {
 	
 	// supprimer les utilisateurs en fonction de leur login
 	public void removeAllByLogin(Utilisateur u) {
-		String requete ="DELETE FROM Utilisateur u where u.login =?1";
+		String requete ="DELETE FROM Utilisateur u where u.mail =?1";
 		Query qDelete=em.createQuery(requete);
 		tx.begin();
-		qDelete.setParameter(1, u.getLogin()).executeUpdate();
+		qDelete.setParameter(1, u.getEmail()).executeUpdate();
 		tx.commit();
 	}
 	

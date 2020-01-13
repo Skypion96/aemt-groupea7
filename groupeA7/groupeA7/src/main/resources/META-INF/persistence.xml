@@ -9,6 +9,9 @@
 		  
 		<!-- <jta-data-source>jdbc/dba7</jta-data-source> -->
 		<class>be.helha.aemt.entities.Utilisateur</class>
+		<class>be.helha.aemt.entities.Ancien</class>
+		<class>be.helha.aemt.entities.Admin</class>
+		
 				
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 	
