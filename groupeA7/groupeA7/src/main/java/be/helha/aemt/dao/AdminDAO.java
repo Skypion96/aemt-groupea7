@@ -2,33 +2,41 @@ package be.helha.aemt.dao;
 
 import java.util.List;
 
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import be.helha.aemt.entities.Admin;
 import be.helha.aemt.entities.Utilisateur;
 
+@Stateless
+@LocalBean
 public class AdminDAO {
-
-	private EntityManagerFactory emf;
-	private EntityManager em;
-	private EntityTransaction tx;
 	
-	public AdminDAO() {
+	 @PersistenceContext(unitName = "groupeA7")
+	    private EntityManager em;
+
+	/*private EntityManagerFactory emf;
+	private EntityManager em;
+	private EntityTransaction tx;*/
+	
+	/*public AdminDAO() {
 		//ON EST EN RESSOURCE_LOCAL
 		emf = Persistence.createEntityManagerFactory("groupeA7");//UNIQUEMENT EN RESSOURCE LOCAL
 		em = emf.createEntityManager();
 		tx=em.getTransaction();
 	}
+	*/
 	
-	
-	public void close() {
+	/*public void close() {
 		em.close();
 		emf.close();
-	}
+	}*/
 	
 	public List<Admin> selectAll(){
 		String requete ="SELECT admin from Admin admin";
@@ -38,13 +46,15 @@ public class AdminDAO {
 	
 	public Utilisateur add(String password, String email, String nom, String prenom) {
 		Admin a = new Admin(password, email, nom, prenom);
+		
+	/*public Utilisateur add(Admin a) {
 		tx.begin();		
 		em.merge(a);
 		tx.commit();
 		return a;
-	}
+	}*/
 	
-	public Utilisateur remove(Admin u) {
+	/*public Utilisateur remove(Admin u) {
 		if(u.getEmail()==null) {
 			return null;
 		}
@@ -52,7 +62,7 @@ public class AdminDAO {
 		em.remove(em.merge(u));
 		tx.commit();
 		return u;
-	}
+	}*/
 	
 	
 }
