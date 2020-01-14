@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
-<html xmlns:jsf="http://xmlns.jcp.org/jsf" xmlns:h="http://xmlns.jcp.org/jsf/html" class=" FB_FW_ext eidReader">
+<html xmlns:jsf="http://xmlns.jcp.org/jsf" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:c="http://xmlns.jcp.org/ jsp/jstl/core" class=" FB_FW_ext eidReader">
 <head>
 	<title>MeetHELHa</title>
 	<meta http-equiv="  Content-Type" content="text/html; charset=UTF-8" />
@@ -12,97 +12,12 @@
 
 </head>
 <body>
-
-
-	<style>
-		footer{
-			display: table-row;
-			height: 1px;
-		}
-		.modal-title{
-			color: black;
-		}
-	</style>
 	
 	
 	<!-- NAVBAR -->
-	<nav class="navbar navbar-expand-lg navbar-dark bg-info">
-	  <a class="navbar-brand" href="index.xhtml">
-	  	MeetHELHa
-	  </a>
-	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	    <span class="navbar-toggler-icon"></span>
-	  </button>
-	
-	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-	    <ul class="navbar-nav mr-auto">
-	      <li class="nav-item active">
-	        <a class="nav-link" href="index.xhtml">Accueil <span class="sr-only">(current)</span></a>
-	      </li>
-	      <li class="nav-item dropdown">
-	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	          Actualités
-	        </a>
-	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	          <a class="dropdown-item" href="#">Annonces</a>
-	          <a class="dropdown-item" href="#">Événements</a>
-	        </div>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="alumni.xhtml">Alumni</a>
-	      </li>
-	      <li class="nav-item dropdown">
-	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	          Offres
-	        </a>
-	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	          <a class="dropdown-item" href="#">Offres d'emploi</a>
-	          <a class="dropdown-item" href="#">Offres de stage</a>
-	        </div>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="#">Formations</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="#">Associations</a>
-	      </li>
-	    </ul>
-	    <form class="form-inline my-2 my-lg-0">
-	    	<button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#connection">Connexion</button>
-	    </form>
-	  </div>
-	</nav>
-		
-		
-	<!-- MODAL CONNECTION -->
-	<div class="modal fade" id="connection" tabindex="-1" role="dialog" aria-labelledby="connectionLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="connectionLabel">Connexion: </h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					</button>
-				</div>
-				<div class="modal-body">
-					<form method="POST" action="j_security_check">
-						<div class="form-group">
-							<label for="txtMail"  class="col-form-label">E-mail:</label>
-							<input type="text"  name="j_username" class="form-control" id="txtMail" />
-						</div>
-						<div class="form-group">
-							<label for="txtMdp" class="col-form-label">Mot de passe:</label>
-							<input type="password" name="j_password" class="form-control" id="txtMdp" />
-						</div>
-						<div class="modal-footer">
-							<input class="btn btn-secondary" type="reset" value="Annuler" data-dismiss="modal" onclick="refresh();"/>
-							<input class="btn btn-primary" type="submit" value="Connexion"/>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-	
+	<ui:insert name="navbar" >
+  		<ui:include src="/navbar.xhtml" />
+	</ui:insert>
 	
 	
 		

@@ -1,0 +1,21 @@
+#connexion{
+	color: white;
+	font-size: 25px;
+	margin-left: 3px;
+}
+
+#connexion:hover{
+	text-decoration: none;
+	color: black;
+}
+
+.container{
+	height: auto;
+}
+
+html, body{
+	margin: 0;
+	display: table;
+	height: 100%;
+	width: 100%;
+}
