@@ -23,6 +23,7 @@ public class Ancien extends Utilisateur implements Serializable{
     private byte[] imageProfil;
 
 	private String section;
+	private boolean valide;
 	
 	public String getTelephone() {
 		return telephone;
@@ -39,6 +40,7 @@ public class Ancien extends Utilisateur implements Serializable{
 		this.emploiActuel = emploiActuel;
 		this.setRole("Ancien");
 		this.section = section;
+		this.setValide(false);
 	}
 	
 	
@@ -96,6 +98,14 @@ public class Ancien extends Utilisateur implements Serializable{
 
 	public void setSection(String section) {
 		this.section = section;
+	}
+
+	public boolean isValide() {
+		return valide;
+	}
+
+	public void setValide(boolean valide) {
+		this.valide = valide;
 	}
 
 	
