@@ -8,10 +8,7 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-import be.helha.aemt.entities.Admin;
-import be.helha.aemt.entities.Offre;
 import be.helha.aemt.entities.OffreEmploi;
-import be.helha.aemt.entities.Utilisateur;
 
 public class OffreEmploiDAO {
 

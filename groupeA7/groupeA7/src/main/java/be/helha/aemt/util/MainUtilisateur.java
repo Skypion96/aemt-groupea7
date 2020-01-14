@@ -23,12 +23,12 @@ public class MainUtilisateur {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Utilisateur u1 = new Ancien("lala","Mail1","Maxime","Yes","0202020",2020,"coucou",7000,"Mons","Chomage", "Assistant de direction");
-		Utilisateur u2 = new Admin("lala","Mail2","Maxime","No");
-		Utilisateur u3 = new Ancien("lala","Mail3","PE","Yes","0202020",2020,"coucou",7000,"Mons","Chomage", "Assistant de direction");
+		Utilisateur u1 = new Ancien("helha","user","Orient","David","0476063387",2020,"2, Rue Chisaire",7000,"Mons","Chomage", "Informatique de gestion");
+		Utilisateur u2 = new Admin("helha","admin","Leurart","Vincent");
+		Utilisateur u3 = new Ancien("lala","Mail3","Janssens","Maxime","0476060606",2020,"12, Rue du Test",7000,"Mons","Chomage", "Informatique de gestion");
 
-		Offre o1 = new OffreStage("Salut mon pote",false,new Date() ,(Ancien)u1,"meetHelha","rue des vieux","test","test");
-		Offre o2 = new OffreEmploi("Salut mon pote",false,new Date() ,(Ancien)u1,"meetHelha","rue des vieux","test","test");
+		Offre o1 = new OffreStage("Test offre stage",false,new Date() ,(Ancien)u1,"meetHelha","30, Rue de l'entreprise, 7000 MONS","Descriptif de l'entreprise","Informatique de gestion");
+		Offre o2 = new OffreEmploi("Test offre emploi",false,new Date() ,(Ancien)u1,"meetHelha","30, Rue de l'entreprise, 7000 MONS","Descriptif de l'entreprise","Informatique de gestion");
 		
 		File file = new File("src/main/webapp/res/Tesla.jpg");
 		byte[] picInBytes = new byte[(int) file.length()];
@@ -68,7 +68,7 @@ public class MainUtilisateur {
 		//em.persist(u3);
 		tx.commit();
 		
-		System.out.println(ancienDao.findSection("Assistant de direction"));
+		System.out.println(ancienDao.findSection("Informatique de gestion"));
 
 		//ancienDao.close();
 		

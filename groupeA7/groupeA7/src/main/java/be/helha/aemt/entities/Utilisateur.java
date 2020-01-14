@@ -35,7 +35,6 @@ public class Utilisateur  implements Serializable{
 		this.email = email;
 		this.nom = nom;
 		this.prenom = prenom;
-		System.out.println(password + " + " + this.password);
 	}
 
 	public String getPassword() {
