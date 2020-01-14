@@ -10,6 +10,7 @@ import javax.inject.Named;
 import javax.swing.JSpinner.ListEditor;
 
 import be.helha.aemt.ejb.GestionUtilisateurEJB;
+import be.helha.aemt.entities.Ancien;
 import be.helha.aemt.entities.Utilisateur;
 
 @SessionScoped
@@ -34,18 +35,18 @@ private String nom = "Anonymous";
         return "list.xhtml";
     }
     
-    public List<Utilisateur> selectAll(){        
+    public List<Ancien> selectAll(){        
         return beanUtilisateur.findAll();
         
     }
     
-    public Utilisateur find(Utilisateur u) {
+   /* public Utilisateur find(Utilisateur u) {
     	return beanUtilisateur.find(u);
     }
 
     public List<Utilisateur> findSection(String section) {
         return beanUtilisateur.findSection(section);
-    }
+    }*/
 	
 	
 

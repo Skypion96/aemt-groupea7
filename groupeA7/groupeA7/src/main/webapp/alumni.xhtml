@@ -137,8 +137,11 @@
 						
 						<h:form>
 						<!-- value="#{utilisateurControl}" var="user" -->
+						    <div>
+        #{utilisateurControl.selectAll()}
+    </div>
 							<b:dataTable>
-								<b:dataTableColumn value="#{utilisateurControl.nom}" label="Nom"/>
+								<b:dataTableColumn value="#{utilisateurControl.selectAll()}" var="ancien" label="Nom"/>
 <!-- 								<b:dataTableColumn value="#{user.prenom}" label="Prénom"/> -->
 <!-- 								<b:dataTableColumn value="#{user.email}" label="E-mail"/> -->
 <!-- 								<b:dataTableColumn value="#{user.telephone}" label="Téléphone"/> -->
