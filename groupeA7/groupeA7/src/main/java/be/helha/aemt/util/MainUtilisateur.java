@@ -29,7 +29,7 @@ public class MainUtilisateur {
 		Offre o1 = new OffreStage("Salut mon pote",false,new Date() ,(Ancien)u1,"meetHelha","rue des vieux","test","test");
 		Offre o2 = new OffreEmploi("Salut mon pote",false,new Date() ,(Ancien)u1,"meetHelha","rue des vieux","test","test");
 		
-		File file = new File("src/main/webapp/res/bruno.jpg");
+		File file = new File("src/main/webapp/res/Tesla.jpg");
 		byte[] picInBytes = new byte[(int) file.length()];
 		FileInputStream fileInputStream;
 		

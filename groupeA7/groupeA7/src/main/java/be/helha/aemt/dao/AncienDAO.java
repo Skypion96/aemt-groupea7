@@ -51,4 +51,11 @@ public class AncienDAO {
 		tx.commit();
 		return u;
 	}
+	
+	public List<Utilisateur> findSection(String section){
+		String requete ="SELECT ancien from Ancien ancien where ancien.section =:section";
+		Query qSelectAll=em.createQuery(requete);
+		qSelectAll.setParameter("section", section );
+		return qSelectAll.getResultList();
+	}
 }
