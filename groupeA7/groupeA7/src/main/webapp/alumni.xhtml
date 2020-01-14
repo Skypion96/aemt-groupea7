@@ -93,52 +93,18 @@
 	<div class="content">
 		<nav id="tabs">
 			<div class="nav nav-tabs" id="nav-tab" role="tablist">
-				<a class="nav-item nav-link active" id="nav-direction-tab" data-toggle="tab" href="#nav-direction" role="tab" aria-controls="nav-direction" aria-selected="true">Assistant.e de direction</a>
+				<a class="nav-item nav-link active" id="nav-direction-tab" data-toggle="tab" href="#nav-direction" role="tab" aria-controls="nav-direction" aria-selected="true">Assistant(e) de direction</a>
 				<a class="nav-item nav-link" id="nav-compta-tab" data-toggle="tab" href="#nav-compta" role="tab" aria-controls="nav-compta" aria-selected="false">Comptabilité</a>
 				<a class="nav-item nav-link" id="nav-info-tab" data-toggle="tab" href="#nav-info" role="tab" aria-controls="nav-info" aria-selected="false">Informatique de gestion</a>
 			</div>
 		</nav>
 		<div class="tab-content" id="nav-tabContent">
 			<div class="tab-pane fade show active" id="nav-direction" role="tabpanel" aria-labelledby="nav-direction-tab">
-<!-- 					<table class="table"> -->
-<!-- 						<thead> -->
-<!-- 							<tr> -->
-<!-- 								<th scope="col" data-sortable="true" data-field="name">Nom</th> -->
-<!-- 								<th scope="col" data-sortable="true" data-field="firstName">Prénom</th> -->
-<!-- 								<th scope="col" data-sortable="true" data-field="mail">E-mail</th> -->
-<!-- 								<th scope="col" data-sortable="true" data-field="tel">Numéro de téléphone</th> -->
-<!-- 								<th scope="col" data-sortable="true" data-field="diplome">Année diplômante</th> -->
-<!-- 							</tr> -->
-<!-- 						</thead> -->
-<!-- 						<tbody> -->
-<!-- 							<tr> -->
-<!-- 								<th>Janssens</th> -->
-<!-- 								<th>Maxime</th> -->
-<!-- 								<th>la161762@student.helha.be</th> -->
-<!-- 								<th>0471358327</th> -->
-<!-- 								<th>2020</th> -->
-<!-- 							</tr> -->
-<!-- 							<tr> -->
-<!-- 								<th>Leurart</th> -->
-<!-- 								<th>Vincent</th> -->
-<!-- 								<th>warmachinedu96@hotmail.fr</th> -->
-<!-- 								<th>0471876852</th> -->
-<!-- 								<th>2018</th> -->
-<!-- 							</tr> -->
-<!-- 							<tr> -->
-<!-- 								<th>Orient</th> -->
-<!-- 								<th>David</th> -->
-<!-- 								<th>ledetraque@life.fr</th> -->
-<!-- 								<th>0472589868</th> -->
-<!-- 								<th>2019</th> -->
-<!-- 							</tr> -->
-<!-- 						</tbody> -->
-<!-- 					</table> -->
 						
 						<h:form>
 						<!-- value="#{utilisateurControl}" var="user" -->
 						
-							<b:dataTable value="#{utilisateurControl.selectAll()}" var="ancien">
+							<b:dataTable value="#{utilisateurControl.findSection('Assistant de direction')}" var="ancien">
 								<b:dataTableColumn value="#{ancien.nom}"  label="Nom"/>
 								<b:dataTableColumn value="#{ancien.prenom}" label="Prénom"/> 
 								<b:dataTableColumn value="#{ancien.email}" label="E-mail"/> 
@@ -146,27 +112,6 @@
  								<b:dataTableColumn value="#{ancien.anneeDiplomante}" label="Année diplômante"/>
 							</b:dataTable>
 							
-<!-- 													    <div> -->
-<!--         #{utilisateurControl.selectAll()} -->
-<!--     </div> -->
-<!-- 							<h:dataTable value = "#{utilisateurControl.selectAll()}" var = "ancien"> -->
-     
-<!-- 							    <h:column> -->
-<!-- 							    <f:facet name="header">ID</f:facet> -->
-<!-- 							      #{ancien.nom} -->
-<!-- 							   </h:column> -->
-							    
-<!-- 							    <h:column>    -->
-<!-- 							    <f:facet name="header">Login</f:facet>                                       -->
-<!-- 							      #{ancien.email} -->
-<!-- 							   </h:column> -->
-							   
-<!-- 							   <h:column>    -->
-<!-- 							   <f:facet name="header">Password</f:facet>                                       -->
-<!-- 							      #{ancien.password} -->
-<!-- 							   </h:column> -->
-							    
-<!-- 							</h:dataTable> -->
 						</h:form>
 						
 <!-- 						<H1>#{utilisateurControl.selectAll()}</H1> -->
@@ -174,35 +119,35 @@
 			</div>
 			
 			<div class="tab-pane fade" id="nav-compta" role="tabpanel" aria-labelledby="nav-compta-tab">
-				<table class="table">
-					<thead>
-						<tr>
-							<th scope="col">Nom</th>
-							<th scope="col">Prénom</th>
-							<th scope="col">E-mail</th>
-							<th scope="col">Numéro de téléphone</th>
-							<th scope="col">Année diplômante</th>
-						</tr>
-					</thead>
-					<tbody>
-					</tbody>
-				</table>
+											<h:form>
+						<!-- value="#{utilisateurControl}" var="user" -->
+						
+							<b:dataTable value="#{utilisateurControl.findSection('Comptabilité')}" var="ancien">
+								<b:dataTableColumn value="#{ancien.nom}"  label="Nom"/>
+								<b:dataTableColumn value="#{ancien.prenom}" label="Prénom"/> 
+								<b:dataTableColumn value="#{ancien.email}" label="E-mail"/> 
+								<b:dataTableColumn value="#{ancien.telephone}" label="Téléphone"/> 
+ 								<b:dataTableColumn value="#{ancien.anneeDiplomante}" label="Année diplômante"/>
+							</b:dataTable>
+							
+						</h:form>
+				
+
 			</div>
 			
 			<div class="tab-pane fade" id="nav-info" role="tabpanel" aria-labelledby="nav-info-tab">
-				<table class="table">
-					<thead>
-						<tr>
-							<th scope="col">Nom</th>
-							<th scope="col">Prénom</th>
-							<th scope="col">E-mail</th>
-							<th scope="col">Numéro de téléphone</th>
-							<th scope="col">Année diplômante</th>
-						</tr>
-					</thead>
-					<tbody>
-					</tbody>
-				</table>
+											<h:form>
+						<!-- value="#{utilisateurControl}" var="user" -->
+						
+							<b:dataTable value="#{utilisateurControl.findSection('Informatique de gestion')}" var="ancien">
+								<b:dataTableColumn value="#{ancien.nom}"  label="Nom"/>
+								<b:dataTableColumn value="#{ancien.prenom}" label="Prénom"/> 
+								<b:dataTableColumn value="#{ancien.email}" label="E-mail"/> 
+								<b:dataTableColumn value="#{ancien.telephone}" label="Téléphone"/> 
+ 								<b:dataTableColumn value="#{ancien.anneeDiplomante}" label="Année diplômante"/>
+							</b:dataTable>
+							
+						</h:form>
 			</div>
 		</div>
 	</div>
