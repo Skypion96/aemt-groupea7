@@ -61,9 +61,11 @@ public class AncienDAO {
 	}*/
 	
 	public List<Ancien> findSection(String section){
-		String requete ="SELECT ancien from Ancien ancien where ancien.section =:section";
+		boolean valide = true;
+		String requete ="SELECT ancien from Ancien ancien where ancien.section =:section and ancien.valide = :valide";
 		Query qSelectAll=em.createQuery(requete);
 		qSelectAll.setParameter("section", section );
+		qSelectAll.setParameter("valide", valide );
 		return qSelectAll.getResultList();
 	}
 }
