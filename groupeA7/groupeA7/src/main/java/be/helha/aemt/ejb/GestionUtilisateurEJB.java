@@ -10,6 +10,7 @@ import javax.persistence.EntityManager;
 import be.helha.aemt.dao.AdminDAO;
 import be.helha.aemt.dao.AncienDAO;
 import be.helha.aemt.dao.UtilisateurDAO;
+import be.helha.aemt.entities.Ancien;
 import be.helha.aemt.entities.Utilisateur;
 
 @Stateless
@@ -24,15 +25,15 @@ public class GestionUtilisateurEJB{
 	@EJB
 	private AdminDAO adminDAO;
     
-    public List<Utilisateur> findAll() {
-        return utilisateurDAO.selectAll();
+    public List<Ancien> findAll() {
+        return ancienDAO.selectAll();
     }
     
-    public Utilisateur find(Utilisateur u) {
+   /* public Utilisateur find(Utilisateur u) {
     	return utilisateurDAO.find(u);
     }
 
     public List<Utilisateur> findSection(String section) {
         return ancienDAO.findSection(section);
-    }
+    }*/
 }

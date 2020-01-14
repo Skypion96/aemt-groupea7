@@ -70,7 +70,7 @@ public class MainUtilisateur {
 		
 		System.out.println(ancienDao.findSection("Assistant de direction"));
 
-		ancienDao.close();
+		//ancienDao.close();
 		
 		em.close();
 		emf.close();
