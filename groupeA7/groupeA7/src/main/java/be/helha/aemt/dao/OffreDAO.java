@@ -37,6 +37,12 @@ public class OffreDAO {
 		return qSelectAll.getResultList();
 	}
 	
+	public List<Offre> select(String section) {
+		String requete="SELECT offre from Offre offre where offre.section=:section";
+		Query qFindSection=em.createQuery(requete);
+		return qFindSection.getResultList();
+	}
+	
 
 	public Offre remove(Offre u) {
 		if(u.getId()==null) {

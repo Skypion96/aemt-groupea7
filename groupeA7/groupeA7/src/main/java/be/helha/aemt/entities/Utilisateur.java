@@ -1,17 +1,24 @@
 package be.helha.aemt.entities;
 
 import java.io.Serializable;
+import java.nio.charset.StandardCharsets;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
+import com.google.common.hash.Hashing;
+
 @Entity
 @Table(uniqueConstraints = {@UniqueConstraint(columnNames = {"email"})})
 public class Utilisateur  implements Serializable{
 	
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	private String email;	
 	private String password;
@@ -24,10 +31,11 @@ public class Utilisateur  implements Serializable{
 	}
 
 	public Utilisateur(String password, String email,String nom,String prenom) {
-		this.password = password;
+		this.password = Hashing.sha256().hashString(password, StandardCharsets.UTF_8).toString();
 		this.email = email;
 		this.nom = nom;
 		this.prenom = prenom;
+		System.out.println(password + " + " + this.password);
 	}
 
 	public String getPassword() {
