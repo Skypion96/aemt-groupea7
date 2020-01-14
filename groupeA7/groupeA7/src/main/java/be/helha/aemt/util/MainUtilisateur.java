@@ -23,9 +23,10 @@ public class MainUtilisateur {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Utilisateur u1 = new Ancien("P1","Mail1","Maxime","Yes","0202020",2020,"coucou",7000,"Mons","Chomage", "Assistant de direction");
-		Utilisateur u2 = new Admin("P1","Mail2","Maxime","No");
-		
+		Utilisateur u1 = new Ancien("lala","Mail1","Maxime","Yes","0202020",2020,"coucou",7000,"Mons","Chomage", "Assistant de direction");
+		Utilisateur u2 = new Admin("lala","Mail2","Maxime","No");
+		Utilisateur u3 = new Ancien("lala","Mail3","PE","Yes","0202020",2020,"coucou",7000,"Mons","Chomage", "Assistant de direction");
+
 		Offre o1 = new OffreStage("Salut mon pote",false,new Date() ,(Ancien)u1,"meetHelha","rue des vieux","test","test");
 		Offre o2 = new OffreEmploi("Salut mon pote",false,new Date() ,(Ancien)u1,"meetHelha","rue des vieux","test","test");
 		
@@ -61,12 +62,13 @@ public class MainUtilisateur {
 		tx.begin();
 		em.merge(u1);
 		em.merge(u2);
+		em.merge(u3);
 		em.merge(o1);
 		em.merge(o2);
 		//em.persist(u3);
 		tx.commit();
 		
-		System.out.println(ancienDao.selectAll());;
+		System.out.println(ancienDao.findSection("Assistant de direction"));
 
 		ancienDao.close();
 		

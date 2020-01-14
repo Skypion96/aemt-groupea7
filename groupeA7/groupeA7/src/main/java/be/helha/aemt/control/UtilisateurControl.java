@@ -38,6 +38,14 @@ private String nom = "Anonymous";
         return beanUtilisateur.findAll();
         
     }
+    
+    public Utilisateur find(Utilisateur u) {
+    	return beanUtilisateur.find(u);
+    }
+
+    public List<Utilisateur> findSection(String section) {
+        return beanUtilisateur.findSection(section);
+    }
 	
 	
 
