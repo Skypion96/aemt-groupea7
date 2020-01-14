@@ -31,9 +31,9 @@ public class GestionUtilisateurEJB{
     
    /* public Utilisateur find(Utilisateur u) {
     	return utilisateurDAO.find(u);
-    }
-
-    public List<Utilisateur> findSection(String section) {
-        return ancienDAO.findSection(section);
     }*/
+
+    public List<Ancien> findSection(String section) {
+        return ancienDAO.findSection(section);
+    }
 }

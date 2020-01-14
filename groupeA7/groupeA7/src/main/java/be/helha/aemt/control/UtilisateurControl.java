@@ -42,11 +42,11 @@ private String nom = "Anonymous";
     
    /* public Utilisateur find(Utilisateur u) {
     	return beanUtilisateur.find(u);
-    }
-
-    public List<Utilisateur> findSection(String section) {
-        return beanUtilisateur.findSection(section);
     }*/
+
+    public List<Ancien> findSection(String section) {
+        return beanUtilisateur.findSection(section);
+    }
 	
 	
 

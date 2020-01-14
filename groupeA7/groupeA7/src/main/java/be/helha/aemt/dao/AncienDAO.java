@@ -60,10 +60,10 @@ public class AncienDAO {
 		return u;
 	}*/
 	
-	/*public List<Utilisateur> findSection(String section){
+	public List<Ancien> findSection(String section){
 		String requete ="SELECT ancien from Ancien ancien where ancien.section =:section";
 		Query qSelectAll=em.createQuery(requete);
 		qSelectAll.setParameter("section", section );
 		return qSelectAll.getResultList();
-	}*/
+	}
 }
