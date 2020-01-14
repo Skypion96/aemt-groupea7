@@ -66,12 +66,12 @@
 		      </li>
 	      </c:if>
 	    </ul>
-	    	<c:if test="#{sessionControl.connected}">
+	    	<c:if test="#{!sessionControl.connected}">
 	    		<form class="form-inline my-2 my-lg-0">
 	    			<button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#connection">Connexion</button>
 	    		</form>
 	    	</c:if>
-	    	<c:if test="#{!sessionControl.connected}">
+	    	<c:if test="#{sessionControl.connected}">
 	    		<form class="form-inline my-2 my-lg-0">
 		    		<div class="dropdown" id="user" style="margin-right: 60px;">
 						<a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
