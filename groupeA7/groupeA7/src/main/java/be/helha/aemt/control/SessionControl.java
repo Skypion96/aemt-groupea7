@@ -3,6 +3,7 @@ package be.helha.aemt.control;
 import java.io.Serializable;
 
 import javax.enterprise.context.SessionScoped;
+import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import javax.servlet.http.HttpServletRequest;
@@ -10,25 +11,20 @@ import javax.servlet.http.HttpSession;
 
 import org.jboss.weld.context.http.HttpRequestContext;
 
+import be.helha.aemt.entities.Utilisateur;
+
 @SessionScoped
 @Named
 public class SessionControl implements Serializable{
 
 	
 	public String logOut() {
-		HttpServletRequest request = getRequest();
-        HttpSession session = request.getSession();
-        //user = null;
-        session.invalidate();
-        session = request.getSession(false);
-        return "/index.xhtml?faces-redirect=true";    
+		FacesContext context = FacesContext.getCurrentInstance();
+        ExternalContext ec = context.getExternalContext();
+        final HttpServletRequest request = (HttpServletRequest) ec.getRequest();
+        request.getSession(false).invalidate(); // on invalide
+        return "index.xhtml";   
     }
-	
-
-	public HttpServletRequest getRequest() {
-		return null;
-	}
-
 
 	public boolean connected() {
 		return FacesContext.getCurrentInstance().getExternalContext().getUserPrincipal() != null;
