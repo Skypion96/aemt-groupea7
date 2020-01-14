@@ -23,54 +23,53 @@
 		
 	<!-- CONTENT -->
 	<div class="container">
-				<form method="POST" action="">
+				<form>
 						<div class="form-group">
-							<label for="txtMdp" class="col-form-label">Nom : </label>
-							<input type="text" class="form-control" id="txtMdp" />
+							<label for="nom" class="col-form-label">Nom : </label>
+							<h:inputText type="text" class="form-control" name="nom" id="nom" value="#{AjoutAncienControl.nom}"/>
 						</div>
 						<div class="form-group">
-							<label for="txtMdp" class="col-form-label">Prénom :</label>
-							<input type="text" class="form-control" id="txtMdp" />
+							<label for="prenom" class="col-form-label">Prénom :</label>
+							<h:inputText type="text" class="form-control" name="prenom" id="prenom" value="#{AjoutAncienControl.prenom}"/>
 						</div>
 						<div class="form-group">
-							<label for="txtMail"  class="col-form-label">E-mail :</label>
-							<input type="text" class="form-control" id="txtMail" />
+							<label for="mail"  class="col-form-label">E-mail :</label>
+							<h:inputText type="text" class="form-control" name="mail" id="mail" value="#{AjoutAncienControl.email}"/>
 						</div>
 						<div class="form-group">
-							<label for="txtMdp" class="col-form-label">Mot de passe :</label>
-							<input type="password" class="form-control" id="txtMdp" />
+							<label for="mdp" class="col-form-label">Mot de passe :</label>
+							<h:inputText type="password" class="form-control" name="mdp" id="mdp" value="#{AjoutAncienControl.password}"/>
 						</div>
 						<div class="form-group">
-							<label for="txtMdp" class="col-form-label">Adresse :</label>
-							<input type="text" class="form-control" id="txtMdp" />
+							<label for="adresse" class="col-form-label">Adresse :</label>
+							<h:inputText type="text" class="form-control" name="adresse" id="adresse" value="#{AjoutAncienControl.adresse}"/>
 						</div>
 						<div class="form-group">
-							<label for="txtMdp" class="col-form-label">Code postal :</label>
-							<input type="text" class="form-control" id="txtMdp" />
+							<label for="cp" class="col-form-label">Code postal :</label>
+							<h:inputText type="text" class="form-control" name="cp" id="cp" value="#{AjoutAncienControl.cp}"/>
 						</div>
 						<div class="form-group">
-							<label for="txtMdp" class="col-form-label">Localité :</label>
-							<input type="text" class="form-control" id="txtMdp" />
+							<label for="localite" class="col-form-label">Localité :</label>
+							<h:inputText type="text" class="form-control" name="localite" id="localite" value="#{AjoutAncienControl.localite}"/>
 						</div>
 						<div class="form-group">
-							<label for="txtMdp" class="col-form-label">Section :</label>
-							<input type="text" class="form-control" id="txtMdp" />
+							<label for="section" class="col-form-label">Section :</label>
+							<h:inputText type="text" class="form-control" name="section" id="section" value="#{AjoutAncienControl.section}"/>
 						</div>
 						<div class="form-group">
-							<label for="txtMdp" class="col-form-label">Année diplomante :</label>
-							<input type="text" class="form-control" id="txtMdp" />
+							<label for="anneeDiplomante" class="col-form-label">Année diplomante :</label>
+							<h:inputText type="text" class="form-control" name="anneeDiplomante" id="anneeDiplomante" value="#{AjoutAncienControl.anneeDiplomante}"/>
 						</div>
 						<div class="form-group">
-							<label for="txtMdp" class="col-form-label">Téléphone :</label>
-							<input type="text" class="form-control" id="txtMdp" />
+							<label for="telephone" class="col-form-label">Téléphone :</label>
+							<h:inputText type="text" class="form-control" name="telephone" id="telephone" value="#{AjoutAncienControl.telephone}"/>
 						</div>
 						<div class="form-group">
-							<label for="txtMdp" class="col-form-label">Emploi actuel :</label>
-							<input type="text" class="form-control" id="txtMdp" />
+							<label for="emploi" class="col-form-label">Emploi actuel :</label>
+							<h:inputText type="text" class="form-control" name="emploi" id="emploi" value="#{AjoutAncienControl.emploiActuel}"/>
 						</div>
 						<div class="footer">
-							<input class="btn btn-secondary" type="reset" value="Annuler"/>
-							<input class="btn btn-primary" type="submit" value="Inscription"/>
+							<h:commandButton update="@form" class="btn btn-primary" value="Inscription" action="#{AjoutAncienControl.AjoutAncien()}"/>
 						</div>
 						
 					</form>

@@ -43,14 +43,12 @@ public class AncienDAO {
 		return qSelectAll.getResultList();
 	}
 	
-	/*public Utilisateur add(Ancien u) {
-		tx.begin();		
+	public Ancien add(Ancien u) {
 		em.merge(u);
-		tx.commit();
 		return u;
 	}
 	
-	public Utilisateur remove(Ancien u) {
+	/*public Utilisateur remove(Ancien u) {
 		if(u.getEmail()==null) {
 			return null;
 		}

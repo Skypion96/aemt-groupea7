@@ -17,7 +17,8 @@ import be.helha.aemt.entities.Utilisateur;
 @Named
 public class UtilisateurControl implements Serializable{
 	
-private String nom = "Anonymous";
+	private String nom = "Anonymous";
+	
     
     @EJB
     private GestionUtilisateurEJB beanUtilisateur;
