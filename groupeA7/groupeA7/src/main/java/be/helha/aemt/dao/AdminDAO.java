@@ -43,9 +43,6 @@ public class AdminDAO {
 		Query qSelectAll=em.createQuery(requete);
 		return qSelectAll.getResultList();
 	}
-	
-	public Utilisateur add(String password, String email, String nom, String prenom) {
-		Admin a = new Admin(password, email, nom, prenom);
 		
 	/*public Utilisateur add(Admin a) {
 		tx.begin();		

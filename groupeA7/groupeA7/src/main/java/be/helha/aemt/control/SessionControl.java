@@ -7,11 +7,6 @@ import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
-import org.jboss.weld.context.http.HttpRequestContext;
-
-import be.helha.aemt.entities.Utilisateur;
 
 @SessionScoped
 @Named
