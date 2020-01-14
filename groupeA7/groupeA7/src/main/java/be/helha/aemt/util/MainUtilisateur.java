@@ -23,7 +23,7 @@ public class MainUtilisateur {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Utilisateur u1 = new Ancien("P1","Mail1","Maxime","Yes","0202020",2020,"coucou",7000,"Mons","Chomage");
+		Utilisateur u1 = new Ancien("P1","Mail1","Maxime","Yes","0202020",2020,"coucou",7000,"Mons","Chomage", "Assistant de direction");
 		Utilisateur u2 = new Admin("P1","Mail2","Maxime","No");
 		
 		Offre o1 = new OffreStage("Salut mon pote",false,new Date() ,(Ancien)u1,"meetHelha","rue des vieux","test","test");
