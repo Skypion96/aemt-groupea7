@@ -16,14 +16,14 @@ import be.helha.aemt.entities.Utilisateur;
 @Stateless
 public class GestionUtilisateurEJB{
 
-	@EJB//injection (@Inject)
+	/*@EJB//injection (@Inject)
     private UtilisateurDAO utilisateurDAO;
-	
+	*/
 	@EJB
 	private AncienDAO ancienDAO;
 	
-	@EJB
-	private AdminDAO adminDAO;
+	/*@EJB
+	private AdminDAO adminDAO;*/
     
     public List<Ancien> findAll() {
         return ancienDAO.selectAll();

@@ -137,16 +137,36 @@
 						
 						<h:form>
 						<!-- value="#{utilisateurControl}" var="user" -->
-						    <div>
-        #{utilisateurControl.selectAll()}
-    </div>
-							<b:dataTable>
-								<b:dataTableColumn value="#{utilisateurControl.selectAll()}" var="ancien" label="Nom"/>
-<!-- 								<b:dataTableColumn value="#{user.prenom}" label="Prénom"/> -->
-<!-- 								<b:dataTableColumn value="#{user.email}" label="E-mail"/> -->
-<!-- 								<b:dataTableColumn value="#{user.telephone}" label="Téléphone"/> -->
-<!-- 								<b:dataTableColumn value="#{user.anneeDiplomante}" label="Année diplômante"/> -->
+						
+							<b:dataTable value="#{utilisateurControl.selectAll()}" var="ancien">
+								<b:dataTableColumn value="#{ancien.nom}"  label="Nom"/>
+								<b:dataTableColumn value="#{ancien.prenom}" label="Prénom"/> 
+								<b:dataTableColumn value="#{ancien.email}" label="E-mail"/> 
+								<b:dataTableColumn value="#{ancien.telephone}" label="Téléphone"/> 
+ 								<b:dataTableColumn value="#{ancien.anneeDiplomante}" label="Année diplômante"/>
 							</b:dataTable>
+							
+<!-- 													    <div> -->
+<!--         #{utilisateurControl.selectAll()} -->
+<!--     </div> -->
+<!-- 							<h:dataTable value = "#{utilisateurControl.selectAll()}" var = "ancien"> -->
+     
+<!-- 							    <h:column> -->
+<!-- 							    <f:facet name="header">ID</f:facet> -->
+<!-- 							      #{ancien.nom} -->
+<!-- 							   </h:column> -->
+							    
+<!-- 							    <h:column>    -->
+<!-- 							    <f:facet name="header">Login</f:facet>                                       -->
+<!-- 							      #{ancien.email} -->
+<!-- 							   </h:column> -->
+							   
+<!-- 							   <h:column>    -->
+<!-- 							   <f:facet name="header">Password</f:facet>                                       -->
+<!-- 							      #{ancien.password} -->
+<!-- 							   </h:column> -->
+							    
+<!-- 							</h:dataTable> -->
 						</h:form>
 						
 <!-- 						<H1>#{utilisateurControl.selectAll()}</H1> -->

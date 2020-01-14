@@ -48,7 +48,7 @@ public class MainUtilisateur {
 
 		//Utilisateur u3 = new Utilisateur("L3","P1","E1","user");
 
-		AncienDAO ancienDao = new AncienDAO();
+		//AncienDAO ancienDao = new AncienDAO();
 		
 		EntityManagerFactory emf;
 		EntityManager em;
@@ -68,7 +68,7 @@ public class MainUtilisateur {
 		//em.persist(u3);
 		tx.commit();
 		
-		System.out.println(ancienDao.findSection("Informatique de gestion"));
+		//System.out.println(ancienDao.findSection("Informatique de gestion"));
 
 		//ancienDao.close();
 		
