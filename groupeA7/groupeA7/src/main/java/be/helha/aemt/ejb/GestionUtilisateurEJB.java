@@ -22,8 +22,8 @@ public class GestionUtilisateurEJB{
 	@EJB
 	private AncienDAO ancienDAO;
 	
-	/*@EJB
-	private AdminDAO adminDAO;*/
+	@EJB
+	private AdminDAO adminDAO;
     
     public List<Ancien> findAll() {
         return ancienDAO.selectAll();
