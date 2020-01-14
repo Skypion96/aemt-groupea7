@@ -36,11 +36,12 @@ public class AdminDAO {
 		return qSelectAll.getResultList();
 	}
 	
-	public Utilisateur add(Admin u) {
+	public Utilisateur add(String password, String email, String nom, String prenom) {
+		Admin a = new Admin(password, email, nom, prenom);
 		tx.begin();		
-		em.merge(u);
+		em.merge(a);
 		tx.commit();
-		return u;
+		return a;
 	}
 	
 	public Utilisateur remove(Admin u) {
