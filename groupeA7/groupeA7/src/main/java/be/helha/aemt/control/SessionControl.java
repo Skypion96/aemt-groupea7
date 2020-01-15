@@ -16,14 +16,14 @@ public class SessionControl implements Serializable{
 
 	
 	public String logOut() {
-		String page="/login?logout=true&faces-redirect=true";
+		String page="/index.xhtml?logout=true&faces-redirect=true";
         FacesContext context = FacesContext.getCurrentInstance();
         HttpServletRequest request = (HttpServletRequest) context.getExternalContext().getRequest();
         try {
           request.logout();
         } catch (ServletException e) {
             context.addMessage(null, new FacesMessage("Logout failed!"));
-            page="/login?logout=false&faces-redirect=true";
+            page="/index.xhtml?logout=false&faces-redirect=true";
         }
         return page;  
     }
@@ -32,5 +32,8 @@ public class SessionControl implements Serializable{
 		return FacesContext.getCurrentInstance().getExternalContext().getUserPrincipal() != null;
 	}
 	
+	public String getNameAndFirstname() {
+		return FacesContext.getCurrentInstance().getExternalContext().getUserPrincipal().getName();
+	}
 	
 }

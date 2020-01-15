@@ -81,13 +81,17 @@
 							<span id="userLogo" style="font-size: 48px; color: white;" onmouseover="this.style.color='black';" onmouseout="this.style.color='white';">
 						  		<i class="fa fa-user"></i>
 							</span>
-							<!-- NOM ET PRENOM UTILISATEUR -->
+							#{sessionControl.getNameAndFirstname()}
 						</a>
 					
 						<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 							<a class="dropdown-item" href="#">Profil</a>
 							<a class="dropdown-item" href="#">Mes offres</a>
 							<a class="dropdown-item" href="#">Mes annonces</a>
+							<div class="dropdown-divider"></div>
+							<c:if test="#{utilisateurControl.getRole() == 'Admin'}">
+								<a class="dropdown-item" href="#">Admin</a>
+							</c:if>
 							<div class="dropdown-divider"></div>
 							<h:form>
 								<h:commandButton class="dropdown-item" action="#{sessionControl.logOut}" value="Déconnexion"></h:commandButton>
