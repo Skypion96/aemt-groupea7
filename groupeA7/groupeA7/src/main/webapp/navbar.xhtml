@@ -81,14 +81,14 @@
 							<span id="userLogo" style="font-size: 48px; color: white;" onmouseover="this.style.color='black';" onmouseout="this.style.color='white';">
 						  		<i class="fa fa-user"></i>
 							</span>
-							#{sessionControl.getNameAndFirstname()}
+							<span style="color: white;"><span style="text-transform: uppercase;">#{utilisateurControl.findMail(sessionControl.getMail()).nom}</span> #{utilisateurControl.findMail(sessionControl.getMail()).prenom}</span>
 						</a>
 					
 						<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 							<a class="dropdown-item" href="#">Profil</a>
 							<a class="dropdown-item" href="#">Mes offres</a>
 							<a class="dropdown-item" href="#">Mes annonces</a>
-							<c:if test="#{utilisateurControl.getRole() == 'Admin'}">
+							<c:if test="#{utilisateurControl.findMail(sessionControl.getMail()).role} == 'Admin'}">
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="#">Admin</a>
 							</c:if>

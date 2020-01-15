@@ -52,7 +52,7 @@ public class UtilisateurDAO {
 	
 	//rechercher un utilisateur
 	public Utilisateur find(Utilisateur u) {
-		String requete ="SELECT u from Utilisateur u where u.mail =:mail";
+		String requete ="SELECT u from Utilisateur u where u.email =:mail";
 		TypedQuery<Utilisateur> qFind = em.createQuery(requete, Utilisateur.class);
 		qFind.setParameter("mail", u.getEmail());
 		List<Utilisateur> res= qFind.getResultList();
@@ -72,7 +72,7 @@ public class UtilisateurDAO {
 	
 	//RECHERCHE A PARTIR DU MAIL
 	public Utilisateur findMail(String mail) {
-		String requete ="SELECT u from Utilisateur u where u.mail =:mail";
+		String requete ="SELECT u from Utilisateur u where u.email =:mail";
 		TypedQuery<Utilisateur> qFind = em.createQuery(requete, Utilisateur.class);
 		qFind.setParameter("mail", mail);
 		List<Utilisateur> res= qFind.getResultList();
