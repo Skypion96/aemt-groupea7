@@ -39,7 +39,7 @@ public class GestionUtilisateurEJB{
     	return ancienDAO.findMailAncien(mail);
     }
     
-    public List<Ancien> findSectionAncien(String section) {
-        return ancienDAO.findSection(section);
+    public List<Ancien> findSectionAncien(String section, String option) {
+        return ancienDAO.findSection(section, option);
     }
 }

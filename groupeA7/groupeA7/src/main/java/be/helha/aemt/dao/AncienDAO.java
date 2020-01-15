@@ -65,12 +65,19 @@ public class AncienDAO {
 		return u;
 	}
 	
-	public List<Ancien> findSection(String section){
+	public List<Ancien> findSection(String section, String option){
 		boolean valide = true;
-		String requete ="SELECT ancien from Ancien ancien where ancien.section =:section and ancien.valide = :valide";
+		String requete ="SELECT ancien from Ancien ancien where ancien.section =:section and ancien.valide = :valide and ancien.nom =:option or ancien.prenom =:option or ancien.email =:option or ancien.anneeDiplomante =:optionNumber";
 		Query qSelectAll=em.createQuery(requete);
 		qSelectAll.setParameter("section", section );
 		qSelectAll.setParameter("valide", valide );
+		if(option=="") {
+			option = null;
+		}
+		int optionNumber = Integer.parseInt(option);
+		qSelectAll.setParameter("option", option );
+		qSelectAll.setParameter("optionNumber", optionNumber);
 		return qSelectAll.getResultList();
 	}
+	
 }
