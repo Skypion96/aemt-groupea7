@@ -2,23 +2,31 @@ package be.helha.aemt.dao;
 
 import java.util.List;
 
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import be.helha.aemt.entities.Admin;
 import be.helha.aemt.entities.Offre;
+import be.helha.aemt.entities.OffreEmploi;
 import be.helha.aemt.entities.Utilisateur;
 
+@Stateless
+@LocalBean
 public class OffreDAO {
 
-	private EntityManagerFactory emf;
+	@PersistenceContext(unitName = "groupeA7")
+    private EntityManager em;
+	/*private EntityManagerFactory emf;
 	private EntityManager em;
 	private EntityTransaction tx;
 	
-	public OffreDAO() {
+	public OffreStageDAO() {
 		//ON EST EN RESSOURCE_LOCAL
 		emf = Persistence.createEntityManagerFactory("groupeA7");//UNIQUEMENT EN RESSOURCE LOCAL
 		em = emf.createEntityManager();
@@ -29,28 +37,20 @@ public class OffreDAO {
 	public void close() {
 		em.close();
 		emf.close();
-	}
+	}*/
 	
-	public List<Offre> selectAll(){
-		String requete ="SELECT offre from Offre offre";
+	public List<Offre> selectAllEmploiNV(){
+		String requete ="SELECT offre from Offre offre where offre.valide = :valide";
 		Query qSelectAll=em.createQuery(requete);
+		qSelectAll.setParameter("valide", false );
 		return qSelectAll.getResultList();
 	}
 	
-	public List<Offre> select(String section) {
-		String requete="SELECT offre from Offre offre where offre.section=:section";
-		Query qFindSection=em.createQuery(requete);
-		return qFindSection.getResultList();
-	}
-	
 
-	public Offre remove(Offre u) {
-		if(u.getId()==null) {
-			return null;
-		}
-		tx.begin();
-		em.remove(em.merge(u));
-		tx.commit();
+	public OffreEmploi addOffreEmploi(OffreEmploi u) {
+		em.merge(u);
 		return u;
 	}
+	
+	//UPDATE A REFLECHIR
 }

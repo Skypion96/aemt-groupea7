@@ -26,9 +26,8 @@
 	<div class="content">
 		<nav id="tabs">
 			<div class="nav nav-tabs" id="nav-tab" role="tablist">
-				<a class="nav-item nav-link active" id="nav-direction-tab" data-toggle="tab" href="#nav-direction" role="tab" aria-controls="nav-direction" aria-selected="true">Assistant(e) de direction</a>
-				<a class="nav-item nav-link" id="nav-compta-tab" data-toggle="tab" href="#nav-compta" role="tab" aria-controls="nav-compta" aria-selected="false">Comptabilité</a>
-				<a class="nav-item nav-link" id="nav-info-tab" data-toggle="tab" href="#nav-info" role="tab" aria-controls="nav-info" aria-selected="false">Informatique de gestion</a>
+				<a class="nav-item nav-link active" id="nav-direction-tab" data-toggle="tab" href="#nav-direction" role="tab" aria-controls="nav-direction" aria-selected="true">Anciens non validé</a>
+				<a class="nav-item nav-link" id="nav-compta-tab" data-toggle="tab" href="#nav-compta" role="tab" aria-controls="nav-compta" aria-selected="false">Offres  non validé</a>
 			</div>
 		</nav>
 		<div class="tab-content" id="nav-tabContent">
@@ -42,28 +41,29 @@
 								<b:dataTableColumn value="#{ancien.email}" order-by="#{ancien.email}" label="E-mail"/> 
 								<b:dataTableColumn value="#{ancien.telephone}" order-by="#{ancien.telephone}" label="Téléphone"/> 
  								<b:dataTableColumn value="#{ancien.anneeDiplomante}" order-by="#{ancien.anneeDiplomante}" label="Année diplômante"/>
+ 								<b:dataTableColumn label=""><b:commandButton class="btn-outline-success" style="margin-right: 10px;">Valider</b:commandButton>
+ 								<b:commandButton class="btn-outline-danger">Rejeter</b:commandButton></b:dataTableColumn>
 							</b:dataTable>
 						</h:form>
 						
 
 			</div>
 			
-<!-- 			<div class="tab-pane fade" id="nav-compta" role="tabpanel" aria-labelledby="nav-compta-tab"> -->
-<!-- 											<h:form> -->
-<!-- 						value="#{utilisateurControl}" var="user" -->
-						
-<!-- 							<b:dataTable value="#{utilisateurControl.findSectionAncien('Comptabilité')}" var="ancien"> -->
-<!-- 								<b:dataTableColumn value="#{ancien.nom}"  label="Nom"/> -->
-<!-- 								<b:dataTableColumn value="#{ancien.prenom}" label="Prénom"/>  -->
-<!-- 								<b:dataTableColumn value="#{ancien.email}" label="E-mail"/>  -->
-<!-- 								<b:dataTableColumn value="#{ancien.telephone}" label="Téléphone"/>  -->
-<!--  								<b:dataTableColumn value="#{ancien.anneeDiplomante}" label="Année diplômante"/> -->
-<!-- 							</b:dataTable> -->
-							
-<!-- 						</h:form> -->
+			<div class="tab-pane fade" id="nav-compta" role="tabpanel" aria-labelledby="nav-compta-tab">
+						<h:form>
+							<b:dataTable value="#{offreEmploiControl.selectAllEmploiNV()}" var="offre"> 
+								<b:dataTableColumn value="#{offre.titre}"  label="Titre"/> 
+								<b:dataTableColumn value="#{offre.date}" label="Date"/>  
+								<b:dataTableColumn value="#{offre.nomEntreprise}" label="Nom entreprise"/>  
+								<b:dataTableColumn value="#{offre.ancien.nom} #{offreEmploi.ancien.prenom}" label="Créateur"/>  
+	 							<b:dataTableColumn value="#{offre.section}" label="Section"/> 
+	 							<b:dataTableColumn label=""><b:commandButton class="btn-outline-success" style="margin-right: 10px;">Valider</b:commandButton>
+ 								<b:commandButton class="btn-outline-danger">Rejeter</b:commandButton></b:dataTableColumn>
+							</b:dataTable>
+						</h:form>
 				
 
-<!-- 			</div> -->
+			</div>
 			
 		
 		</div>

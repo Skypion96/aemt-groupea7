@@ -19,8 +19,8 @@ import be.helha.aemt.entities.Utilisateur;
 @Stateless
 public class GestionOffreEJB {
 
-	/*@EJB//injection (@Inject)
-    private OffreDAO offreDAO;*/
+	@EJB//injection (@Inject)
+    private OffreDAO offreDAO;
 	
 	@EJB
 	private OffreStageDAO offreStageDAO;
@@ -34,6 +34,10 @@ public class GestionOffreEJB {
     
     public List<OffreEmploi> selectAllEmploi() {
         return offreEmploiDAO.selectAllEmploi();
+    }
+    
+    public List<Offre> selectAllEmploiNV() {
+        return offreDAO.selectAllEmploiNV();
     }
     
     public OffreStage AjoutOffreStage(OffreStage offre) {
