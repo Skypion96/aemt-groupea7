@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
-<html xmlns:jsf="http://xmlns.jcp.org/jsf" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:b="http://bootsfaces.net/ui" class=" FB_FW_ext eidReader">
+<html xmlns:jsf="http://xmlns.jcp.org/jsf" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:b="http://bootsfaces.net/ui" class=" FB_FW_ext eidReader">
 <head>
 	<title>MeetHELHa</title>
 	<meta http-equiv="  Content-Type" content="text/html; charset=UTF-8" />
@@ -19,75 +19,13 @@
 			display: table-row;
 			height: 1px;
 		}
-		
-		#user{
-			margin-right: 60px;
-		}
 	</style>
 	
 	
 	<!-- NAVBAR -->
-	<nav class="navbar navbar-expand-lg navbar-dark bg-info">
-	  <a class="navbar-brand" href="index.xhtml">
-	  	MeetHELHa
-	  </a>
-	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	    <span class="navbar-toggler-icon"></span>
-	  </button>
-	
-	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-	    <ul class="navbar-nav mr-auto">
-	      <li class="nav-item active">
-	        <a class="nav-link" href="index.xhtml">Accueil</a>
-	      </li>
-	      <li class="nav-item dropdown">
-	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	          Actualités
-	        </a>
-	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	          <a class="dropdown-item" href="#">Annonces</a>
-	          <a class="dropdown-item" href="#">Événements</a>
-	        </div>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="alumni.xhtml">Alumni</a>
-	      </li>
-	      <li class="nav-item dropdown">
-	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	          Offres
-	        </a>
-	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	          <a class="dropdown-item" href="#">Offres d'emploi</a>
-	          <a class="dropdown-item" href="#">Offres de stage</a>
-	        </div>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="#">Formations</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="#">Associations</a>
-	      </li>
-	    </ul>
-	    <form class="form-inline my-2 my-lg-0">
-			<div class="dropdown" id="user">
-				<a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					<span id="userLogo">
-				  		<i class="fa fa-user"></i>
-					</span>
-					<!-- NOM ET PRENOM UTILISATEUR -->
-				</a>
-				
-				<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-					<a class="dropdown-item" href="#">Profil</a>
-					<a class="dropdown-item" href="#">Mes offres</a>
-					<a class="dropdown-item" href="#">Mes annonces</a>
-					<div class="dropdown-divider"></div>
-					<h:commandLink class="dropdown-item" action="#{sessionControl.logout}">Déconnexion</h:commandLink>
-				</div>
-			</div>
-	    </form>
-	  </div>
-	</nav>
+	<ui:insert name="navbar" >
+  		<ui:include src="/navbar.xhtml" />
+	</ui:insert>
 		
 	<!-- CONTENT -->
 	<div class="content">
