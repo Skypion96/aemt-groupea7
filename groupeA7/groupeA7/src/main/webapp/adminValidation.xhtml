@@ -58,7 +58,7 @@
 								<b:dataTableColumn value="#{offre.ancien.nom} #{offreEmploi.ancien.prenom}" label="Créateur"/>  
 	 							<b:dataTableColumn value="#{offre.section}" label="Section"/> 
 	 							<b:dataTableColumn label=""><b:commandButton class="btn-outline-success" style="margin-right: 10px;">Valider</b:commandButton>
- 								<b:commandButton class="btn-outline-danger">Rejeter</b:commandButton></b:dataTableColumn>
+ 								<b:commandButton class="btn-outline-danger" value="#{offreEmploiControl.removeOffreNV(offre)}">Rejeter</b:commandButton></b:dataTableColumn>
 							</b:dataTable>
 						</h:form>
 				

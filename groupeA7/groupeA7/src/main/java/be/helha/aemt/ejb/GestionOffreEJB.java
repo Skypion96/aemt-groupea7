@@ -47,4 +47,8 @@ public class GestionOffreEJB {
     public OffreEmploi AjoutOffreEmploi(OffreEmploi offre) {
     	return offreEmploiDAO.addOffreEmploi(offre);
     }
+    
+    public Offre removeOffreNV(Offre e) {
+    	return offreDAO.removeOffreNV(e);
+    }
 }

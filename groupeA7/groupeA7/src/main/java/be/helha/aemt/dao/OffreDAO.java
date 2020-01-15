@@ -12,6 +12,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import be.helha.aemt.entities.Admin;
+import be.helha.aemt.entities.Ancien;
 import be.helha.aemt.entities.Offre;
 import be.helha.aemt.entities.OffreEmploi;
 import be.helha.aemt.entities.Utilisateur;
@@ -52,5 +53,12 @@ public class OffreDAO {
 		return u;
 	}
 	
+	public Offre removeOffreNV(Offre u) {
+		if(u.getId()==null) {
+			return null;
+		}
+		em.remove(em.merge(u));
+		return u;
+	}
 	//UPDATE A REFLECHIR
 }
