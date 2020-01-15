@@ -41,7 +41,7 @@ public class AjoutOffreControl implements Serializable{
 	public Offre ajoutOffre(String email) {
 		ancien = beanUser.findMailAncien(email);
 		
-		if(type == "Emploi") {
+		if(type.equals("Emploi")) {
 			OffreEmploi offre = new OffreEmploi("tt", false, new Date(), ancien, "tt", "tt", "tt", "tt");
 			return beanOffreStage.AjoutOffreEmploi(offre);
 		}

@@ -11,6 +11,7 @@ import javax.swing.JSpinner.ListEditor;
 
 import be.helha.aemt.ejb.GestionUtilisateurEJB;
 import be.helha.aemt.entities.Ancien;
+import be.helha.aemt.entities.Offre;
 import be.helha.aemt.entities.Utilisateur;
 
 @SessionScoped
@@ -19,7 +20,7 @@ public class UtilisateurControl implements Serializable{
 	
 	private String nom = "Anonymous";
 	private String role;
-	private String option;
+	private String option ="nor";
     
     @EJB
     private GestionUtilisateurEJB beanUtilisateur;
@@ -50,7 +51,7 @@ public class UtilisateurControl implements Serializable{
     	return beanUtilisateur.findMail(mail);
     }
 
-    public List<Ancien> findSectionAncien(String section, String option) {
+    public List<Ancien> findSectionAncien(String section) {
         return beanUtilisateur.findSectionAncien(section, option);
     }
     
@@ -60,6 +61,10 @@ public class UtilisateurControl implements Serializable{
     
     public List<Ancien> findAllAncienNV() {
         return beanUtilisateur.findAllAncienNV();
+    }
+    
+    public List<Ancien> findAllAncienV() {
+        return beanUtilisateur.findAllAncienV();
     }
 
 	public String getRole() {
@@ -78,6 +83,15 @@ public class UtilisateurControl implements Serializable{
 		this.option = option;
 	}
 	
-	
+    public Ancien removeAncienNV(String mail) {
+    	Ancien o = beanUtilisateur.findMailAncien(mail);
+    	return beanUtilisateur.removeByEmail(o);
 
+    }
+
+    public Ancien updateValidation(String mail) {
+    	Ancien o = beanUtilisateur.findMailAncien(mail);
+    	return beanUtilisateur.updateValidation(o);
+
+    }
 }

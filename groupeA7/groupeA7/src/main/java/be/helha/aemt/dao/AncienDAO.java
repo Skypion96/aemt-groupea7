@@ -54,7 +54,7 @@ public class AncienDAO {
 		return res.size()==0? null:res.get(0);
 	}
 	
-	public Utilisateur remove(Ancien u) {
+	public Ancien remove(Ancien u) {
 		if(u.getEmail()==null) {
 			return null;
 		}
@@ -62,22 +62,42 @@ public class AncienDAO {
 		return u;
 	}
 	
+	public Ancien updateValidation(Ancien a) {
+		a.setValide(true);
+		em.merge(a);
+		return a;
+	}
+	
 	public List<Ancien> findSection(String section, String option){
 		boolean valide = true;
-		String requete ="SELECT ancien from Ancien ancien where ancien.section =:section and ancien.valide = :valide and ancien.nom =:option or ancien.prenom =:option or ancien.email =:option or ancien.anneeDiplomante =:optionNumber";
-		Query qSelectAll=em.createQuery(requete);
-		qSelectAll.setParameter("section", section );
-		qSelectAll.setParameter("valide", valide );
-		if(option=="") {
-			option = null;
+		Query qSelectAll;
+		String requete;
+		if(option==null || option=="") {
+			requete ="SELECT ancien from Ancien ancien where ancien.section =:section and ancien.valide = :valide";
+			qSelectAll=em.createQuery(requete);
+			qSelectAll.setParameter("section", section );
+			qSelectAll.setParameter("valide", valide );
 		}
-		int optionNumber = Integer.parseInt(option);
-		qSelectAll.setParameter("option", option );
-		qSelectAll.setParameter("optionNumber", optionNumber);
+		else {
+			requete ="SELECT ancien from Ancien ancien where ancien.section =:section and ancien.valide = :valide and (ancien.nom like %:option % or ancien.prenom like %:option % or ancien.email like %:option %)";
+			qSelectAll=em.createQuery(requete);
+			qSelectAll.setParameter("section", section );
+			qSelectAll.setParameter("valide", valide );
+			qSelectAll.setParameter("option", option );
+		}
+		
 		return qSelectAll.getResultList();
 	}
 	
 	public List<Ancien> findAllNV(){
+		boolean valide = false;
+		String requete ="SELECT ancien from Ancien ancien where ancien.valide = :valide";
+		Query qSelectAll=em.createQuery(requete);
+		qSelectAll.setParameter("valide", valide );
+		return qSelectAll.getResultList();
+	}
+	
+	public List<Ancien> findAllV(){
 		boolean valide = true;
 		String requete ="SELECT ancien from Ancien ancien where ancien.valide = :valide";
 		Query qSelectAll=em.createQuery(requete);
