@@ -32,6 +32,7 @@
 		<web-resource-name>Protected Admin Area</web-resource-name>
 		<description></description>
 		<url-pattern>/alumni.xhtml</url-pattern>
+		<url-pattern>/ajoutOffre.xhtml</url-pattern>
 	</web-resource-collection>
 	<auth-constraint>
 		<description></description>

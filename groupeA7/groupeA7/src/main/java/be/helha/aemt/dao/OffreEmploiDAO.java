@@ -2,21 +2,29 @@ package be.helha.aemt.dao;
 
 import java.util.List;
 
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import be.helha.aemt.entities.OffreEmploi;
+import be.helha.aemt.entities.OffreStage;
 
+@Stateless
+@LocalBean
 public class OffreEmploiDAO {
 
-	private EntityManagerFactory emf;
+	@PersistenceContext(unitName = "groupeA7")
+    private EntityManager em;
+	/*private EntityManagerFactory emf;
 	private EntityManager em;
 	private EntityTransaction tx;
 	
-	public OffreEmploiDAO() {
+	public OffreStageDAO() {
 		//ON EST EN RESSOURCE_LOCAL
 		emf = Persistence.createEntityManagerFactory("groupeA7");//UNIQUEMENT EN RESSOURCE LOCAL
 		em = emf.createEntityManager();
@@ -27,19 +35,18 @@ public class OffreEmploiDAO {
 	public void close() {
 		em.close();
 		emf.close();
-	}
+	}*/
 	
-	public List<OffreEmploi> selectAll(){
-		String requete ="SELECT offreEmploi from OffreEmploi offreEmploi";
+	public List<OffreEmploi> selectAllEmploi(){
+		String requete ="SELECT offreEmploi from OffreEmploi offreEmploi where offreEmploi.valide = :valide";
 		Query qSelectAll=em.createQuery(requete);
+		qSelectAll.setParameter("valide", true );
 		return qSelectAll.getResultList();
 	}
 	
 
-	public OffreEmploi add(OffreEmploi u) {
-		tx.begin();		
+	public OffreEmploi addOffreEmploi(OffreEmploi u) {
 		em.merge(u);
-		tx.commit();
 		return u;
 	}
 	
