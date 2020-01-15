@@ -18,13 +18,13 @@ public class AjoutAncienControl implements Serializable{
 
 	private String email;	
 	private String password;
-	private String nom = "test";
+	private String nom;
 	private String prenom;
 	private String role;
 	private String telephone;
-//	private int anneeDiplomante;
+	private int anneeDiplomante;
 	private String adresse;
-	//private int cp;
+	private int cp;
 	private String localite;
 	private String emploiActuel;
 	private String section;
@@ -76,24 +76,24 @@ public class AjoutAncienControl implements Serializable{
 	public void setTelephone(String telephone) {
 		this.telephone = telephone;
 	}
-//	public int getAnneeDiplomante() {
-//		return anneeDiplomante;
-//	}
-//	public void setAnneeDiplomante(int anneeDiplomante) {
-//		this.anneeDiplomante = anneeDiplomante;
-//	}
+	public int getAnneeDiplomante() {
+		return anneeDiplomante;
+	}
+	public void setAnneeDiplomante(int anneeDiplomante) {
+		this.anneeDiplomante = anneeDiplomante;
+	}
 	public String getAdresse() {
 		return adresse;
 	}
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
 	}
-//	public int getCp() {
-//		return cp;
-//	}
-//	public void setCp(int cp) {
-//		this.cp = cp;
-//	}
+	public int getCp() {
+		return cp;
+	}
+	public void setCp(int cp) {
+		this.cp = cp;
+	}
 	public String getLocalite() {
 		return localite;
 	}
@@ -113,5 +113,20 @@ public class AjoutAncienControl implements Serializable{
 		this.section = section;
 	}
 	
+	public void clearAjout() {
+		this.nom = "";
+		/*email;	
+		password;
+		nom;
+		prenom;
+		role;
+		telephone;
+		private int anneeDiplomante;
+		private String adresse;
+		private int cp;
+		private String localite;
+		private String emploiActuel;
+		private String section;*/
+	}
 	
 }

@@ -8,10 +8,16 @@
 	<link rel="stylesheet" href="res/css/css.css" />
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"/>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
-	<script type="text/javascript" src="res/js/js.js"></script>
+	<script type="text/javascript" src="res/js/inscription.js"></script>
 
 </head>
 <body>
+
+	<style>
+		.footer{
+			margin-bottom: 20px;
+		}
+	</style>
 	
 	
 	<!-- NAVBAR -->
@@ -23,63 +29,75 @@
 		
 	<!-- CONTENT -->
 	<div class="container">
-				<h:form >
-						<div class="form-group">
-							<label for="nom" class="col-form-label">Nom : </label>
-							<h:inputText type="text" class="form-control" name="nom" id="nom" value="#{ajoutAncienControl.nom}"/>
-						</div>
-						<div class="form-group">
-							<label for="prenom" class="col-form-label">Prénom :</label>
-							<h:inputText type="text" class="form-control" name="prenom" id="prenom" value="#{ajoutAncienControl.prenom}"/>
-						</div>
-						<div class="form-group">
-							<label for="mail"  class="col-form-label">E-mail :</label>
-							<h:inputText type="text" class="form-control" name="mail" id="mail" value="#{ajoutAncienControl.email}"/>
-						</div>
-						<div class="form-group">
-							<label for="mdp" class="col-form-label">Mot de passe :</label>
-							<h:inputSecret type="password" class="form-control" required="true" name="mdp" id="mdp" value="#{ajoutAncienControl.password}"/>
-						</div>
-						<div class="form-group">
-							<label for="adresse" class="col-form-label">Adresse :</label>
-							<h:inputText type="text" class="form-control" required="true" name="adresse" id="adresse" value="#{ajoutAncienControl.adresse}"/>
-						</div>
-						<div class="form-group">
-							<label for="cp" class="col-form-label">Code postal :</label>
-							<h:inputText type="number" class="form-control" required="true" name="cp" id="cp" />
-						</div>
-						<div class="form-group">
-							<label for="localite" class="col-form-label">Localité :</label>
-							<h:inputText type="text" class="form-control" required="true" name="localite" id="localite" value="#{ajoutAncienControl.localite}"/>
-						</div>
-						<div class="form-group">
-							<label for="section" class="col-form-label">Section :</label>
-							<h:inputText type="text" class="form-control" required="true" name="section" id="section" value="#{ajoutAncienControl.section}"/>
-						</div>
-						<div class="form-group">
-							<label for="anneeDiplomante" class="col-form-label">Année diplomante :</label>
-							<h:inputText type="number" class="form-control" required="true" name="anneeDiplomante" id="anneeDiplomante"/>
-						</div>
-						<div class="form-group">
-							<label for="telephone" class="col-form-label">Téléphone :</label>
-							<h:inputText type="text" class="form-control" required="true" name="telephone" id="telephone" value="#{ajoutAncienControl.telephone}"/>
-						</div>
-						<div class="form-group">
-							<label for="emploi" class="col-form-label">Emploi actuel :</label>
-							<h:inputText type="text" class="form-control" required="true" name="emploi" id="emploi" value="#{ajoutAncienControl.emploiActuel}">
-								<f:facet name="prepend">
-								</f:facet>
-							</h:inputText>
-						</div>
-						<div class="footer">
-							<h:commandButton class="btn btn-primary" value="Validate constraints" action="#{ajoutAncienControl.AjoutAncien()}"/>
-						</div>
-						
-					</h:form>
-
+		<h:form >
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="nom" class="col-form-label">Nom : </label>
+					<h:inputText type="text" class="form-control" name="nom" id="nom" value="#{ajoutAncienControl.nom}"/>
+				</div>
+				<div class="form-group col-md-6">
+					<label for="prenom" class="col-form-label">Prénom :</label>
+					<h:inputText type="text" class="form-control" name="prenom" id="prenom" value="#{ajoutAncienControl.prenom}"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="mail"  class="col-form-label">E-mail :</label>
+				<h:inputText type="email" class="form-control" name="mail" id="mail" value="#{ajoutAncienControl.email}"/>
+			</div>
+			<div class="form-group">
+				<label for="mdp" class="col-form-label">Mot de passe :</label>
+				<h:inputSecret type="password" class="form-control" required="true" name="mdp" id="mdp" value="#{ajoutAncienControl.password}"/>
+			</div>
+			<div class="form-group">
+				<label for="adresse" class="col-form-label">Adresse :</label>
+				<h:inputText type="text" class="form-control" required="true" name="adresse" id="adresse" value="#{ajoutAncienControl.adresse}"/>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="cp" class="col-form-label">Code postal :</label>
+					<h:inputText type="number" class="form-control" required="true" name="cp" id="cp" />
+				</div>
+				<div class="form-group col-md-6">
+					<label for="localite" class="col-form-label">Localité :</label>
+					<h:inputText type="text" class="form-control" required="true" name="localite" id="localite" value="#{ajoutAncienControl.localite}"/>
+				</div>
+			</div>
+				
+			<div class="form-group">
+				<label for="section" class="col-form-label">Section :</label>
+				<select class="form-control" value="#{ajoutAncienControl.section}">
+					<option selected="true">Assistant de direction</option>
+					<option>Comptabilité</option>
+					<option>Informatique de gestion</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="anneeDiplomante" class="col-form-label">Année diplomante :</label>
+				<h:inputText type="number" class="form-control" required="true" name="anneeDiplomante" id="anneeDiplomante"/>
+			</div>
+			<div class="form-group">
+				<label for="telephone" class="col-form-label">Téléphone :</label>
+				<h:inputText type="text" class="form-control" required="true" name="telephone" id="telephone" value="#{ajoutAncienControl.telephone}"/>
+			</div>
+			<div class="form-group">
+				<label for="emploi" class="col-form-label">Emploi actuel :</label>
+				<h:inputText type="text" class="form-control" required="true" name="emploi" id="emploi" value="#{ajoutAncienControl.emploiActuel}">
+					<f:facet name="prepend">
+					</f:facet>
+				</h:inputText>
+			</div>
+			<div class="footer">
+				<button onclick="clearAll();">Annuler</button>
+				<h:commandButton class="btn btn-primary" value="S'inscrire" action="#{ajoutAncienControl.AjoutAncien()}"/>
+			</div>
+				
+		</h:form>
 	</div>
 	
-	
+	<!-- FOOTER -->
+	<ui:insert name="footer" >
+  		<ui:include src="/footer.xhtml" />
+	</ui:insert>
 	
 	
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
