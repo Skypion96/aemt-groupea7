@@ -54,12 +54,18 @@ public class AncienDAO {
 		return res.size()==0? null:res.get(0);
 	}
 	
-	public Utilisateur remove(Ancien u) {
+	public Ancien remove(Ancien u) {
 		if(u.getEmail()==null) {
 			return null;
 		}
 		em.remove(em.merge(u));
 		return u;
+	}
+	
+	public Ancien updateValidation(Ancien a) {
+		a.setValide(true);
+		em.merge(a);
+		return a;
 	}
 	
 	public List<Ancien> findSection(String section, String option){
@@ -85,6 +91,14 @@ public class AncienDAO {
 	}
 	
 	public List<Ancien> findAllNV(){
+		boolean valide = false;
+		String requete ="SELECT ancien from Ancien ancien where ancien.valide = :valide";
+		Query qSelectAll=em.createQuery(requete);
+		qSelectAll.setParameter("valide", valide );
+		return qSelectAll.getResultList();
+	}
+	
+	public List<Ancien> findAllV(){
 		boolean valide = true;
 		String requete ="SELECT ancien from Ancien ancien where ancien.valide = :valide";
 		Query qSelectAll=em.createQuery(requete);

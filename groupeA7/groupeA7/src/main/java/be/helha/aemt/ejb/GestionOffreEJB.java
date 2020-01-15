@@ -11,6 +11,7 @@ import be.helha.aemt.dao.OffreDAO;
 import be.helha.aemt.dao.OffreEmploiDAO;
 import be.helha.aemt.dao.OffreStageDAO;
 import be.helha.aemt.dao.UtilisateurDAO;
+import be.helha.aemt.entities.Ancien;
 import be.helha.aemt.entities.Offre;
 import be.helha.aemt.entities.OffreEmploi;
 import be.helha.aemt.entities.OffreStage;
@@ -40,6 +41,10 @@ public class GestionOffreEJB {
         return offreDAO.selectAllEmploiNV();
     }
     
+    public List<Offre> selectAllEmploiV() {
+        return offreDAO.selectAllEmploiV();
+    }
+    
     public OffreStage AjoutOffreStage(OffreStage offre) {
     	return offreStageDAO.addOffreStage(offre);
     }
@@ -50,5 +55,13 @@ public class GestionOffreEJB {
     
     public Offre removeOffreNV(Offre e) {
     	return offreDAO.removeOffreNV(e);
+    }
+    
+    public Offre findId(int id) {
+    	return offreDAO.findId(id);
+    }
+    
+    public Offre updateValidation(Offre u) {
+    	return offreDAO.updateValidation(u);
     }
 }

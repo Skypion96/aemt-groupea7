@@ -46,4 +46,16 @@ public class GestionUtilisateurEJB{
     public List<Ancien> findAllAncienNV() {
         return ancienDAO.findAllNV();
     }
+    
+    public List<Ancien> findAllAncienV() {
+        return ancienDAO.findAllV();
+    }
+    
+    public Ancien removeByEmail(Ancien u) {
+    	return ancienDAO.remove(u);
+    }
+    
+    public Ancien updateValidation(Ancien u) {
+    	return ancienDAO.updateValidation(u);
+    }
 }

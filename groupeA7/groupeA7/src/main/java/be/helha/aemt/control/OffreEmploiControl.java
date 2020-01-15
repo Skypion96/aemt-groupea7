@@ -30,8 +30,17 @@ public class OffreEmploiControl implements Serializable{
         return beanOffreStage.selectAllEmploiNV();
     } 
     
-    public Offre removeOffreNV(String mail) {
-    	return null;
-
+    public List<Offre> selectAllEmploiV() {
+        return beanOffreStage.selectAllEmploiV();
+    } 
+    
+    public Offre removeOffreNV(int id) {
+    	Offre o = beanOffreStage.findId(id);
+    	return beanOffreStage.removeOffreNV(o);
+    }
+    
+    public Offre updateValidation(int id) {
+    	Offre o = beanOffreStage.findId(id);
+    	return beanOffreStage.updateValidation(o);
     }
 }
