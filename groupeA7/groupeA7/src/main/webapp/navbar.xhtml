@@ -81,7 +81,9 @@
 		    		<div class="dropdown" id="user" style="margin-right: 60px;">
 						<a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							<span id="userLogo" style="font-size: 48px; color: white;" onmouseover="this.style.color='black';" onmouseout="this.style.color='white';">
-						  		<i class="fa fa-user"></i>
+						  		<c:if test="#{utilisateurControl.findMail(sessionControl.getMail()).role == 'Ancien'}">
+						  			<i class="fa fa-user"></i>
+						  		</c:if>
 							</span>
 							<span style="color: white;"><span style="text-transform: uppercase;">#{utilisateurControl.findMail(sessionControl.getMail()).nom}</span> #{utilisateurControl.findMail(sessionControl.getMail()).prenom}</span>
 						</a>

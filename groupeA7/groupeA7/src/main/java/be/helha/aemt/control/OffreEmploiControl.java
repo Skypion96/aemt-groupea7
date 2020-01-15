@@ -8,6 +8,7 @@ import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
 import be.helha.aemt.ejb.GestionOffreEJB;
+import be.helha.aemt.entities.Offre;
 import be.helha.aemt.entities.OffreEmploi;
 import be.helha.aemt.entities.OffreStage;
 
@@ -21,4 +22,8 @@ public class OffreEmploiControl implements Serializable{
     public List<OffreEmploi> selectAllEmploi(){        
         return beanOffreStage.selectAllEmploi(); 
     }
+    
+    public List<Offre> selectAllEmploiNV() {
+        return beanOffreStage.selectAllEmploiNV();
+    } 
 }
