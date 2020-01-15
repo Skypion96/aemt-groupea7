@@ -34,17 +34,42 @@
 		<div class="tab-content" id="nav-tabContent">
 			<div class="tab-pane fade show active" id="nav-direction" role="tabpanel" aria-labelledby="nav-direction-tab">
 						
-						<h:form>
+						<label for="search">Rechercher un ancien: </label>
+						<input type="text" id="search" onkeyup="sortTable();" placeholder="Votre recherche"/>
 						
-							<b:dataTable value="#{utilisateurControl.findSectionAncien('Assistant de direction')}" var="ancien">
-								<b:dataTableColumn value="#{ancien.nom}" order-by="#{ancien.nom}" label="Nom"/>
-								<b:dataTableColumn value="#{ancien.prenom}" order-by="#{ancien.prenom}" label="Prénom"/> 
-								<b:dataTableColumn value="#{ancien.email}" order-by="#{ancien.email}" label="E-mail"/> 
-								<b:dataTableColumn value="#{ancien.telephone}" order-by="#{ancien.telephone}" label="Téléphone"/> 
- 								<b:dataTableColumn value="#{ancien.anneeDiplomante}" order-by="#{ancien.anneeDiplomante}" label="Année diplômante"/>
-							</b:dataTable>
-							
-						</h:form>
+						
+						<table class="table" id="table">
+							<thead>
+								<tr>
+									<th scope="col">Nom</th>
+									<th scope="col">Prénom</th>
+									<th scope="col">E-mail</th>
+									<th scope="col">Téléphone</th>
+									<th scope="col">Année diplômante</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">#{utilisateurControl.findSectionAncien('Assistant de direction').nom}</th>
+									<td>#{utilisateurControl.findSectionAncien('Assistant de direction').prenom}</td>
+									<td>#{utilisateurControl.findSectionAncien('Assistant de direction').email}</td>
+									<td>@#{utilisateurControl.findSectionAncien('Assistant de direction').telephone}</td>
+									<td>@#{utilisateurControl.findSectionAncien('Assistant de direction').anneeDiplomante}</td>
+								</tr>
+							</tbody>
+						</table>
+						
+						
+						
+<!-- 						<h:form> -->
+<!-- 							<b:dataTable value="#{utilisateurControl.findSectionAncien('Assistant de direction')}" var="ancien" id="table"> -->
+<!-- 								<b:dataTableColumn value="#{ancien.nom}" order-by="#{ancien.nom}" label="Nom"/> -->
+<!-- 								<b:dataTableColumn value="#{ancien.prenom}" order-by="#{ancien.prenom}" label="Prénom"/>  -->
+<!-- 								<b:dataTableColumn value="#{ancien.email}" order-by="#{ancien.email}" label="E-mail"/>  -->
+<!-- 								<b:dataTableColumn value="#{ancien.telephone}" order-by="#{ancien.telephone}" label="Téléphone"/>  -->
+<!--  								<b:dataTableColumn value="#{ancien.anneeDiplomante}" order-by="#{ancien.anneeDiplomante}" label="Année diplômante"/> -->
+<!-- 							</b:dataTable> -->
+<!-- 						</h:form> -->
 						
 
 			</div>
