@@ -34,7 +34,7 @@
 						<h:form>
 						<!-- value="#{utilisateurControl}" var="user" -->
 						
-							<b:dataTable value="#{utilisateurControl.findSection('Assistant de direction')}" var="ancien">
+							<b:dataTable value="#{utilisateurControl.findSectionAncien('Assistant de direction')}" var="ancien">
 								<b:dataTableColumn value="#{ancien.nom}"  label="Nom"/>
 								<b:dataTableColumn value="#{ancien.prenom}" label="Prénom"/> 
 								<b:dataTableColumn value="#{ancien.email}" label="E-mail"/> 
@@ -52,7 +52,7 @@
 											<h:form>
 						<!-- value="#{utilisateurControl}" var="user" -->
 						
-							<b:dataTable value="#{utilisateurControl.findSection('Comptabilité')}" var="ancien">
+							<b:dataTable value="#{utilisateurControl.findSectionAncien('Comptabilité')}" var="ancien">
 								<b:dataTableColumn value="#{ancien.nom}"  label="Nom"/>
 								<b:dataTableColumn value="#{ancien.prenom}" label="Prénom"/> 
 								<b:dataTableColumn value="#{ancien.email}" label="E-mail"/> 
@@ -69,7 +69,7 @@
 											<h:form>
 						<!-- value="#{utilisateurControl}" var="user" -->
 						
-							<b:dataTable value="#{utilisateurControl.findSection('Informatique de gestion')}" var="ancien">
+							<b:dataTable value="#{utilisateurControl.findSectionAncien('Informatique de gestion')}" var="ancien">
 								<b:dataTableColumn value="#{ancien.nom}"  label="Nom"/>
 								<b:dataTableColumn value="#{ancien.prenom}" label="Prénom"/> 
 								<b:dataTableColumn value="#{ancien.email}" label="E-mail"/> 

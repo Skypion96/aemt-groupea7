@@ -20,7 +20,8 @@ public class AncienDAO {
 	
     @PersistenceContext(unitName = "groupeA7")
     private EntityManager em;
-
+    
+    //RESOURCE_LOCAL
 	/*private EntityManagerFactory emf;
 	private EntityManager em;
 	private EntityTransaction tx;
@@ -29,9 +30,7 @@ public class AncienDAO {
 		emf = Persistence.createEntityManagerFactory("groupeA7");//UNIQUEMENT EN RESSOURCE LOCAL
 		em = emf.createEntityManager();
 		tx=em.getTransaction();
-	}
-	
-	
+	}	
 	public void close() {
 		em.close();
 		emf.close();
@@ -48,15 +47,15 @@ public class AncienDAO {
 		return u;
 	}
 	
-	/*public Utilisateur remove(Ancien u) {
+	
+	
+	public Utilisateur remove(Ancien u) {
 		if(u.getEmail()==null) {
 			return null;
 		}
-		tx.begin();
 		em.remove(em.merge(u));
-		tx.commit();
 		return u;
-	}*/
+	}
 	
 	public List<Ancien> findSection(String section){
 		boolean valide = true;
