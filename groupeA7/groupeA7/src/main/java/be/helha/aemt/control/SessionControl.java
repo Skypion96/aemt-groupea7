@@ -32,7 +32,7 @@ public class SessionControl implements Serializable{
 		return FacesContext.getCurrentInstance().getExternalContext().getUserPrincipal() != null;
 	}
 	
-	public String getNameAndFirstname() {
+	public String getMail() {
 		return FacesContext.getCurrentInstance().getExternalContext().getUserPrincipal().getName();
 	}
 	
