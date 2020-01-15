@@ -10,6 +10,7 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import be.helha.aemt.entities.Ancien;
 import be.helha.aemt.entities.Utilisateur;
@@ -47,7 +48,14 @@ public class AncienDAO {
 		return u;
 	}
 	
-	
+	//rechercher un utilisateur
+	public  Ancien findMailAncien(String mail) {
+		String requete ="SELECT ancien from Ancien ancien where ancien.email =:mail";
+		TypedQuery<Ancien> qFind = em.createQuery(requete, Ancien.class);
+		qFind.setParameter("mail", mail);
+		List<Ancien> res= qFind.getResultList();
+		return res.size()==0? null:res.get(0);
+	}
 	
 	public Utilisateur remove(Ancien u) {
 		if(u.getEmail()==null) {

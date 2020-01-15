@@ -35,6 +35,10 @@ public class GestionUtilisateurEJB{
     	return utilisateurDAO.findMail(mail);
     }
 
+    public Ancien findMailAncien(String mail) {
+    	return ancienDAO.findMailAncien(mail);
+    }
+    
     public List<Ancien> findSectionAncien(String section) {
         return ancienDAO.findSection(section);
     }

@@ -3,11 +3,14 @@ package be.helha.aemt.control;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import be.helha.aemt.dao.AncienDAO;
+import be.helha.aemt.ejb.GestionOffreEJB;
 import be.helha.aemt.entities.Ancien;
 import be.helha.aemt.entities.Offre;
 import be.helha.aemt.entities.OffreEmploi;
@@ -18,30 +21,32 @@ import be.helha.aemt.entities.Utilisateur;
 @Named
 public class AjoutOffreControl implements Serializable{
 
-	UtilisateurControl uc = new UtilisateurControl();
 	private String titre;
-	private boolean valide;
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date date;
 	private Ancien ancien;
 	private String nomEntreprise;
 	private String adresseEntreprise;
 	private String type;
 	private String descriptif;
 	private String section;
+	private String mail;
+	private AncienDAO dao;
 	
+	@EJB
+    private GestionOffreEJB beanOffreStage;
 	
-	
-	public Offre AjoutOffre(String mail) {
-		ancien = (Ancien)uc.findMail(mail);
-		Offre offre = null;
+	public Offre ajoutOffre() {
+		ancien = dao.findMailAncien("Mail1");
+		System.out.println(ancien.getAdresse());
+		/*type = "emploi";
 		if(type == "Emploi") {
-			offre = new OffreEmploi(titre, valide, new Date(), (Ancien)ancien, nomEntreprise, adresseEntreprise, descriptif, section);
+			OffreEmploi offre = new OffreEmploi("tt", false, new Date(), ancien, "tt", "tt", "tt", "tt");
+			return beanOffreStage.AjoutOffreEmploi(offre);
 		}
 		else {
-			offre = new OffreStage(titre, valide, new Date(),(Ancien) ancien, nomEntreprise, adresseEntreprise, descriptif, section);
-		}
-		return offre;
+			OffreStage offre = new OffreStage(titre, false, new Date(),ancien, nomEntreprise, adresseEntreprise, descriptif, section);
+			return beanOffreStage.AjoutOffreStage(offre);
+		}*/
+		return null;
 	}
 	
 	public String getTitre() {
@@ -49,18 +54,6 @@ public class AjoutOffreControl implements Serializable{
 	}
 	public void setTitre(String titre) {
 		this.titre = titre;
-	}
-	public boolean isValide() {
-		return valide;
-	}
-	public void setValide(boolean valide) {
-		this.valide = valide;
-	}
-	public Date getDate() {
-		return date;
-	}
-	public void setDate(Date date) {
-		this.date = date;
 	}
 	public Ancien getAncien() {
 		return ancien;

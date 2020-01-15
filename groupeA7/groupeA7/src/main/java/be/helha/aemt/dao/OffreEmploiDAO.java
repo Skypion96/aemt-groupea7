@@ -45,12 +45,10 @@ public class OffreEmploiDAO {
 	}
 	
 
-	/*public OffreStage add(OffreStage u) {
-		tx.begin();		
+	public OffreEmploi addOffreEmploi(OffreEmploi u) {
 		em.merge(u);
-		tx.commit();
 		return u;
-	}*/
+	}
 	
 	//UPDATE A REFLECHIR
 }

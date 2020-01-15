@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
-<html xmlns:jsf="http://xmlns.jcp.org/jsf" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:b="http://bootsfaces.net/ui" class=" FB_FW_ext eidReader">
+<html xmlns:jsf="http://xmlns.jcp.org/jsf" xmlns:c="http://xmlns.jcp.org/jsp/jstl/core" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:b="http://bootsfaces.net/ui" class=" FB_FW_ext eidReader">
 <head>
 	<title>MeetHELHa</title>
 	<meta http-equiv="  Content-Type" content="text/html; charset=UTF-8" />
@@ -48,14 +48,14 @@
 									<th scope="col">Année diplômante</th>
 								</tr>
 							</thead>
-							<tbody>
-								<tr>
-									<th scope="row">#{utilisateurControl.findSectionAncien('Assistant de direction').nom}</th>
-									<td>#{utilisateurControl.findSectionAncien('Assistant de direction').prenom}</td>
-									<td>#{utilisateurControl.findSectionAncien('Assistant de direction').email}</td>
-									<td>@#{utilisateurControl.findSectionAncien('Assistant de direction').telephone}</td>
-									<td>@#{utilisateurControl.findSectionAncien('Assistant de direction').anneeDiplomante}</td>
-								</tr>
+							<tbody value="#{utilisateurControl.findSectionAncien('Assistant de direction')}" var="ancien">
+				                <tr >
+				                    <td>#{ancien.nom}</td>
+				                    <td>#{ancien.prenom}</td>
+				                    <td>#{ancien.email}</td>
+				                    <td>#{ancien.telephone}</td>
+				                </tr>
+
 							</tbody>
 						</table>
 						

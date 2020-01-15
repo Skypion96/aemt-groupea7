@@ -45,12 +45,12 @@
 				<h:inputText type="text" class="form-control" name="adresseEntreprise" id="adresseEntreprise" value="#{ajoutOffreControl.adresseEntreprise}"/>
 			</div>
 			<div class="form-group">
-				<label for="descriptif" class="col-form-label">Mot de passe :</label>
-				<h:inputSecret type="text" class="form-control" required="true" name="descriptif" id="descriptif" value="#{ajoutOffreControl.descriptif}"/>
+				<label for="descriptif" class="col-form-label">description :</label>
+				<h:inputText type="text" class="form-control" required="true" name="descriptif" id="descriptif" value="#{ajoutOffreControl.descriptif}"/>
 			</div>			
 			<div class="form-group">
 				<label for="section" class="col-form-label">Type :</label>
-				<select class="form-control" value="#{ajoutOffreControl.section}">
+				<select class="form-control" value="#{ajoutOffreControl.type}">
 					<option selected="true">Stage</option>
 					<option>Emploi</option>
 				</select>
@@ -65,10 +65,10 @@
 			</div>
 			<div class="footer">
 				<button onclick="clearAll();">Annuler</button>
-				<h:commandButton class="btn btn-primary" value="S'inscrire" action="#{ajoutOffreControl.AjoutOffre(#{sessionControl.getMail()})}"/>
+				<h:commandButton class="btn btn-primary" value="Créer l'offre" action="#{ajoutOffreControl.ajoutOffre()}"/>
 			</div>
 				
-		</h:form>
+		</h:form>		
 	</div>
 	
 	<!-- FOOTER -->

@@ -35,5 +35,12 @@ public class GestionOffreEJB {
     public List<OffreEmploi> selectAllEmploi() {
         return offreEmploiDAO.selectAllEmploi();
     }
+    
+    public OffreStage AjoutOffreStage(OffreStage offre) {
+    	return offreStageDAO.addOffreStage(offre);
+    }
 
+    public OffreEmploi AjoutOffreEmploi(OffreEmploi offre) {
+    	return offreEmploiDAO.addOffreEmploi(offre);
+    }
 }
