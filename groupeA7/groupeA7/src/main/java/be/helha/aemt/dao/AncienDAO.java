@@ -5,9 +5,6 @@ import java.util.List;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
@@ -80,4 +77,11 @@ public class AncienDAO {
 		return qSelectAll.getResultList();
 	}
 	
+	public List<Ancien> findAllNV(){
+		boolean valide = true;
+		String requete ="SELECT ancien from Ancien ancien where ancien.valide = :valide";
+		Query qSelectAll=em.createQuery(requete);
+		qSelectAll.setParameter("valide", valide );
+		return qSelectAll.getResultList();
+	}
 }

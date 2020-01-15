@@ -57,6 +57,10 @@ public class UtilisateurControl implements Serializable{
     public Ancien findMailAncien(String mail) {
     	return beanUtilisateur.findMailAncien(mail);
     }
+    
+    public List<Ancien> findAllAncienNV() {
+        return beanUtilisateur.findAllAncienNV();
+    }
 
 	public String getRole() {
 		return role;
