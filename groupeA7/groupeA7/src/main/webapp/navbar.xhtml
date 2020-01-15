@@ -92,7 +92,7 @@
 							<a class="dropdown-item" href="#">Mes annonces</a>
 							<c:if test="#{utilisateurControl.findMail(sessionControl.getMail()).role == 'Admin'}">
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="#">Admin</a>
+								<a class="dropdown-item" href="adminValidation.xhtml">Admin</a>
 							</c:if>
 							<div class="dropdown-divider"></div>
 							<h:form>

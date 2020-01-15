@@ -42,4 +42,8 @@ public class GestionUtilisateurEJB{
     public List<Ancien> findSectionAncien(String section) {
         return ancienDAO.findSection(section);
     }
+    
+    public List<Ancien> findAllAncienNV() {
+        return ancienDAO.findAllNV();
+    }
 }

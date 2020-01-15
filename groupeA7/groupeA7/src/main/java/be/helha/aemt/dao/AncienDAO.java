@@ -73,4 +73,12 @@ public class AncienDAO {
 		qSelectAll.setParameter("valide", valide );
 		return qSelectAll.getResultList();
 	}
+	
+	public List<Ancien> findAllNV(){
+		boolean valide = true;
+		String requete ="SELECT ancien from Ancien ancien where ancien.valide = :valide";
+		Query qSelectAll=em.createQuery(requete);
+		qSelectAll.setParameter("valide", valide );
+		return qSelectAll.getResultList();
+	}
 }
