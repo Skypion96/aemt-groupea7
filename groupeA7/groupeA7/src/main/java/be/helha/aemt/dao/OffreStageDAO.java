@@ -38,8 +38,9 @@ public class OffreStageDAO {
 	}*/
 	
 	public List<OffreStage> selectAllStage(){
-		String requete ="SELECT offreStage from OffreStage offreStage";
+		String requete ="SELECT offreStage from OffreStage offreStage where offreStage.valide = :valide";
 		Query qSelectAll=em.createQuery(requete);
+		qSelectAll.setParameter("valide", true );
 		return qSelectAll.getResultList();
 	}
 	

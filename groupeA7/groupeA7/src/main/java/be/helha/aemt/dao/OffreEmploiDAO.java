@@ -38,8 +38,9 @@ public class OffreEmploiDAO {
 	}*/
 	
 	public List<OffreEmploi> selectAllEmploi(){
-		String requete ="SELECT offreEmploi from OffreEmploi offreEmploi";
+		String requete ="SELECT offreEmploi from OffreEmploi offreEmploi where offreEmploi.valide = :valide";
 		Query qSelectAll=em.createQuery(requete);
+		qSelectAll.setParameter("valide", true );
 		return qSelectAll.getResultList();
 	}
 	
