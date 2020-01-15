@@ -11,6 +11,7 @@ import javax.persistence.TemporalType;
 
 import be.helha.aemt.dao.AncienDAO;
 import be.helha.aemt.ejb.GestionOffreEJB;
+import be.helha.aemt.ejb.GestionUtilisateurEJB;
 import be.helha.aemt.entities.Ancien;
 import be.helha.aemt.entities.Offre;
 import be.helha.aemt.entities.OffreEmploi;
@@ -34,10 +35,11 @@ public class AjoutOffreControl implements Serializable{
 	@EJB
     private GestionOffreEJB beanOffreStage;
 	
-	public Offre ajoutOffre() {
-		ancien = dao.findMailAncien("Mail1");
-		System.out.println(ancien.getAdresse());
-		/*type = "emploi";
+	@EJB
+	private GestionUtilisateurEJB beanUser;
+	
+	public Offre ajoutOffre(String email) {
+		ancien = beanUser.findMailAncien(email);
 		if(type == "Emploi") {
 			OffreEmploi offre = new OffreEmploi("tt", false, new Date(), ancien, "tt", "tt", "tt", "tt");
 			return beanOffreStage.AjoutOffreEmploi(offre);
@@ -45,8 +47,7 @@ public class AjoutOffreControl implements Serializable{
 		else {
 			OffreStage offre = new OffreStage(titre, false, new Date(),ancien, nomEntreprise, adresseEntreprise, descriptif, section);
 			return beanOffreStage.AjoutOffreStage(offre);
-		}*/
-		return null;
+		}
 	}
 	
 	public String getTitre() {

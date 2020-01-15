@@ -65,7 +65,7 @@
 			</div>
 			<div class="footer">
 				<button onclick="clearAll();">Annuler</button>
-				<h:commandButton class="btn btn-primary" value="Créer l'offre" action="#{ajoutOffreControl.ajoutOffre()}"/>
+				<h:commandButton class="btn btn-primary" value="Créer l'offre" action="#{ajoutOffreControl.ajoutOffre(sessionControl.getMail())}"/>
 			</div>
 				
 		</h:form>		
