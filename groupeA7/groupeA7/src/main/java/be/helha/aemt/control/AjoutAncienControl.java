@@ -1,10 +1,13 @@
 package be.helha.aemt.control;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.Serializable;
 
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
+import javax.servlet.http.Part;
 
 import be.helha.aemt.ejb.GestionAjoutAncienEJB;
 import be.helha.aemt.entities.Ancien;
@@ -13,7 +16,12 @@ import be.helha.aemt.entities.Ancien;
 @Named
 public class AjoutAncienControl implements Serializable{
 	
-    @EJB
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@EJB
     private GestionAjoutAncienEJB beanUtilisateur;
 
 	private String email;	
@@ -28,12 +36,25 @@ public class AjoutAncienControl implements Serializable{
 	private String localite;
 	private String emploiActuel;
 	private String section;
+	private Part photo;
 
 	
 	
 	public Ancien AjoutAncien() {
-		
 		Ancien ancien = new Ancien(password,email,nom,prenom,telephone,2020,adresse,0,localite,emploiActuel,section);
+		
+		if(photo != null) {
+			try {
+				InputStream img = photo.getInputStream();
+				byte[] bytes = new byte[2000000];
+				while ((img.read(bytes)) != -1);
+				ancien.setImageProfil(bytes);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
 		return beanUtilisateur.AjoutAncien(ancien);
 	}
 	
@@ -112,7 +133,13 @@ public class AjoutAncienControl implements Serializable{
 	public void setSection(String section) {
 		this.section = section;
 	}
-	
+	public Part getPhoto() {
+		return photo;
+	}
+	public void setPhoto(Part photo) {
+		this.photo = photo;
+	}
+
 	public void clearAjout() {
 		this.nom = "";
 		/*email;	

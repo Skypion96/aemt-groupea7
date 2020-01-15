@@ -30,7 +30,7 @@ public class MainUtilisateur {
 		Offre o1 = new OffreStage("Test offre stage",false,new Date() ,(Ancien)u1,"meetHelha","30, Rue de l'entreprise, 7000 MONS","Descriptif de l'entreprise","Informatique de gestion");
 		Offre o2 = new OffreEmploi("Test offre emploi",false,new Date() ,(Ancien)u1,"meetHelha","30, Rue de l'entreprise, 7000 MONS","Descriptif de l'entreprise","Informatique de gestion");
 		
-		File file = new File("src/main/webapp/res/Tesla.jpg");
+		File file = new File("src/main/webapp/res/no_profile.gif");
 		byte[] picInBytes = new byte[(int) file.length()];
 		FileInputStream fileInputStream;
 		
