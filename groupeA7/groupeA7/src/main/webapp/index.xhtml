@@ -38,66 +38,9 @@ Duis sit amet erat nec lorem venenatis vulputate vitae sed ex. Duis a urna sapie
 	</div>
 	
 	
-	<!-- FOOTER -->
-	<footer class="page-footer font-small bg-info pt-4">
-	
-	  <!-- Footer Links -->
-	  <div class="container-fluid text-center text-md-left">
-	
-	    <!-- Grid row -->
-	    <div class="row">
-	
-	      <!-- Grid column -->
-	      <div class="col-md-6 mt-md-0 mt-3">
-	        <!-- Content -->
-	        <h:graphicImage value="res/HELHa_logo.jpg"></h:graphicImage><br/>
-	      </div>
-	
-	      <hr class="clearfix w-100 d-md-none pb-3"/>
-	      <div class="col-md-3 mb-md-0 mb-3">
-	
-	        <!-- Links -->
-	        <h5 class="text-uppercase">Contact</h5>
-	
-	        <ul class="list-unstyled">
-	          <li>
-	            <a href="https://www.helha.be/#1" class="liFooter">Site de la HELHa</a>
-	          </li>
-	          <li>
-	            <a href="https://www.linkedin.com/school/helha/?originalSubdomain=fr" class="liFooter">LinkedIN</a>
-	          </li>
-	          <li>
-	            <a href="https://www.facebook.com/helha.be/" class="liFooter">Facebook</a>
-	          </li>
-	        </ul>
-	
-	      </div>
-	      <div class="col-md-3 mb-md-0 mb-3">
-	
-	        <!-- Links -->
-	        <h5 class="text-uppercase">Links</h5>
-	
-	        <ul class="list-unstyled">
-	          <li>
-	            <a href="#!" class="liFooter">Link 1</a>
-	          </li>
-	          <li>
-	            <a href="#!" class="liFooter">Link 2</a>
-	          </li>
-	          <li>
-	            <a href="#!" class="liFooter">Link 3</a>
-	          </li>
-	        </ul>
-	      </div>
-	    </div>
-	  </div>
-	  <hr/>
-	  <!-- Copyright -->
-	  <div class="footer-copyright text-center py-3" id="copyright">© 2020 Copyright:
-	    <a href="https://mdbootstrap.com/education/bootstrap/" id="copyright"> MeetHELHa.be</a>
-	  </div>
-	</footer>
-	
+	<ui:insert name="footer" >
+  		<ui:include src="/footer.xhtml" />
+	</ui:insert>
 	
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

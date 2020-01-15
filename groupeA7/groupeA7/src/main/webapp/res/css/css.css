@@ -2,23 +2,9 @@
 	height: auto;
 }
 
-#copyright{
-	color: white;
+html, body{
+	margin: 0;
+	display: table;
+	height: 100%;
 	width: 100%;
-}
-
-hr{
-	background-color: white;
-}
-
-.liFooter{
-	color: white;
-}
-
-.liFooter:hover {
-	color: white;
-}
-
-.text-uppercase{
-	color: white;
 }
