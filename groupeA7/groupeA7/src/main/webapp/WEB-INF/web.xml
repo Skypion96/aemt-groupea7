@@ -42,7 +42,7 @@
 		  <transport-guarantee>NONE</transport-guarantee> 
 	</user-data-constraint>
 	</security-constraint>
-
+	
 	<login-config>
 		<auth-method>FORM</auth-method>
 		<realm-name>utilisateurConnection</realm-name>
