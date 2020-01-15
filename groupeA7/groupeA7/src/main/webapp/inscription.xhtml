@@ -65,11 +65,13 @@
 				
 			<div class="form-group">
 				<label for="section" class="col-form-label">Section *</label>
-				<select class="form-control" value="#{ajoutAncienControl.section}">
-					<option selected="true">Assistant de direction</option>
-					<option>Comptabilité</option>
-					<option>Informatique de gestion</option>
-				</select>
+                      <h:selectOneMenu fieldId="section" name="section" label="Section : " 
+                          colMd="10" labelColMd="2" required="true" select2="true" value="#{ajoutAncienControl.section}">
+                          <f:selectItem itemLabel="(Choisissez votre section)" itemValue="" />
+                          <f:selectItem itemLabel="Informatique de Gestion" itemValue="Informatique de Gestion"/>
+                          <f:selectItem itemLabel="Assistant de direction" itemValue="Assistant de direction"/>
+                          <f:selectItem itemLabel="Comptabilité" itemValue="Comptabilité"/>
+                      </h:selectOneMenu>
 			</div>
 			<div class="form-group">
 				<label for="anneeDiplomante" class="col-form-label">Année diplomante *</label>
