@@ -19,6 +19,7 @@ public class UtilisateurControl implements Serializable{
 	
 	private String nom = "Anonymous";
 	private String role;
+	private String option;
     
     @EJB
     private GestionUtilisateurEJB beanUtilisateur;
@@ -49,8 +50,8 @@ public class UtilisateurControl implements Serializable{
     	return beanUtilisateur.findMail(mail);
     }
 
-    public List<Ancien> findSectionAncien(String section) {
-        return beanUtilisateur.findSectionAncien(section);
+    public List<Ancien> findSectionAncien(String section, String option) {
+        return beanUtilisateur.findSectionAncien(section, option);
     }
     
     public Ancien findMailAncien(String mail) {
@@ -67,6 +68,14 @@ public class UtilisateurControl implements Serializable{
 
 	public void setRole(String role) {
 		this.role = role;
+	}
+
+	public String getOption() {
+		return option;
+	}
+
+	public void setOption(String option) {
+		this.option = option;
 	}
 	
 	

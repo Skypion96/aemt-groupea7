@@ -11,6 +11,10 @@ import javax.persistence.Lob;
 public class Ancien extends Utilisateur implements Serializable{
 
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String telephone;
 	private int anneeDiplomante;
 	private String adresse;
@@ -40,7 +44,7 @@ public class Ancien extends Utilisateur implements Serializable{
 		this.emploiActuel = emploiActuel;
 		this.setRole("Ancien");
 		this.section = section;
-		this.setValide(false);
+		this.valide = false;
 	}
 	
 	
@@ -89,7 +93,7 @@ public class Ancien extends Utilisateur implements Serializable{
 	}
 
 	public void setImageProfil(byte[] imageProfil) {
-		this.imageProfil = imageProfil;
+			this.imageProfil = imageProfil;
 	}
 
 	public String getSection() {
