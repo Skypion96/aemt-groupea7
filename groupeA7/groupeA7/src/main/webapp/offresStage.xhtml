@@ -34,12 +34,12 @@
 						<h:form>
 						<!-- value="#{utilisateurControl}" var="user" -->
 						
-							<b:dataTable value="#{utilisateurControl.findSectionAncien('Assistant de direction')}" var="ancien">
-								<b:dataTableColumn value="#{ancien.nom}"  label="Nom"/>
-								<b:dataTableColumn value="#{ancien.prenom}" label="Prénom"/> 
-								<b:dataTableColumn value="#{ancien.email}" label="E-mail"/> 
-								<b:dataTableColumn value="#{ancien.ancien}" label="Téléphone"/> 
- 								<b:dataTableColumn value="#{ancien.anneeDiplomante}" label="Année diplômante"/>
+							<b:dataTable value="#{offreControl.selectAllStage()}" var="ancien">
+								<b:dataTableColumn value="#{offreStage.date}"  label="Nom"/>
+								<b:dataTableColumn value="#{offreStage.nomEntreprise}" label="Prénom"/> 
+								<b:dataTableColumn value="#{offreStage.titre}" label="E-mail"/> 
+								<b:dataTableColumn value="#{offreStage.telephone}" label="Téléphone"/> 
+ 								<b:dataTableColumn value="#{offreStage.section}" label="Année diplômante"/>
 							</b:dataTable>
 							
 						</h:form>

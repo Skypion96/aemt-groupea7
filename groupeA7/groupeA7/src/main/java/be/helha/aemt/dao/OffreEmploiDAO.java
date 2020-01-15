@@ -2,17 +2,25 @@ package be.helha.aemt.dao;
 
 import java.util.List;
 
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import be.helha.aemt.entities.OffreEmploi;
 
+@Stateless
+@LocalBean
 public class OffreEmploiDAO {
 
-	private EntityManagerFactory emf;
+	
+	@PersistenceContext(unitName = "groupeA7")
+    private EntityManager em;
+	/*private EntityManagerFactory emf;
 	private EntityManager em;
 	private EntityTransaction tx;
 	
@@ -27,7 +35,7 @@ public class OffreEmploiDAO {
 	public void close() {
 		em.close();
 		emf.close();
-	}
+	}*/
 	
 	public List<OffreEmploi> selectAll(){
 		String requete ="SELECT offreEmploi from OffreEmploi offreEmploi";
@@ -36,12 +44,12 @@ public class OffreEmploiDAO {
 	}
 	
 
-	public OffreEmploi add(OffreEmploi u) {
+	/*public OffreEmploi add(OffreEmploi u) {
 		tx.begin();		
 		em.merge(u);
 		tx.commit();
 		return u;
-	}
+	}*/
 	
 	//UPDATE A REFLECHIR
 }
