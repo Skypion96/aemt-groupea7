@@ -18,7 +18,7 @@ import be.helha.aemt.entities.Utilisateur;
 public class UtilisateurControl implements Serializable{
 	
 	private String nom = "Anonymous";
-	
+	private String role;
     
     @EJB
     private GestionUtilisateurEJB beanUtilisateur;
@@ -48,6 +48,14 @@ public class UtilisateurControl implements Serializable{
     public List<Ancien> findSection(String section) {
         return beanUtilisateur.findSection(section);
     }
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
 	
 	
 
