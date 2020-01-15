@@ -3,33 +3,41 @@ package be.helha.aemt.dao;
 
 import java.util.List;
 
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import be.helha.aemt.entities.Utilisateur;
 
+@Stateless
+@LocalBean
 public class UtilisateurDAO {
-	
-	private EntityManagerFactory emf;
+	@PersistenceContext(unitName = "groupeA7")
 	private EntityManager em;
-	private EntityTransaction tx;
 	
-	
-	public UtilisateurDAO() {
-		//ON EST EN RESSOURCE_LOCAL
-		emf = Persistence.createEntityManagerFactory("groupeA7");//UNIQUEMENT EN RESSOURCE LOCAL
-		em = emf.createEntityManager();
-		tx=em.getTransaction();
-	}
-	
-	public void close() {
-		em.close();
-		emf.close();
-	}
+//RESOURCE_LOCAL
+//	private EntityManagerFactory emf;
+//	private EntityManager em;
+//	private EntityTransaction tx;
+//	
+//	
+//	public UtilisateurDAO() {
+//		//ON EST EN RESSOURCE_LOCAL
+//		emf = Persistence.createEntityManagerFactory("groupeA7");//UNIQUEMENT EN RESSOURCE LOCAL
+//		em = emf.createEntityManager();
+//		tx=em.getTransaction();
+//	}
+//	
+//	public void close() {
+//		em.close();
+//		emf.close();
+//	}
 	
 	public List<Utilisateur> selectAll(){
 		String requete ="SELECT utilisateur from Utilisateur utilisateur";
@@ -38,9 +46,7 @@ public class UtilisateurDAO {
 	}
 	
 	public Utilisateur add(Utilisateur u) {
-		tx.begin();
 		em.merge(u);
-		tx.commit();
 		return u;
 	}
 	
@@ -60,29 +66,17 @@ public class UtilisateurDAO {
 		if(u.getEmail()==null) {
 			return null;
 		}
-		tx.begin();
 		em.remove(em.merge(u));
-		tx.commit();
 		return u;
 	}
 	
-	// supprimer les utilisateurs en fonction de leur login
-	public void removeAllByLogin(Utilisateur u) {
-		String requete ="DELETE FROM Utilisateur u where u.mail =?1";
-		Query qDelete=em.createQuery(requete);
-		tx.begin();
-		qDelete.setParameter(1, u.getEmail()).executeUpdate();
-		tx.commit();
-	}
-	
-	//RECHERCHE A PARTIR DU CODE POSTAL
-	
-	public List<Utilisateur> findCP(int cp) {
-		String requete ="SELECT u from Utilisateur u join u.adresse a where a.codePostal =:cp";
+	//RECHERCHE A PARTIR DU MAIL
+	public Utilisateur findMail(String mail) {
+		String requete ="SELECT u from Utilisateur u where u.mail =:mail";
 		TypedQuery<Utilisateur> qFind = em.createQuery(requete, Utilisateur.class);
-		qFind.setParameter("cp", cp);
+		qFind.setParameter("mail", mail);
 		List<Utilisateur> res= qFind.getResultList();
-		return res;
+		return res.size()==0? null:res.get(0);
 	}
 	
 

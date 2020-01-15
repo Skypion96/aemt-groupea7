@@ -36,17 +36,21 @@ public class UtilisateurControl implements Serializable{
         return "list.xhtml";
     }
     
-    public List<Ancien> selectAll(){        
-        return beanUtilisateur.findAll();
+    public List<Ancien> selectAllAncien(){        
+        return beanUtilisateur.findAllAncien();
         
     }
     
-   /* public Utilisateur find(Utilisateur u) {
+    public Utilisateur find(Utilisateur u) {
     	return beanUtilisateur.find(u);
-    }*/
+    }
+    
+    public Utilisateur findMail(String mail) {
+    	return beanUtilisateur.findMail(mail);
+    }
 
-    public List<Ancien> findSection(String section) {
-        return beanUtilisateur.findSection(section);
+    public List<Ancien> findSectionAncien(String section) {
+        return beanUtilisateur.findSectionAncien(section);
     }
 
 	public String getRole() {
