@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
-<html xmlns:jsf="http://xmlns.jcp.org/jsf" xmlns:c="http://xmlns.jcp.org/jsp/jstl/core" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:b="http://bootsfaces.net/ui" class=" FB_FW_ext eidReader">
+<html xmlns:jsf="http://xmlns.jcp.org/jsf" xmlns:c="http://xmlns.jcp.org/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:b="http://bootsfaces.net/ui" class=" FB_FW_ext eidReader">
 <head>
 	<title>MeetHELHa</title>
 	<meta http-equiv="  Content-Type" content="text/html; charset=UTF-8" />
@@ -35,7 +35,8 @@
 			<div class="tab-pane fade show active" id="nav-direction" role="tabpanel" aria-labelledby="nav-direction-tab">
 						
 						<label for="search">Rechercher un ancien: </label>
-						<input type="text" id="search" placeholder="Votre recherche" value="#{utilisateurControl.option}"/>
+						<h:inputText type="text" id="search" placeholder="Votre recherche" value="#{utilisateurControl.option}"></h:inputText>
+						<h:form><h:commandButton value="Trier"><f:ajax render="table"></f:ajax></h:commandButton></h:form>
 						
 						
 <!-- 						<table class="table" id="table"> -->
@@ -62,7 +63,7 @@
 						
 						
 						<h:form>
-							<b:dataTable value="#{utilisateurControl.findSectionAncien('Assistant de direction', utilisateurControl.option)}" var="ancien" id="table" auto-update="true">
+							<b:dataTable value="#{utilisateurControl.findSectionAncien('Assistant de direction')}" var="ancien" id="table" auto-update="true">
 								<b:dataTableColumn value="#{ancien.nom}" order-by="#{ancien.nom}" label="Nom"/>
 								<b:dataTableColumn value="#{ancien.prenom}" order-by="#{ancien.prenom}" label="Prénom"/> 
 								<b:dataTableColumn value="#{ancien.email}" order-by="#{ancien.email}" label="E-mail"/> 
@@ -122,7 +123,6 @@
 	
 	<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.js"></script>
  	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

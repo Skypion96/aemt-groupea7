@@ -70,23 +70,22 @@ public class AncienDAO {
 	
 	public List<Ancien> findSection(String section, String option){
 		boolean valide = true;
-		String requeteCompl = " or ancien.anneeDiplomante =:optionNumber";
-		String requete = "";
-		Query qSelectAll=em.createQuery(requete);
-		qSelectAll.setParameter("section", section );
-		qSelectAll.setParameter("valide", valide );
-		int optionNumber = Integer.parseInt(option);
-		qSelectAll.setParameter("option", option );
-		if(option==null) {
-			option = "";
-		}
-		if(option=="") {
-			requete ="SELECT ancien from Ancien ancien where ancien.section =:section and ancien.valide = :valide and ancien.nom =:option or ancien.prenom =:option or ancien.email =:option";
+		Query qSelectAll;
+		String requete;
+		if(option==null || option=="") {
+			requete ="SELECT ancien from Ancien ancien where ancien.section =:section and ancien.valide = :valide";
+			qSelectAll=em.createQuery(requete);
+			qSelectAll.setParameter("section", section );
+			qSelectAll.setParameter("valide", valide );
 		}
 		else {
-			requete ="SELECT ancien from Ancien ancien where ancien.section =:section and ancien.valide = :valide and ancien.nom =:option or ancien.prenom =:option or ancien.email =:option"+requeteCompl;
-			qSelectAll.setParameter("optionNumber", optionNumber);
+			requete ="SELECT ancien from Ancien ancien where ancien.section =:section and ancien.valide = :valide and (ancien.nom like %:option % or ancien.prenom like %:option % or ancien.email like %:option %)";
+			qSelectAll=em.createQuery(requete);
+			qSelectAll.setParameter("section", section );
+			qSelectAll.setParameter("valide", valide );
+			qSelectAll.setParameter("option", option );
 		}
+		
 		return qSelectAll.getResultList();
 	}
 	
