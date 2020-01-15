@@ -12,6 +12,7 @@ import be.helha.aemt.dao.OffreEmploiDAO;
 import be.helha.aemt.dao.OffreStageDAO;
 import be.helha.aemt.dao.UtilisateurDAO;
 import be.helha.aemt.entities.Offre;
+import be.helha.aemt.entities.OffreEmploi;
 import be.helha.aemt.entities.OffreStage;
 import be.helha.aemt.entities.Utilisateur;
 
@@ -24,11 +25,15 @@ public class GestionOffreEJB {
 	@EJB
 	private OffreStageDAO offreStageDAO;
 	
-	/*@EJB
-	private OffreEmploiDAO offreEmploiDAO;*/
+	@EJB
+	private OffreEmploiDAO offreEmploiDAO;
     
     public List<OffreStage> selectAllStage() {
         return offreStageDAO.selectAllStage();
+    }
+    
+    public List<OffreEmploi> selectAllEmploi() {
+        return offreEmploiDAO.selectAllEmploi();
     }
 
 }
