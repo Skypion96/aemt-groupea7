@@ -72,18 +72,18 @@ public class AncienDAO {
 		boolean valide = true;
 		Query qSelectAll;
 		String requete;
-		if(option==null || option=="") {
+		if(option == null || option.contentEquals("")) {
 			requete ="SELECT ancien from Ancien ancien where ancien.section =:section and ancien.valide = :valide";
 			qSelectAll=em.createQuery(requete);
 			qSelectAll.setParameter("section", section );
 			qSelectAll.setParameter("valide", valide );
 		}
 		else {
-			requete ="SELECT ancien from Ancien ancien where ancien.section =:section and ancien.valide = :valide and (ancien.nom like %:option % or ancien.prenom like %:option % or ancien.email like %:option %)";
+			requete ="SELECT ancien from Ancien ancien where ancien.section =:section and ancien.valide = :valide and (ancien.nom like :option or ancien.prenom like :option or ancien.email like :option)";
 			qSelectAll=em.createQuery(requete);
 			qSelectAll.setParameter("section", section );
 			qSelectAll.setParameter("valide", valide );
-			qSelectAll.setParameter("option", option );
+			qSelectAll.setParameter("option", "%" + option + "%" );
 		}
 		
 		return qSelectAll.getResultList();

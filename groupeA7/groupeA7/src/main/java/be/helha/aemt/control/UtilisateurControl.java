@@ -20,7 +20,7 @@ public class UtilisateurControl implements Serializable{
 	
 	private String nom = "Anonymous";
 	private String role;
-	private String option ="nor";
+	private String option ="dav";
     
     @EJB
     private GestionUtilisateurEJB beanUtilisateur;

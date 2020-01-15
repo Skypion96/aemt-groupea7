@@ -35,8 +35,8 @@
 			<div class="tab-pane fade show active" id="nav-direction" role="tabpanel" aria-labelledby="nav-direction-tab">
 						
 						<label for="search">Rechercher un ancien: </label>
-						<h:inputText type="text" id="search" placeholder="Votre recherche" value="#{utilisateurControl.option}"></h:inputText>
-						<h:form><h:commandButton value="Trier"><f:ajax render="table"></f:ajax></h:commandButton></h:form>
+						<h:form><h:inputText type="submit" id="search" placeholder="Votre recherche" value="#{utilisateurControl.option}"></h:inputText>
+						<h:commandButton type="submit" value="Trier" id="sub" name="sub"><!--<f:ajax render="table"></f:ajax>--></h:commandButton></h:form>
 						
 						
 <!-- 						<table class="table" id="table"> -->
