@@ -55,6 +55,13 @@ public class OffreDAO {
 		return qSelectAll.getResultList();
 	}
 	
+	public List<Offre> selectAllOffreByAncien(Ancien ancien){
+		String requete ="SELECT offre from Offre offre where offre.ancien = :ancien";
+		Query qSelectAll=em.createQuery(requete);
+		qSelectAll.setParameter("ancien", ancien );
+		return qSelectAll.getResultList();
+	}
+	
 	public Offre findId(int id){
 		String requete ="SELECT offre from Offre offre where offre.id = :id";
 		TypedQuery<Offre> qFind = em.createQuery(requete, Offre.class);

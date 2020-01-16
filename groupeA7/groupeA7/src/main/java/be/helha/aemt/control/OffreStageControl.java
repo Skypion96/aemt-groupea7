@@ -20,6 +20,9 @@ public class OffreStageControl implements Serializable{
     @EJB
     private GestionOffreEJB beanOffreStage;
     
+    @EJB
+    private GestionUtilisateurEJB beanAncien;
+    
     private int id;
 	
     public List<OffreStage> selectAllStage(){        
@@ -43,6 +46,11 @@ public class OffreStageControl implements Serializable{
 	
 	public Offre findId(int id) {
 		return beanOffreStage.findId(id);
+	}
+	
+	public List<Offre> findByAncien(String mail){
+		Ancien ancien = beanAncien.findMailAncien(mail);
+		return beanOffreStage.findByAncien(ancien);
 	}
 
 }
