@@ -7,12 +7,9 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import javax.persistence.TypedQuery;
 
-import be.helha.aemt.entities.Ancien;
 import be.helha.aemt.entities.Annonce;
-import be.helha.aemt.entities.Offre;
-import be.helha.aemt.entities.OffreEmploi;
+
 import be.helha.aemt.entities.Utilisateur;
 
 @Stateless
