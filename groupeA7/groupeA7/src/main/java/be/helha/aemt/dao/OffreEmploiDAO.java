@@ -13,6 +13,7 @@ import javax.persistence.Query;
 
 import be.helha.aemt.entities.OffreEmploi;
 import be.helha.aemt.entities.OffreStage;
+import be.helha.aemt.entities.PdfGenerator;
 
 @Stateless
 @LocalBean
@@ -47,6 +48,7 @@ public class OffreEmploiDAO {
 
 	public OffreEmploi addOffreEmploi(OffreEmploi u) {
 		em.merge(u);
+		PdfGenerator.createPDF();
 		return u;
 	}
 	

@@ -176,6 +176,15 @@ public class Offre {
 		return true;
 	}
 
+
+	@Override
+	public String toString() {
+		return "Offre [id=" + id + ", titre=" + titre + ", valide=" + valide + ", date=" + date + ", ancien=" + ancien
+				+ ", nomEntreprise=" + nomEntreprise + ", adresseEntreprise=" + adresseEntreprise + ", type=" + type
+				+ ", descriptif=" + descriptif + ", section=" + section + ", nomContact=" + nomContact
+				+ ", prenomContact=" + prenomContact + ", mailContact=" + mailContact + "]";
+	}
+
 	
 	
 }

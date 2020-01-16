@@ -16,6 +16,7 @@ import be.helha.aemt.entities.Ancien;
 import be.helha.aemt.entities.Offre;
 import be.helha.aemt.entities.OffreEmploi;
 import be.helha.aemt.entities.OffreStage;
+import be.helha.aemt.entities.PdfGenerator;
 import be.helha.aemt.entities.Utilisateur;
 
 @SessionScoped
@@ -33,6 +34,7 @@ public class AjoutOffreControl implements Serializable{
 	private String nomContact;
 	private String prenomContact;
 	private String mailContact;
+
 	
 	@EJB
     private GestionOffreEJB beanOffreStage;
