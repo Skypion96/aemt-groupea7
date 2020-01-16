@@ -34,41 +34,20 @@
 		<div class="tab-content" id="nav-tabContent">
 			<div class="tab-pane fade show active" id="nav-direction" role="tabpanel" aria-labelledby="nav-direction-tab">
 						
-						<label for="search">Rechercher un ancien: </label>
-						<h:form><h:inputText type="submit" id="search" placeholder="Votre recherche" value="#{utilisateurControl.option}"></h:inputText>
-						<h:commandButton type="submit" value="Trier" id="sub" name="sub"><!--<f:ajax render="table"></f:ajax>--></h:commandButton></h:form>
-						
-						
-<!-- 						<table class="table" id="table"> -->
-<!-- 							<thead> -->
-<!-- 								<tr> -->
-<!-- 									<th scope="col">Nom</th> -->
-<!-- 									<th scope="col">Prénom</th> -->
-<!-- 									<th scope="col">E-mail</th> -->
-<!-- 									<th scope="col">Téléphone</th> -->
-<!-- 									<th scope="col">Année diplômante</th> -->
-<!-- 								</tr> -->
-<!-- 							</thead> -->
-<!-- 							<tbody value="#{utilisateurControl.findSectionAncien('Assistant de direction')}" var="ancien"> -->
-<!-- 				                <tr > -->
-<!-- 				                    <td>#{ancien.nom}</td> -->
-<!-- 				                    <td>#{ancien.prenom}</td> -->
-<!-- 				                    <td>#{ancien.email}</td> -->
-<!-- 				                    <td>#{ancien.telephone}</td> -->
-<!-- 				                </tr> -->
-
-<!-- 							</tbody> -->
-<!-- 						</table> -->
-						
-						
-						
 						<h:form>
-							<b:dataTable value="#{utilisateurControl.findSectionAncien('Assistant de direction')}" var="ancien" id="table" auto-update="true">
+							<label for="search">Rechercher un ancien: </label>
+							<h:inputText type="submit" id="search" placeholder="Votre recherche" value="#{utilisateurControl.option}"></h:inputText>
+							<h:commandButton type="submit" class="btn btn-primary" value="Filtrer" id="sub" name="sub" style="margin-left: 5px;"></h:commandButton>
+						
+							<b:dataTable value="#{utilisateurControl.findSectionAncien('Assistant de direction')}" var="ancien" id="tableDirection" auto-update="true">
 								<b:dataTableColumn value="#{ancien.nom}" order-by="#{ancien.nom}" label="Nom"/>
 								<b:dataTableColumn value="#{ancien.prenom}" order-by="#{ancien.prenom}" label="Prénom"/> 
 								<b:dataTableColumn value="#{ancien.email}" order-by="#{ancien.email}" label="E-mail"/> 
 								<b:dataTableColumn value="#{ancien.telephone}" order-by="#{ancien.telephone}" label="Téléphone"/> 
  								<b:dataTableColumn value="#{ancien.anneeDiplomante}" order-by="#{ancien.anneeDiplomante}" label="Année diplômante"/>
+ 								<b:dataTableColumn>
+ 									<b:commandButton class="btn btn-primary" value="Afficher l'ancien" label="Afficher" action="#{utilisateurControl.displayUtilisateur(ancien.email)}"></b:commandButton>
+ 								</b:dataTableColumn>
 							</b:dataTable>
 						</h:form>
 						
@@ -76,34 +55,32 @@
 			</div>
 			
 			<div class="tab-pane fade" id="nav-compta" role="tabpanel" aria-labelledby="nav-compta-tab">
-											<h:form>
-						<!-- value="#{utilisateurControl}" var="user" -->
-						
-							<b:dataTable value="#{utilisateurControl.findSectionAncien('Comptabilité')}" var="ancien">
+			
+						<h:form>
+							
+							<b:dataTable value="#{utilisateurControl.findSectionAncien('Comptabilité')}" var="ancien" id="tableCompta" auto-update="true">
 								<b:dataTableColumn value="#{ancien.nom}"  label="Nom"/>
 								<b:dataTableColumn value="#{ancien.prenom}" label="Prénom"/> 
 								<b:dataTableColumn value="#{ancien.email}" label="E-mail"/> 
 								<b:dataTableColumn value="#{ancien.telephone}" label="Téléphone"/> 
  								<b:dataTableColumn value="#{ancien.anneeDiplomante}" label="Année diplômante"/>
 							</b:dataTable>
-							
 						</h:form>
 				
 
 			</div>
 			
 			<div class="tab-pane fade" id="nav-info" role="tabpanel" aria-labelledby="nav-info-tab">
-											<h:form>
-						<!-- value="#{utilisateurControl}" var="user" -->
+			
+						<h:form>
 						
-							<b:dataTable value="#{utilisateurControl.findSectionAncien('Informatique de gestion')}" var="ancien">
+							<b:dataTable value="#{utilisateurControl.findSectionAncien('Informatique de gestion')}" id="tableInfo" var="ancien" auto-update="true">
 								<b:dataTableColumn value="#{ancien.nom}"  label="Nom"/>
 								<b:dataTableColumn value="#{ancien.prenom}" label="Prénom"/> 
 								<b:dataTableColumn value="#{ancien.email}" label="E-mail"/> 
 								<b:dataTableColumn value="#{ancien.telephone}" label="Téléphone"/> 
  								<b:dataTableColumn value="#{ancien.anneeDiplomante}" label="Année diplômante"/>
 							</b:dataTable>
-							
 						</h:form>
 			</div>
 		</div>

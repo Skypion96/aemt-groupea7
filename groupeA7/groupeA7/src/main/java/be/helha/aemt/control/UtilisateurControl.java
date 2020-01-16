@@ -20,7 +20,8 @@ public class UtilisateurControl implements Serializable{
 	
 	private String nom = "Anonymous";
 	private String role;
-	private String option ="dav";
+	private String option;
+	private String ancienMailChoose;
     
     @EJB
     private GestionUtilisateurEJB beanUtilisateur;
@@ -83,15 +84,28 @@ public class UtilisateurControl implements Serializable{
 		this.option = option;
 	}
 	
-    public Ancien removeAncienNV(String mail) {
+    public String getAncienMailChoose() {
+		return ancienMailChoose;
+	}
+
+	public void setAncienMailChoose(String ancienMailChoose) {
+		this.ancienMailChoose = ancienMailChoose;
+	}
+
+	public Ancien removeAncienNV(String mail) {
     	Ancien o = beanUtilisateur.findMailAncien(mail);
     	return beanUtilisateur.removeByEmail(o);
-
     }
 
     public Ancien updateValidation(String mail) {
     	Ancien o = beanUtilisateur.findMailAncien(mail);
     	return beanUtilisateur.updateValidation(o);
 
+    }
+    
+    public String displayUtilisateur(String mail) {
+    	String page="/profilAncien.xhtml?logout=true&faces-redirect=true";
+    	setAncienMailChoose(mail);
+    	return page;
     }
 }
