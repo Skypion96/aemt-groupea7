@@ -176,6 +176,37 @@ public class Offre {
 		return true;
 	}
 
+	
+
+	public String getNomContact() {
+		return nomContact;
+	}
+
+
+	public void setNomContact(String nomContact) {
+		this.nomContact = nomContact;
+	}
+
+
+	public String getPrenomContact() {
+		return prenomContact;
+	}
+
+
+	public void setPrenomContact(String prenomContact) {
+		this.prenomContact = prenomContact;
+	}
+
+
+	public String getMailContact() {
+		return mailContact;
+	}
+
+
+	public void setMailContact(String mailContact) {
+		this.mailContact = mailContact;
+	}
+
 
 	@Override
 	public String toString() {

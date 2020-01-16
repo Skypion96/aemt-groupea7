@@ -10,7 +10,9 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
+import be.helha.aemt.entities.Ancien;
 import be.helha.aemt.entities.OffreEmploi;
 import be.helha.aemt.entities.OffreStage;
 
@@ -48,6 +50,14 @@ public class OffreStageDAO {
 	public OffreStage addOffreStage(OffreStage u) {
 		em.merge(u);
 		return u;
+	}
+	
+	public OffreStage findById(int id) {
+		String requete = "SELECT offreStage from OffreStage offreStage where offreStage.id = :id";
+		TypedQuery<OffreStage> qFind = em.createQuery(requete, OffreStage.class);
+		qFind.setParameter("id", id);
+		List<OffreStage> res= qFind.getResultList();
+		return res.size()==0? null:res.get(0);
 	}
 	
 	//UPDATE A REFLECHIR
