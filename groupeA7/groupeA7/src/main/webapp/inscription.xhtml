@@ -55,7 +55,7 @@
 			<div class="form-row">
 				<div class="form-group col-md-6">
 					<label for="cp" class="col-form-label">Code postal *</label>
-					<h:inputText type="number" class="form-control" required="true" name="cp" id="cp" />
+					<h:inputText type="number" class="form-control" required="true" name="cp" id="cp" value="#{ajoutAncienControl.cp}"/>
 				</div>
 				<div class="form-group col-md-6">
 					<label for="localite" class="col-form-label">Localité *</label>
@@ -75,7 +75,7 @@
 			</div>
 			<div class="form-group">
 				<label for="anneeDiplomante" class="col-form-label">Année diplomante *</label>
-				<h:inputText type="number" class="form-control" required="true" name="anneeDiplomante" id="anneeDiplomante" value="2020" requiredMessage="Please enter digits only."/>
+				<h:inputText type="number" class="form-control" required="true" name="anneeDiplomante" id="anneeDiplomante" value="#{ajoutAncienControl.anneeDiplomante}" requiredMessage="Please enter digits only."/>
 				<span class="danger"><h:message for="anneeDiplomante" errorClass="danger"></h:message></span>
 			</div>
 			<div class="form-group">

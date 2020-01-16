@@ -67,6 +67,18 @@
                           <f:selectItem itemLabel="Comptabilité" itemValue="Comptabilité"/>
                       </h:selectOneMenu>
 			</div>
+			<div class="form-group">
+				<label for="nomContact" class="col-form-label">Nom contact :</label>
+				<h:inputText type="text" class="form-control" required="true" name="nomContact" id="nomContact" value="#{ajoutOffreControl.nomContact}"/>
+			</div>			
+			<div class="form-group">
+				<label for="prenContact" class="col-form-label">Prénom contact : :</label>
+				<h:inputText type="text" class="form-control" required="true" name="prenContact" id="prenContact" value="#{ajoutOffreControl.prenomContact}"/>
+			</div>			
+			<div class="form-group">
+				<label for="mailContact" class="col-form-label">Email contact :</label>
+				<h:inputText type="text" class="form-control" required="true" name="mailContact" id="mailContact" value="#{ajoutOffreControl.mailContact}"/>
+			</div>			
 			<div class="footer">
 				<button onclick="clearAll();">Annuler</button>
 				<h:commandButton class="btn btn-primary" value="Créer l'offre" action="#{ajoutOffreControl.ajoutOffre(sessionControl.getMail())}"/>

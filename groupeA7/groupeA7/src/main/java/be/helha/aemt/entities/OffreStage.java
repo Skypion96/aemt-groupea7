@@ -14,8 +14,8 @@ public class OffreStage extends Offre implements Serializable{
 	}
 
 	public OffreStage(String titre, boolean valide, Date date, Ancien ancien, String nomEntreprise,
-			String adresseEntreprise, String descriptif, String section) {
-		super(titre, valide, date, ancien, nomEntreprise, adresseEntreprise, descriptif, section);
+			String adresseEntreprise, String descriptif, String section,String nomContact,String prenomContact,String mailContact) {
+		super(titre, valide, date, ancien, nomEntreprise, adresseEntreprise, descriptif, section,nomContact,prenomContact,mailContact);
 		this.setType("Stage");
 	}
 

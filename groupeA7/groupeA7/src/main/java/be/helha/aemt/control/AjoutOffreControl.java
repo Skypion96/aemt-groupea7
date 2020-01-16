@@ -30,7 +30,9 @@ public class AjoutOffreControl implements Serializable{
 	private String descriptif;
 	private String section;
 	private String mail;
-	private AncienDAO dao;
+	private String nomContact;
+	private String prenomContact;
+	private String mailContact;
 	
 	@EJB
     private GestionOffreEJB beanOffreStage;
@@ -42,11 +44,11 @@ public class AjoutOffreControl implements Serializable{
 		ancien = beanUser.findMailAncien(email);
 		
 		if(type.equals("Emploi")) {
-			OffreEmploi offre = new OffreEmploi("tt", false, new Date(), ancien, "tt", "tt", "tt", "tt");
+			OffreEmploi offre = new OffreEmploi(titre, false, new Date(),ancien, nomEntreprise, adresseEntreprise, descriptif, section,nomContact,prenomContact,mailContact);
 			return beanOffreStage.AjoutOffreEmploi(offre);
 		}
 		else {
-			OffreStage offre = new OffreStage(titre, false, new Date(),ancien, nomEntreprise, adresseEntreprise, descriptif, section);
+			OffreStage offre = new OffreStage(titre, false, new Date(),ancien, nomEntreprise, adresseEntreprise, descriptif, section,nomContact,prenomContact,mailContact);
 			return beanOffreStage.AjoutOffreStage(offre);
 		}
 	}
@@ -92,6 +94,30 @@ public class AjoutOffreControl implements Serializable{
 	}
 	public void setSection(String section) {
 		this.section = section;
+	}
+
+	public String getNomContact() {
+		return nomContact;
+	}
+
+	public void setNomContact(String nomContact) {
+		this.nomContact = nomContact;
+	}
+
+	public String getPrenomContact() {
+		return prenomContact;
+	}
+
+	public void setPrenomContact(String prenomContact) {
+		this.prenomContact = prenomContact;
+	}
+
+	public String getMailContact() {
+		return mailContact;
+	}
+
+	public void setMailContact(String mailContact) {
+		this.mailContact = mailContact;
 	}
 	
 	
