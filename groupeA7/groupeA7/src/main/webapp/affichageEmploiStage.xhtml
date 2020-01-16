@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns:jsf="http://xmlns.jcp.org/jsf"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:o="http://omnifaces.org/ui"
+xmlns:of="http://omnifaces.org/functions"
+xmlns:h="http://xmlns.jcp.org/jsf/html"
+xmlns:c="http://xmlns.jcp.org/ jsp/jstl/core"
+class=" FB_FW_ext eidReader">
+<head>
+	<title>MeetHELHa</title>
+	<meta http-equiv="  Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="robots" content="noindex, nofollow" />
+	<link rel="stylesheet" href="res/css/profilAncien.css" />
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"/>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+
+</head>
+<body>
+	
+	
+	<!-- NAVBAR -->
+	<ui:insert name="navbar" >
+  		<ui:include src="/navbar.xhtml" />
+	</ui:insert>
+	
+	
+		
+	<!-- CONTENT -->
+	<div class="container">
+		
+		<div>
+			<h1>Offre d'emploi | Section: #{offreStageControl.findById(offreStageControl.id).section}</h1>
+			<h4>#{offreStageControl.findById(offreStageControl.id).titre}</h4>
+			<h5>Postée le #{offreStageControl.findById(offreStageControl.id).date} par #{utilisateurControl.findMail(offreStageControl.findById(offreStageControl.id).ancien.email).nom} #{utilisateurControl.findMail(offreStageControl.findById(offreStageControl.id).ancien.email).prenom}</h5>
+			
+		</div>
+		
+		<table style="margin-left: 30px;">
+			<tr>
+				<td colspan="2"><h5>Entreprise: #{offreStageControl.findById(offreStageControl.id).nomEntreprise}</h5></td>
+			</tr>
+			<tr>
+				<td colspan="2"><h5>Adresse de l'entreprise: #{offreStageControl.findById(offreStageControl.id).adresseEntreprise}</h5></td>
+			</tr>
+			<tr>
+				<td><h5>Nom de la personne de contact: #{offreStageControl.findById(offreStageControl.id).nomContact}</h5></td>
+				<td><h5>Prénom de la personne de contact: #{offreStageControl.findById(offreStageControl.id).prenomContact}</h5></td>
+			</tr>
+			<tr>
+				<td colspan="2"><h5>E-mail de la personne de contact: #{offreStageControl.findById(offreStageControl.id).mailContact}</h5></td>
+			</tr>
+			<tr>
+				<td colspan="2"><h5>Descriptif: #{offreStageControl.findById(offreStageControl.id).descriptif}</h5></td>
+			</tr>
+		</table>
+	</div>
+	
+	
+	<ui:insert name="footer" >
+  		<ui:include src="/footer.xhtml" />
+	</ui:insert>
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

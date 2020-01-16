@@ -29,7 +29,10 @@
 								<b:dataTableColumn value="#{offreStage.date}" label="Date"/>  
 								<b:dataTableColumn value="#{offreStage.nomEntreprise}" label="Nom entreprise"/>  
 								<b:dataTableColumn value="#{offreStage.ancien.nom} #{offreStage.ancien.prenom}" label="Créateur"/>  
-	 							<b:dataTableColumn value="#{offreStage.section}" label="Section"/> 
+	 							<b:dataTableColumn value="#{offreStage.section}" label="Section"/>
+	 							<b:dataTableColumn>
+ 									<b:commandButton class="btn btn-primary" value="Afficher l'offre" label="Afficher" action="#{offreStageControl.displayOffreStage(offreStage.id)}"></b:commandButton>
+ 								</b:dataTableColumn>
 							</b:dataTable>
 						</h:form>
 			

@@ -64,4 +64,12 @@ public class GestionOffreEJB {
     public Offre updateValidation(Offre u) {
     	return offreDAO.updateValidation(u);
     }
+    
+    public OffreStage findById(int id) {
+    	return offreStageDAO.findById(id);
+    }
+    
+    public OffreEmploi findByIdEmploi(int id) {
+    	return offreEmploiDAO.findById(id);
+    }
 }

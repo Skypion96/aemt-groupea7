@@ -20,7 +20,10 @@ public class OffreEmploiControl implements Serializable{
 
 	@EJB
     private GestionOffreEJB beanOffreStage;
+
 	
+	
+	private int id;
 	
     public List<OffreEmploi> selectAllEmploi(){        
         return beanOffreStage.selectAllEmploi(); 
@@ -43,4 +46,22 @@ public class OffreEmploiControl implements Serializable{
     	Offre o = beanOffreStage.findId(id);
     	return beanOffreStage.updateValidation(o);
     }
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+    
+    public String displayOffreEmploi(int id) {
+    	String page="/affichageOffreEmploi.xhtml?logout=true&faces-redirect=true";
+    	setId(id);
+    	return page;
+    }
+    
+    public OffreEmploi findById(int id) {
+		return beanOffreStage.findByIdEmploi(id);
+	}
 }
