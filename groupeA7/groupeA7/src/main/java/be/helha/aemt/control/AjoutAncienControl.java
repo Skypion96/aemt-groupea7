@@ -10,6 +10,7 @@ import javax.inject.Named;
 import javax.servlet.http.Part;
 
 import be.helha.aemt.ejb.GestionAjoutAncienEJB;
+import be.helha.aemt.ejb.GestionUtilisateurEJB;
 import be.helha.aemt.entities.Ancien;
 
 @SessionScoped
@@ -23,6 +24,10 @@ public class AjoutAncienControl implements Serializable{
 
 	@EJB
     private GestionAjoutAncienEJB beanUtilisateur;
+	
+
+	@EJB
+    private GestionUtilisateurEJB beanUtilisateurverif;
 
 	private String email;	
 	private String password;
@@ -41,8 +46,16 @@ public class AjoutAncienControl implements Serializable{
 	
 	
 	public Ancien AjoutAncien() {
-		Ancien ancien = new Ancien(password,email,nom,prenom,telephone,2020,adresse,0,localite,emploiActuel,section);
 		
+		Ancien verif = beanUtilisateurverif.findMailAncien(email);
+		
+		
+		
+		Ancien ancien = new Ancien(password,email,nom,prenom,telephone,anneeDiplomante,adresse,cp,localite,emploiActuel,section);
+		
+		if(verif != null) {
+			return null;
+		}
 		if(photo != null) {
 			try {
 				InputStream img = photo.getInputStream();

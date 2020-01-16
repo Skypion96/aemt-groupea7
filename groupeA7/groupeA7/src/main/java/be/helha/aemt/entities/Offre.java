@@ -28,8 +28,14 @@ public class Offre {
 	private String type;
 	private String descriptif;
 	private String section;
+	private String nomContact;
+	private String prenomContact;
+	private String mailContact;
+	
+	
+	
 	public Offre(String titre, boolean valide, Date date, Ancien ancien, String nomEntreprise,
-			String adresseEntreprise, String descriptif, String section) {
+			String adresseEntreprise, String descriptif, String section,String nomContact,String prenomContact,String mailContact) {
 		super();
 		this.titre = titre;
 		this.valide = valide;
@@ -39,6 +45,9 @@ public class Offre {
 		this.adresseEntreprise = adresseEntreprise;
 		this.descriptif = descriptif;
 		this.section = section;
+		this.nomContact = nomContact;
+		this.prenomContact = prenomContact;
+		this.mailContact = mailContact;
 	}
 	
 	

@@ -7,14 +7,15 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import be.helha.aemt.entities.Annonce;
-import be.helha.aemt.entities.Evenement;
 import be.helha.aemt.entities.Offre;
+import be.helha.aemt.entities.OffreEmploi;
 
 @Stateless
 @LocalBean
-public class EvenementDAO {
+public class AnnonceDAO {
 
 	@PersistenceContext(unitName = "groupeA7")
     private EntityManager em;
@@ -35,19 +36,19 @@ public class EvenementDAO {
 		emf.close();
 	}*/
 	
-	public List<Evenement> selectAllEvenement(){
-		String requete ="SELECT evenement from Evenement evenement";
+	public List<Annonce> selectAllAnnonce(){
+		String requete ="SELECT annonce from Annonce annonce";
 		Query qSelectAll=em.createQuery(requete);
 		return qSelectAll.getResultList();
 	}
 	
 
-	public Evenement addEvenement(Evenement u) {
+	public Annonce addAnnonce(Annonce u) {
 		em.merge(u);
 		return u;
 	}
 	
-	public Evenement removeEvenement(Evenement u) {
+	public Offre removeOffreNV(Offre u) {
 		if(u.getId()==null) {
 			return null;
 		}

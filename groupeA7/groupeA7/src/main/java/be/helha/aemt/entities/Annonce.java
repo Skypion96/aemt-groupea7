@@ -1,64 +1,48 @@
 package be.helha.aemt.entities;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 @Entity
-public class Evenement implements Serializable{
+public class Annonce implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String titre;
 	private String descriptif;
-	private String date;
-	public Evenement(String titre, String descriptif, String date) {
+	private Utilisateur user;
+	public Annonce(String titre, String descriptif, Utilisateur user) {
 		super();
 		this.titre = titre;
 		this.descriptif = descriptif;
-		this.date = date;
+		this.user = user;
 	}
 	
-	public Evenement() {}
-
+	public Annonce() {}
 	public String getTitre() {
 		return titre;
 	}
-
 	public void setTitre(String titre) {
 		this.titre = titre;
 	}
-
 	public String getDescriptif() {
 		return descriptif;
 	}
-
 	public void setDescriptif(String descriptif) {
 		this.descriptif = descriptif;
 	}
-
-	public String getDate() {
-		return date;
+	public Utilisateur getUser() {
+		return user;
 	}
-
-	public void setDate(String date) {
-		this.date = date;
+	public void setUser(Utilisateur user) {
+		this.user = user;
 	}
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
+	
 	
 	
 
