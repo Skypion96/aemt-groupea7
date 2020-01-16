@@ -79,7 +79,7 @@ public class AncienDAO {
 			qSelectAll.setParameter("valide", valide );
 		}
 		else {
-			requete ="SELECT ancien from Ancien ancien where ancien.section =:section and ancien.valide = :valide and (ancien.nom like :option or ancien.prenom like :option or ancien.email like :option) order by ancien.aneeDiplomante desc";
+			requete ="SELECT ancien from Ancien ancien where ancien.section =:section and ancien.valide = :valide and (ancien.nom like :option or ancien.prenom like :option or ancien.email like :option) order by ancien.anneeDiplomante desc";
 			qSelectAll=em.createQuery(requete);
 			qSelectAll.setParameter("section", section );
 			qSelectAll.setParameter("valide", valide );
