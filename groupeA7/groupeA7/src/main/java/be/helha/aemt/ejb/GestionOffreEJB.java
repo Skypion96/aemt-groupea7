@@ -72,4 +72,8 @@ public class GestionOffreEJB {
     public OffreEmploi findByIdEmploi(int id) {
     	return offreEmploiDAO.findById(id);
     }
+    
+    public List<Offre> findByAncien(Ancien ancien) {
+    	return offreDAO.selectAllOffreByAncien(ancien);
+    }
 }

@@ -42,6 +42,14 @@ public class Annonce implements Serializable{
 	public void setUser(Utilisateur user) {
 		this.user = user;
 	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
 	
 	
 	

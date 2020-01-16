@@ -12,6 +12,7 @@ import javax.persistence.TypedQuery;
 import be.helha.aemt.entities.Annonce;
 import be.helha.aemt.entities.Offre;
 import be.helha.aemt.entities.OffreEmploi;
+import be.helha.aemt.entities.Utilisateur;
 
 @Stateless
 @LocalBean
@@ -42,14 +43,29 @@ public class AnnonceDAO {
 		return qSelectAll.getResultList();
 	}
 	
+	public Annonce findId(int id){
+		String requete ="SELECT annonce from Annonce annonce where annonce.id = :id";
+		Query qFind=em.createQuery(requete);
+		qFind.setParameter("id", id);
+		List<Annonce> res= qFind.getResultList();
+		return res.size()==0? null:res.get(0);
+		}
+	
+	public List<Annonce> selectAllAnnonceByUser(Utilisateur user){
+		String requete ="SELECT annonce from Annonce annonce where annonce.user =:user";
+		Query qSelectAll=em.createQuery(requete);
+		qSelectAll.setParameter("user", user );
+		return qSelectAll.getResultList();
+	}
+	
 
 	public Annonce addAnnonce(Annonce u) {
 		em.merge(u);
 		return u;
 	}
 	
-	public Offre removeOffreNV(Offre u) {
-		if(u.getId()==null) {
+	public Annonce removeAnnonce(Annonce u) {
+		if(u==null) {
 			return null;
 		}
 		em.remove(em.merge(u));

@@ -10,6 +10,7 @@ import javax.inject.Named;
 import be.helha.aemt.ejb.GestionAnnonceEJB;
 import be.helha.aemt.ejb.GestionUtilisateurEJB;
 import be.helha.aemt.entities.Annonce;
+import be.helha.aemt.entities.Offre;
 import be.helha.aemt.entities.Utilisateur;
 
 @SessionScoped
@@ -30,12 +31,21 @@ public class AnnonceControl implements Serializable{
 		return beanAnnonce.selectAllAnnonce();
 	}
 	
+	public List<Annonce> selectAllByUser(String mail){
+		Utilisateur user = beanUser.findMail(mail);
+		return beanAnnonce.selectAllAnnonceByUser(user);
+	}
+	
     public Annonce ajoutAnnonce(String email) {
     	user = beanUser.findMail(email);
     	Annonce annonce = new Annonce(titre, descriptif, user);
     	return beanAnnonce.AjoutAnnonce(annonce);
     }
 
+    public Annonce removeAnnonce(int id) {
+    	Annonce o = beanAnnonce.findId(id);
+    	return beanAnnonce.removeAnnonce(o);
+    }
 	public String getTitre() {
 		return titre;
 	}
