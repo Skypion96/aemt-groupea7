@@ -51,7 +51,7 @@
 						<h:inputTextarea type="text" class="form-control" required="true" name="descriptif" id="descriptif" value="#{annonceControl.descriptif}"/>
 					</div>			
 					<div class="footer">
-						<button onclick="clearAll();">Annuler</button>
+						<button class="btn btn-secondary" onclick="clearAll();">Annuler</button>
 						<h:commandButton class="btn btn-primary" value="Créer l'offre" action="#{annonceControl.ajoutAnnonce(sessionControl.getMail())}" />
 					</div>
 					</div>
