@@ -9,6 +9,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
+import be.helha.aemt.entities.Ancien;
 import be.helha.aemt.entities.Annonce;
 import be.helha.aemt.entities.Offre;
 import be.helha.aemt.entities.OffreEmploi;
@@ -37,9 +38,17 @@ public class AnnonceDAO {
 	}*/
 	
 	public List<Annonce> selectAllAnnonce(){
-		String requete ="SELECT annonce from Annonce annonce";
-		Query qSelectAll=em.createQuery(requete);
+		String requete ="SELECT annonce from Annonce annonce ORDER BY annonce.date DESC";
+		Query qSelectAll=em.createQuery(requete, Annonce.class);
 		return qSelectAll.getResultList();
+	}
+	
+	public Annonce selectLastAnnonceIndex(int i) {
+		String requete ="SELECT annonce from Annonce annonce ORDER BY annonce.date DESC";
+		Query qSelectAnnonceIndex = em.createQuery(requete, Annonce.class);
+		qSelectAnnonceIndex.setFirstResult(i);
+		List<Annonce> res= qSelectAnnonceIndex.getResultList();
+		return res.size()==0? null:res.get(0);
 	}
 	
 

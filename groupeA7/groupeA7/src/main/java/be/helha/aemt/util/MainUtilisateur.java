@@ -32,7 +32,7 @@ public class MainUtilisateur {
 		Offre o1 = new OffreStage("Test offre stage",false,new Date() ,(Ancien)u1,"meetHelha","30, Rue de l'entreprise, 7000 MONS","Descriptif de l'entreprise","Informatique de gestion","test","test","test");
 		Offre o2 = new OffreEmploi("Test offre emploi",false,new Date() ,(Ancien)u1,"meetHelha","30, Rue de l'entreprise, 7000 MONS","Descriptif de l'entreprise","Informatique de gestion","test","test","test");
 		
-		Annonce annonce = new Annonce("test", "test", u2);
+		Annonce annonce = new Annonce("test", "test", u2, new Date());
 		Evenement event = new Evenement("test", "test", "20/20/2020");
 		
 		File file = new File("src/main/webapp/res/no_profile.gif");

@@ -1,6 +1,7 @@
 package be.helha.aemt.control;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 import javax.ejb.EJB;
@@ -26,13 +27,17 @@ public class AnnonceControl implements Serializable{
 	@EJB
 	private GestionUtilisateurEJB beanUser;
 	
-	public List<Annonce> selectAll2(){
+	public List<Annonce> selectAll(){
 		return beanAnnonce.selectAllAnnonce();
+	}
+	
+	public Annonce selectLastAnnonceIndex(int i) {
+		return beanAnnonce.selectLastAnnonceIndex(i);
 	}
 	
     public Annonce ajoutAnnonce(String email) {
     	user = beanUser.findMail(email);
-    	Annonce annonce = new Annonce(titre, descriptif, user);
+    	Annonce annonce = new Annonce(titre, descriptif, user, new Date());
     	return beanAnnonce.AjoutAnnonce(annonce);
     }
 

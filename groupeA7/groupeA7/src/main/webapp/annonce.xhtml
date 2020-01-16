@@ -24,9 +24,9 @@
 	<ui:insert name="navbar" >
   		<ui:include src="/navbar.xhtml" />
 	</ui:insert>
-				<div class="container">
-		    		<form class="form-inline my-2 my-lg-0">
-	    			<button type="button" class="btn" data-toggle="modal" data-target="#annonce">Créer une annonce</button>
+				<div>
+		    		<form class="form-inline">
+	    			<button type="button" class="btn btn-primary" style="margin: 5px" data-toggle="modal" data-target="#annonce">Créer une annonce</button>
 	    			</form>
 				</div>
 		
@@ -47,12 +47,12 @@
 							<h:inputText type="text" class="form-control" name="titre" id="titre" value="#{annonceControl.titre}"/>
 						</div>
 					<div class="form-group">
-						<label for="descriptif" class="col-form-label">description :</label>
+						<label for="descriptif" class="col-form-label">Description :</label>
 						<h:inputTextarea type="text" class="form-control" required="true" name="descriptif" id="descriptif" value="#{annonceControl.descriptif}"/>
 					</div>			
 					<div class="footer">
-						<button class="btn btn-secondary" onclick="clearAll();">Annuler</button>
-						<h:commandButton class="btn btn-primary" value="Créer l'offre" action="#{annonceControl.ajoutAnnonce(sessionControl.getMail())}" />
+						<button class="btn btn-secondary" style="margin: 5px" onclick="clearAll();">Annuler</button>
+						<h:commandButton class="btn btn-primary" value="Créer l'annonce" action="#{annonceControl.ajoutAnnonce(sessionControl.getMail())}" />
 					</div>
 					</div>
 						
@@ -67,7 +67,7 @@
 		
 						
 						<h:form>
-							<b:dataTable value="#{annonceControl.selectAll2()}" var="annonce"> 
+							<b:dataTable value="#{annonceControl.selectAll()}" var="annonce"> 
 								<b:dataTableColumn value="#{annonce.titre}"  label="Titre"/> 
 								<b:dataTableColumn value="#{annonce.descriptif}" label="Description"/>  
 								<b:dataTableColumn value="#{annonce.user.nom} #{annonce.user.prenom}" label="Nom du créateur"/>  

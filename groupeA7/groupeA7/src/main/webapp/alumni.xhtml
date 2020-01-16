@@ -44,11 +44,11 @@
 							
 						
 							<b:dataTable value="#{utilisateurControl.findSectionAncien('Assistant de direction')}" var="ancien" id="tableDirection" auto-update="true">
-								<b:dataTableColumn value="#{ancien.nom}" order-by="#{ancien.nom}" label="Nom"/>
-								<b:dataTableColumn value="#{ancien.prenom}" order-by="#{ancien.prenom}" label="Prénom"/> 
-								<b:dataTableColumn value="#{ancien.email}" order-by="#{ancien.email}" label="E-mail"/> 
-								<b:dataTableColumn value="#{ancien.telephone}" order-by="#{ancien.telephone}" label="Téléphone"/> 
- 								<b:dataTableColumn value="#{ancien.anneeDiplomante}" order-by="#{ancien.anneeDiplomante}" label="Année diplômante"/>
+								<b:dataTableColumn value="#{ancien.nom}" label="Nom"/>
+								<b:dataTableColumn value="#{ancien.prenom}" label="Prénom"/> 
+								<b:dataTableColumn value="#{ancien.email}" label="E-mail"/> 
+								<b:dataTableColumn value="#{ancien.telephone}" label="Téléphone"/> 
+ 								<b:dataTableColumn value="#{ancien.anneeDiplomante}" label="Année diplômante"/>
  								<b:dataTableColumn>
  									<b:commandButton class="btn btn-primary" value="Afficher l'ancien" label="Afficher" action="#{utilisateurControl.displayUtilisateur(ancien.email)}"></b:commandButton>
  								</b:dataTableColumn>

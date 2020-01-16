@@ -19,6 +19,10 @@ public class GestionAnnonceEJB {
 		return dao.selectAllAnnonce();
 	}
 	
+	public Annonce selectLastAnnonceIndex(int i) {
+		return dao.selectLastAnnonceIndex(i);
+	}
+	
     public Annonce AjoutAnnonce(Annonce annonce) {
     	return dao.addAnnonce(annonce);
     }
