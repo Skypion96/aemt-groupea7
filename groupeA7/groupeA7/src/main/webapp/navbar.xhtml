@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
-<html xmlns:jsf="http://xmlns.jcp.org/jsf" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:c="http://xmlns.jcp.org/jsp/jstl/core" class=" FB_FW_ext eidReader">
+<html 
+xmlns:jsf="http://xmlns.jcp.org/jsf"
+xmlns:o="http://omnifaces.org/ui"
+xmlns:of="http://omnifaces.org/functions"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:h="http://xmlns.jcp.org/jsf/html"
+xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+class=" FB_FW_ext eidReader">
 <head>
 	<title>MeetHELHa</title>
 	<meta http-equiv="  Content-Type" content="text/html; charset=UTF-8" />
@@ -83,9 +90,16 @@
 							<span id="userLogo" style="font-size: 48px; color: white;" onmouseover="this.style.color='black';" onmouseout="this.style.color='white';">
 						  		<c:choose>
 						  			<c:when test="#{utilisateurControl.findMail(sessionControl.getMail()).role == 'Ancien'}">
-						  				<c:if test="#{utilisateurControl.findMail(sessionControl.getMail()).imageProfil == null}">
-						  					hehe
-						  				</c:if>
+						  				<c:choose>
+							  				<c:when test="#{utilisateurControl.findMail(sessionControl.getMail()).imageProfil != null}">
+							  					<div style="display: inline-block;height: 60px;width: 60px;max-height: 60px;max-width: 60px;overflow: hidden;border-radius: 50%;">
+							  						<o:graphicImage value="#{imageControl.findImageFromMail(sessionControl.getMail())}" style="height: 90px; margin-right: 50%; transform: translateX(calc(-50% + 30px))"></o:graphicImage>
+							  					</div>
+							  				</c:when>
+							  				<c:otherwise>
+							  					<i class="fa fa-user"></i>
+							  				</c:otherwise>
+							  			</c:choose>
 						  			</c:when>
 							  		<c:otherwise >
 							  			<i class="fa fa-user"></i>
