@@ -64,6 +64,9 @@
 								<b:dataTableColumn value="#{ancien.email}" label="E-mail"/> 
 								<b:dataTableColumn value="#{ancien.telephone}" label="Téléphone"/> 
  								<b:dataTableColumn value="#{ancien.anneeDiplomante}" label="Année diplômante"/>
+ 								<b:dataTableColumn>
+ 									<b:commandButton class="btn btn-primary" value="Afficher l'ancien" label="Afficher" action="#{utilisateurControl.displayUtilisateur(ancien.email)}"></b:commandButton>
+ 								</b:dataTableColumn>
 							</b:dataTable>
 						</h:form>
 				
@@ -80,6 +83,9 @@
 								<b:dataTableColumn value="#{ancien.email}" label="E-mail"/> 
 								<b:dataTableColumn value="#{ancien.telephone}" label="Téléphone"/> 
  								<b:dataTableColumn value="#{ancien.anneeDiplomante}" label="Année diplômante"/>
+ 								<b:dataTableColumn>
+ 									<b:commandButton class="btn btn-primary" value="Afficher l'ancien" label="Afficher" action="#{utilisateurControl.displayUtilisateur(ancien.email)}"></b:commandButton>
+ 								</b:dataTableColumn>
 							</b:dataTable>
 						</h:form>
 			</div>

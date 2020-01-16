@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
-<html xmlns:jsf="http://xmlns.jcp.org/jsf" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:c="http://xmlns.jcp.org/ jsp/jstl/core" class=" FB_FW_ext eidReader">
+<html xmlns:jsf="http://xmlns.jcp.org/jsf"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:o="http://omnifaces.org/ui"
+xmlns:of="http://omnifaces.org/functions"
+xmlns:h="http://xmlns.jcp.org/jsf/html"
+xmlns:c="http://xmlns.jcp.org/ jsp/jstl/core"
+class=" FB_FW_ext eidReader">
 <head>
 	<title>MeetHELHa</title>
 	<meta http-equiv="  Content-Type" content="text/html; charset=UTF-8" />
@@ -22,24 +28,33 @@
 		
 	<!-- CONTENT -->
 	<div class="container">
-		<h1>#{utilisateurControl.findMail(utilisateurControl.ancienMailChoose).nom} #{utilisateurControl.findMail(utilisateurControl.ancienMailChoose).prenom}</h1> <h3>| #{utilisateurControl.findMail(utilisateurControl.ancienMailChoose).section} | #{utilisateurControl.findMail(utilisateurControl.ancienMailChoose).anneeDiplomante}</h3>
-		<div>PHOTO</div>
-		<table>
+		<div style="margin-bottom: 30px;"><h1>#{utilisateurControl.findMail(utilisateurControl.ancienMailChoose).nom} #{utilisateurControl.findMail(utilisateurControl.ancienMailChoose).prenom}</h1> <h3>#{utilisateurControl.findMail(utilisateurControl.ancienMailChoose).section} | #{utilisateurControl.findMail(utilisateurControl.ancienMailChoose).anneeDiplomante}</h3></div>
+		<div style="display: inline-block; float: left; max-height: 200px; max-width: 200px; height: 200px; overflow: hidden;  background-color: lightGrey; color: white">
+		<c:choose>
+			<c:when test="#{imageControl.findImageFromMail(utilisateurControl.ancienMailChoose) != null}">
+				<o:graphicImage value="#{imageControl.findImageFromMail(utilisateurControl.ancienMailChoose)}" style="height: 200px; transform: translatex(calc(-50% + 100px));"></o:graphicImage>
+			</c:when>
+			<c:otherwise>
+				<i class="fa fa-user" style="transform: translatex(-2px); font-size: 200px;"></i>
+			</c:otherwise>
+		</c:choose>
+		</div>
+		<table style="float: left; margin-left: 30px;">
 			<tr>
-				<td colspan="2">E-mail: #{utilisateurControl.findMail(utilisateurControl.ancienMailChoose).email}</td>
+				<td colspan="2"><h5>E-mail: #{utilisateurControl.findMail(utilisateurControl.ancienMailChoose).email}</h5></td>
 			</tr>
 			<tr>
-				<td colspan="2">Téléphone: #{utilisateurControl.findMail(utilisateurControl.ancienMailChoose).telephone}</td>
+				<td colspan="2"><h5>Téléphone: #{utilisateurControl.findMail(utilisateurControl.ancienMailChoose).telephone}</h5></td>
 			</tr>
 			<tr>
-				<td colspan="2">Adresse: #{utilisateurControl.findMail(utilisateurControl.ancienMailChoose).adresse}</td>
+				<td colspan="2"><h5>Adresse: #{utilisateurControl.findMail(utilisateurControl.ancienMailChoose).adresse}</h5></td>
 			</tr>
 			<tr>
-				<td>CodePostal: #{utilisateurControl.findMail(utilisateurControl.ancienMailChoose).cp}</td>
-				<td>Localité: #{utilisateurControl.findMail(utilisateurControl.ancienMailChoose).localite}</td>
+				<td><h5>CodePostal: #{utilisateurControl.findMail(utilisateurControl.ancienMailChoose).cp}</h5></td>
+				<td><h5>Localité: #{utilisateurControl.findMail(utilisateurControl.ancienMailChoose).localite}</h5></td>
 			</tr>
 			<tr>
-				<td colspan="2">Emploi actuel: #{utilisateurControl.findMail(utilisateurControl.ancienMailChoose).emploiActuel}</td>
+				<td colspan="2"><h5>Emploi actuel: #{utilisateurControl.findMail(utilisateurControl.ancienMailChoose).emploiActuel}</h5></td>
 			</tr>
 		</table>
 	</div>
