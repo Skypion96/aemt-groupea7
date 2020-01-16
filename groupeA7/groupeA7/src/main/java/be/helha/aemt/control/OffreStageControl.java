@@ -10,6 +10,7 @@ import javax.inject.Named;
 import be.helha.aemt.ejb.GestionOffreEJB;
 import be.helha.aemt.ejb.GestionUtilisateurEJB;
 import be.helha.aemt.entities.Ancien;
+import be.helha.aemt.entities.Offre;
 import be.helha.aemt.entities.OffreStage;
 
 @SessionScoped
@@ -35,13 +36,13 @@ public class OffreStageControl implements Serializable{
 	}
 
 	public String displayOffreStage(int id) {
-    	String page="/affichageOffreStage.xhtml?logout=true&faces-redirect=true";
+    	String page="/affichageOffreStage.xhtml?faces-redirect=true";
     	setId(id);
     	return page;
     }
 	
-	public OffreStage findById(int id) {
-		return beanOffreStage.findById(id);
+	public Offre findId(int id) {
+		return beanOffreStage.findId(id);
 	}
 
 }

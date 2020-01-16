@@ -61,7 +61,7 @@ public class OffreEmploiControl implements Serializable{
     	return page;
     }
     
-    public OffreEmploi findById(int id) {
-		return beanOffreStage.findByIdEmploi(id);
+    public Offre findId(int id) {
+		return beanOffreStage.findId(id);
 	}
 }

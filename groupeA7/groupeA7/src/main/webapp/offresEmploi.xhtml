@@ -30,6 +30,9 @@
 								<b:dataTableColumn value="#{offreEmploi.nomEntreprise}" label="Nom entreprise"/>  
 								<b:dataTableColumn value="#{offreEmploi.ancien.nom} #{offreEmploi.ancien.prenom}" label="Créateur"/>  
 	 							<b:dataTableColumn value="#{offreEmploi.section}" label="Section"/> 
+								 <b:dataTableColumn>
+ 									<b:commandButton class="btn btn-primary" value="Afficher l'offre" label="Afficher" action="#{offreEmploiControl.displayOffreEmploi(offreEmploi.id)}"></b:commandButton>
+ 								</b:dataTableColumn>
 							</b:dataTable>
 						</h:form>
 			
