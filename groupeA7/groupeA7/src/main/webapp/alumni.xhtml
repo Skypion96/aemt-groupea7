@@ -24,7 +24,13 @@
 		
 	<!-- CONTENT -->
 	<div class="content">
+	<h:form>
+	<label for="search" style="margin-left: 10px; margin-right:5px;margin-top: 10px;float: left;">Rechercher un ancien: </label>
+	<h:inputText type="submit" class="form-control" style="max-width: 200px; float: left; margin-top: 5px;" id="search" placeholder="Votre recherche" value="#{utilisateurControl.option}"></h:inputText>
+	<br/><br/>
+	<h:commandButton type="submit" class="btn btn-primary" value="Filtrer" id="sub" name="sub" style="margin-left: 5px;"></h:commandButton>
 		<nav id="tabs">
+		<br/>
 			<div class="nav nav-tabs" id="nav-tab" role="tablist">
 				<a class="nav-item nav-link active" id="nav-direction-tab" data-toggle="tab" href="#nav-direction" role="tab" aria-controls="nav-direction" aria-selected="true">Assistant(e) de direction</a>
 				<a class="nav-item nav-link" id="nav-compta-tab" data-toggle="tab" href="#nav-compta" role="tab" aria-controls="nav-compta" aria-selected="false">Comptabilité</a>
@@ -34,10 +40,8 @@
 		<div class="tab-content" id="nav-tabContent">
 			<div class="tab-pane fade show active" id="nav-direction" role="tabpanel" aria-labelledby="nav-direction-tab">
 						
-						<h:form>
-							<label for="search">Rechercher un ancien: </label>
-							<h:inputText type="submit" id="search" placeholder="Votre recherche" value="#{utilisateurControl.option}"></h:inputText>
-							<h:commandButton type="submit" class="btn btn-primary" value="Filtrer" id="sub" name="sub" style="margin-left: 5px;"></h:commandButton>
+						
+							
 						
 							<b:dataTable value="#{utilisateurControl.findSectionAncien('Assistant de direction')}" var="ancien" id="tableDirection" auto-update="true">
 								<b:dataTableColumn value="#{ancien.nom}" order-by="#{ancien.nom}" label="Nom"/>
@@ -48,15 +52,13 @@
  								<b:dataTableColumn>
  									<b:commandButton class="btn btn-primary" value="Afficher l'ancien" label="Afficher" action="#{utilisateurControl.displayUtilisateur(ancien.email)}"></b:commandButton>
  								</b:dataTableColumn>
-							</b:dataTable>
-						</h:form>
+							</b:dataTable>					
 						
 
 			</div>
 			
 			<div class="tab-pane fade" id="nav-compta" role="tabpanel" aria-labelledby="nav-compta-tab">
 			
-						<h:form>
 							
 							<b:dataTable value="#{utilisateurControl.findSectionAncien('Comptabilité')}" var="ancien" id="tableCompta" auto-update="true">
 								<b:dataTableColumn value="#{ancien.nom}"  label="Nom"/>
@@ -68,14 +70,12 @@
  									<b:commandButton class="btn btn-primary" value="Afficher l'ancien" label="Afficher" action="#{utilisateurControl.displayUtilisateur(ancien.email)}"></b:commandButton>
  								</b:dataTableColumn>
 							</b:dataTable>
-						</h:form>
 				
 
 			</div>
 			
 			<div class="tab-pane fade" id="nav-info" role="tabpanel" aria-labelledby="nav-info-tab">
 			
-						<h:form>
 						
 							<b:dataTable value="#{utilisateurControl.findSectionAncien('Informatique de gestion')}" id="tableInfo" var="ancien" auto-update="true">
 								<b:dataTableColumn value="#{ancien.nom}"  label="Nom"/>
@@ -87,9 +87,9 @@
  									<b:commandButton class="btn btn-primary" value="Afficher l'ancien" label="Afficher" action="#{utilisateurControl.displayUtilisateur(ancien.email)}"></b:commandButton>
  								</b:dataTableColumn>
 							</b:dataTable>
-						</h:form>
 			</div>
 		</div>
+		</h:form>
 	</div>
 	
 	
