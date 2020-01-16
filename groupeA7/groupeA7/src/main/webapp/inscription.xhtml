@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
-<html xmlns:jsf="http://xmlns.jcp.org/jsf" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:c="http://xmlns.jcp.org/ jsp/jstl/core" class=" FB_FW_ext eidReader">
+<html xmlns:jsf="http://xmlns.jcp.org/jsf"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:f="http://xmlns.jcp.org/jsf/core"
+xmlns:h="http://xmlns.jcp.org/jsf/html"
+xmlns:c="http://xmlns.jcp.org/ jsp/jstl/core"
+class=" FB_FW_ext eidReader">
 <head>
 	<title>MeetHELHa</title>
 	<meta http-equiv="  Content-Type" content="text/html; charset=UTF-8" />
@@ -33,41 +38,51 @@
 			<div class="form-row">
 				<div class="form-group col-md-6">
 					<label for="nom" class="col-form-label">Nom *</label>
-					<h:inputText type="text" class="form-control" name="nom" id="nom" value="#{ajoutAncienControl.nom}"/>
+					<h:inputText type="text" class="form-control" name="nom" id="nom" value="#{ajoutAncienControl.nom}" required="true" requiredMessage="Veuillez entrer un nom."/>
+					<h:message for="nom" style="color:red" />
 				</div>
 				<div class="form-group col-md-6">
 					<label for="prenom" class="col-form-label">Prénom *</label>
-					<h:inputText type="text" class="form-control" name="prenom" id="prenom" value="#{ajoutAncienControl.prenom}"/>
+					<h:inputText type="email" class="form-control" name="prenom" id="prenom" value="#{ajoutAncienControl.prenom}" required = "true" requiredMessage="Veuillez entrer un prénom.">
+					</h:inputText>
+					<h:message for="prenom" style="color:red" />
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="mail"  class="col-form-label">E-mail *</label>
-				<h:inputText type="email" class="form-control" name="mail" id="mail" value="#{ajoutAncienControl.email}"/>
+				<h:inputText type="text" class="form-control" name="mail" id="mail" value="#{ajoutAncienControl.email}" required ="true" requiredMessage="Veuillez entrer une adresse mail." validatorMessage="Veuillez entrer une adresse mail valide.">
+					<f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+				</h:inputText>
+				<h:message for="mail" style="color:red" />
 			</div>
 			<div class="form-group">
 				<label for="mdp" class="col-form-label">Mot de passe *</label>
-				<h:inputSecret type="password" class="form-control" required="true" name="mdp" id="mdp" value="#{ajoutAncienControl.password}"/>
+				<h:inputSecret type="password" class="form-control" required="true" name="mdp" id="mdp" value="#{ajoutAncienControl.password}" requiredMessage="Veuillez entrer un mot de passe."/>
+				<h:message for="mdp" style="color:red" />
 			</div>
 			<div class="form-group">
 				<label for="adresse" class="col-form-label">Adresse *</label>
-				<h:inputText type="text" class="form-control" required="true" name="adresse" id="adresse" value="#{ajoutAncienControl.adresse}"/>
+				<h:inputText type="text" class="form-control" required="true" name="adresse" id="adresse" value="#{ajoutAncienControl.adresse}" requiredMessage="Veuillez entrer une adresse."/>
+				<h:message for="adresse" style="color:red" />
 			</div>
 			<div class="form-row">
 				<div class="form-group col-md-6">
 					<label for="cp" class="col-form-label">Code postal *</label>
-					<h:inputText type="number" class="form-control" required="true" name="cp" id="cp" value="#{ajoutAncienControl.cp}"/>
+					<h:inputText type="number" class="form-control" required="true" name="cp" id="cp" value="#{ajoutAncienControl.cp}" requiredMessage="Veuillez entrer votre code postal.">
+					</h:inputText>
+					<h:message for="cp" style="color:red" />
 				</div>
 				<div class="form-group col-md-6">
 					<label for="localite" class="col-form-label">Localité *</label>
-					<h:inputText type="text" class="form-control" required="true" name="localite" id="localite" value="#{ajoutAncienControl.localite}"/>
+					<h:inputText type="text" class="form-control" required="true" name="localite" id="localite" value="#{ajoutAncienControl.localite}" requiredMessage="Veuillez entrer votre localité."/>
+					<h:message for="localite" style="color:red" />
 				</div>
 			</div>
 				
 			<div class="form-group">
-				<label for="section" class="col-form-label">Section *</label>
-                      <h:selectOneMenu fieldId="section" name="section" label="Section : " 
-                          colMd="10" labelColMd="2" required="true" select2="true" value="#{ajoutAncienControl.section}">
-                          <f:selectItem itemLabel="(Choisissez votre section)" itemValue="" />
+				<label for="section" class="col-form-label">Section *</label><br/>
+                      <h:selectOneMenu fieldId="section" name="section" label="Section :"
+                          required="true" value="#{ajoutAncienControl.section}" class="form-control form-control">
                           <f:selectItem itemLabel="Informatique de Gestion" itemValue="Informatique de Gestion"/>
                           <f:selectItem itemLabel="Assistant de direction" itemValue="Assistant de direction"/>
                           <f:selectItem itemLabel="Comptabilité" itemValue="Comptabilité"/>
@@ -75,25 +90,27 @@
 			</div>
 			<div class="form-group">
 				<label for="anneeDiplomante" class="col-form-label">Année diplomante *</label>
-				<h:inputText type="number" class="form-control" required="true" name="anneeDiplomante" id="anneeDiplomante" value="#{ajoutAncienControl.anneeDiplomante}" requiredMessage="Please enter digits only."/>
-				<span class="danger"><h:message for="anneeDiplomante" errorClass="danger"></h:message></span>
+				<h:inputText type="text" class="form-control" required="true" name="anneeDiplomante" id="anneeDiplomante" value="#{ajoutAncienControl.anneeDiplomante}" requiredMessage="Veuillez entrer l'année d'obtention de votre diplôme."/>
+				<h:message for="anneeDiplomante" style="color:red" />
 			</div>
 			<div class="form-group">
 				<label for="telephone" class="col-form-label">Téléphone *</label>
-				<h:inputText type="text" class="form-control" required="true" name="telephone" id="telephone" value="#{ajoutAncienControl.telephone}"/>
+				<h:inputText type="text" class="form-control" required="true" name="telephone" id="telephone" value="#{ajoutAncienControl.telephone}" requiredMessage="Veuillez entrer votre numéro de téléphone."/>
+				<h:message for="telephone" style="color:red" />
 			</div>
 			<div class="form-group">
 				<label for="emploi" class="col-form-label">Emploi actuel *</label>
-				<h:inputText type="text" class="form-control" required="true" name="emploi" id="emploi" value="#{ajoutAncienControl.emploiActuel}">
+				<h:inputText type="text" class="form-control" required="true" name="emploi" id="emploi" value="#{ajoutAncienControl.emploiActuel}" requiredMessage="Veuillez entrer votre emploi actuel.">
 				</h:inputText>
+				<h:message for="emploi" style="color:red" />
 			</div>
 			<div class="form-group">
 				<label for="photo" class="col-form-label">Photo de profil : maximum 2Mo (<i>Facultatif</i>)</label>
 				<h:inputFile type="file" class="form-control" required="false" name="photo" id="photo" accept="image/png, image/jpeg" value="#{ajoutAncienControl.photo}">
 				</h:inputFile>
 			</div>
+			<i>* = Champs obligatoires</i><br/><br/>
 			<div class="footer">
-				<button onclick="clearAll();">Annuler</button>
 				<h:commandButton class="btn btn-primary" value="S'inscrire" action="#{ajoutAncienControl.AjoutAncien()}"/>
 			</div>
 				

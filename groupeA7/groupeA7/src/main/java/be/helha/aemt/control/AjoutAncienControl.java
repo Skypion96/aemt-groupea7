@@ -45,7 +45,7 @@ public class AjoutAncienControl implements Serializable{
 
 	
 	
-	public Ancien AjoutAncien() {
+	public String AjoutAncien() {
 		
 		Ancien verif = beanUtilisateurverif.findMailAncien(email);
 		
@@ -68,7 +68,8 @@ public class AjoutAncienControl implements Serializable{
 			}
 		}
 		
-		return beanUtilisateur.AjoutAncien(ancien);
+		beanUtilisateur.AjoutAncien(ancien);
+		return "/inscriptionsuccess.xhtml?faces-redirect=true";
 	}
 	
 	
@@ -151,22 +152,5 @@ public class AjoutAncienControl implements Serializable{
 	}
 	public void setPhoto(Part photo) {
 		this.photo = photo;
-	}
-
-	public void clearAjout() {
-		this.nom = "";
-		/*email;	
-		password;
-		nom;
-		prenom;
-		role;
-		telephone;
-		private int anneeDiplomante;
-		private String adresse;
-		private int cp;
-		private String localite;
-		private String emploiActuel;
-		private String section;*/
-	}
-	
+	}	
 }
