@@ -54,10 +54,11 @@
 						<label for="date" class="col-form-label">Date :</label>
 						<h:inputText type="text" class="form-control" required="true" name="date" id="date" value="#{evenementControl.date}"/>
 					</div>			
-					<div class="footer">
-						<button onclick="clearAll();">Annuler</button>
+				</div>
+					
+					<div class="modal-footer">
+						<button class="btn btn-secondary" onclick="clearAll();">Annuler</button>
 						<h:commandButton class="btn btn-primary" value="Créer l'offre" action="#{evenementControl.ajoutEvenement()}" />
-					</div>
 					</div>
 						
 				</h:form>	
