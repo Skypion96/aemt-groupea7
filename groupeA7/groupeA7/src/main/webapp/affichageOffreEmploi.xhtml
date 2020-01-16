@@ -30,27 +30,27 @@ class=" FB_FW_ext eidReader">
 	<div class="container">
 		
 		<div>
-			<h1>Offre d'emploi | Section: #{offreStageControl.findId(offreStageControl.id).section}</h1>
-			<h4>#{offreStageControl.findId(offreStageControl.id).titre}</h4>
-			<h5>Postée le #{offreStageControl.findId(offreStageControl.id).date} par #{utilisateurControl.findMail(offreStageControl.findId(offreStageControl.id).ancien.email).nom} #{utilisateurControl.findMail(offreStageControl.findId(offreStageControl.id).ancien.email).prenom}</h5>
+			<h1>Offre d'emploi | Section: #{offreEmploiControl.findId(offreStageControl.id).section}</h1>
+			<h4>#{offreEmploiControl.findId(offreStageControl.id).titre}</h4>
+			<h5>Postée le #{offreEmploiControl.findId(offreStageControl.id).date} par #{utilisateurControl.findMail(offreEmploiControl.findId(offreStageControl.id).ancien.email).nom} #{utilisateurControl.findMail(offreEmploiControl.findId(offreStageControl.id).ancien.email).prenom}</h5>
 			
 		</div>
 		
 		<table style="margin-left: 30px;">
 			<tr>
-				<td colspan="2"><h5>Entreprise: #{offreStageControl.findId(offreStageControl.id).nomEntreprise}</h5></td>
+				<td colspan="2"><h5>Entreprise: #{offreEmploiControl.findId(offreStageControl.id).nomEntreprise}</h5></td>
 			</tr>
 			<tr>
-				<td colspan="2"><h5>Adresse de l'entreprise: #{offreStageControl.findId(offreStageControl.id).adresseEntreprise}</h5></td>
+				<td colspan="2"><h5>Adresse de l'entreprise: #{offreEmploiControl.findId(offreStageControl.id).adresseEntreprise}</h5></td>
 			</tr>
 			<tr>
-				<td><h5>Personne de contact: #{offreStageControl.findId(offreStageControl.id).nomContact} #{offreStageControl.findId(offreStageControl.id).prenomContact}</h5></td>
+				<td><h5>Personne de contact: #{offreEmploiControl.findId(offreStageControl.id).nomContact} #{offreEmploiControl.findId(offreStageControl.id).prenomContact}</h5></td>
 			</tr>
 			<tr>
-				<td colspan="2"><h5>E-mail de la personne de contact: #{offreStageControl.findId(offreStageControl.id).mailContact}</h5></td>
+				<td colspan="2"><h5>E-mail de la personne de contact: #{offreEmploiControl.findId(offreStageControl.id).mailContact}</h5></td>
 			</tr>
 			<tr>
-				<td colspan="2"><h5>Descriptif: #{offreStageControl.findId(offreStageControl.id).descriptif}</h5></td>
+				<td colspan="2"><h5>Descriptif: #{offreEmploiControl.findId(offreStageControl.id).descriptif}</h5></td>
 			</tr>
 		</table>
 	</div>
